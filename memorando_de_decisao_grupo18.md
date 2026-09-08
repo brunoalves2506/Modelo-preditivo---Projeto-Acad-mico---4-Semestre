@@ -116,12 +116,12 @@ O pipeline do projeto já está definido: qualquer fonte de dados precisa produz
 `[]` 
 `[]`
 
-### Integrante 6 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
-`[]` 
-`[]`
+### Integrante 6 — `Wendel Henrique da Silva Rocha`
+- **O que fez nesta etapa:** `Contribuiu para a escolha do modelo utilizado, opinando nos benefícios e malefícios de cada escolha, além de explicar como chamar a API.`
+- **Tempo dedicado (aprox.):** `1h30`
+- **Evidência da contribuição** **: 
+<img width="540" height="1170" alt="image" src="https://github.com/user-attachments/assets/06c573a1-c1f7-4650-95b2-ab51186dcca0" />
+
 
 ---
 
