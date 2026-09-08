@@ -99,10 +99,11 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 `[]` 
 `[]`
 
-### Integrante 4 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
+### Integrante 4 — `[Igor da Silva Alves Correa]`
+- **O que fez nesta etapa:** `[Contribuiu com a pesquisa para o projeto]`
+- **Tempo dedicado (aprox.):** `[ex.: 2h]`
+- **Evidência da contribuição** <img width="877" height="760" alt="image" src="https://github.com/user-attachments/assets/56a0a29f-0060-4ac4-afae-c9ab2fc89e1d" />
+ 
 `[]` 
 `[]`
 
