@@ -130,5 +130,5 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 <!-- Mínimo de 3 fontes. Liste todas as páginas de documentação, artigos ou repositórios usados. -->
 
 1. [https://atlas.ripe.net/]
-2. [ ]
+2. [https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/]
 3. [ ]
