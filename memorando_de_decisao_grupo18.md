@@ -7,7 +7,7 @@
 | Projeto integrador | `[]` |
 | Orientador(a) | `Andrea Ono Sakai` |
 | Data de entrega desta etapa | `08/09/2026` |
-| Integrantes do grupo | `Bruno Alves Ribeiro de Souza - 42276047 | Samuel de Oliveira Santos - 41761782` | 'Victoria Agatha Rodrigues Fagundes - 43756042' | Wendel Henrique da Silva Rocha - 42614945 | Igor da Silva Alves Correa - 41885163
+| Integrantes do grupo | `[Bruno Alves Ribeiro de Souza - 42276047  Samuel de Oliveira Santos - 41761782 Victoria Agatha Rodrigues Fagundes - 43756042 Wendel Henrique da Silva Rocha - 42614945  Igor da Silva Alves Correa - 41885163]`
 
 ---
 
