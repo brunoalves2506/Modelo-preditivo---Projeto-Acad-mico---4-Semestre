@@ -82,8 +82,9 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 ### Integrante 1 — `[ Bruno Alves Ribeiro de Souza ]`
 - **O que fez nesta etapa:** `[Disponibilizou e configurou uma máquina pessoal para a instalação da probe RIPE]`
 - **Tempo dedicado (aprox.):** `[ex.: 6h00]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
-`[]` 
+- **Evidência da contribuição**:
+`[<img width="900" height="1600" alt="probe_ripe" src="https://github.com/user-attachments/assets/ecc4cd95-e9c0-413e-9a0e-09c4083959f3" />
+]` 
 `[]`
 
 ### Integrante 2 — `[Escreva nome completo do aluno ]`
