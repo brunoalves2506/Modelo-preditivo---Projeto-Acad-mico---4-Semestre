@@ -3,10 +3,10 @@
 
 | Campo | Informação |
 |---|---|
-| Curso / Disciplina | `[]` |
+| Curso / Disciplina | `CC e ADS` |
 | Projeto integrador | `[]` |
-| Orientador(a) | `[]` |
-| Data de entrega desta etapa | `[]` |
+| Orientador(a) | `Andrea Ono Sakai` |
+| Data de entrega desta etapa | `08/09/2026` |
 | Integrantes do grupo | `[]` |
 
 ---
@@ -19,7 +19,7 @@
 O pipeline do projeto já está definido: qualquer fonte de dados precisa produzir registros que se transformem em janelas e, por fim, em X = [latência, perda, jitter]. Falta decidir de onde virão esses dados na próxima fase. A equipe do projeto precisa recomendar, com base em pesquisa e não em preferência pessoal, se a próxima etapa deve usar um dataset real já publicado ou a API do RIPE Atlas. O grupo deve produzir um memorando de decisão com a recomendação da tomada de decisão. A recomendação só tem valor se for sustentada por pesquisa real — não existe resposta pronta para copiar; ela precisa ser construída a partir do que vocês encontraram.
 -->
 
-[Escreva aqui uma frase, qual decisão precisa ser tomada e por quê]
+Conseguimos definir a forma como vamos conseguir os dados, que é via API e já conseguimos os créditos para isso. Agora devemos definir o pipeline para podermos dar continuidade no projeto e mapear nossos passos.
 
 ## 2. Opção A — Dataset real
 
@@ -117,7 +117,7 @@ O pipeline do projeto já está definido: qualquer fonte de dados precisa produz
 `[]`
 
 ### Integrante 6 — `Wendel Henrique da Silva Rocha`
-- **O que fez nesta etapa:** `Contribuiu para a escolha do modelo utilizado, opinando nos benefícios e malefícios de cada escolha, além de explicar como chamar a API.`
+- **O que fez nesta etapa:** `Contribuiu para a escolha do modelo utilizado, opinando nos benefícios e malefícios de cada escolha, além de explicar como chamar a API. Tambem definiiu o item 1. Situação.`
 - **Tempo dedicado (aprox.):** `1h30`
 - **Evidência da contribuição** **: 
 <img width="540" height="1170" alt="image" src="https://github.com/user-attachments/assets/06c573a1-c1f7-4650-95b2-ab51186dcca0" />
