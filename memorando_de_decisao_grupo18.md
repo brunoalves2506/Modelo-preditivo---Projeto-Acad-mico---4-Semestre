@@ -105,12 +105,15 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 `[]` 
 `[]`
 
-### Integrante 5 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
-`[]` 
-`[]`
+### Integrante 5 —'Victoria Agatha Rodrigues Fagundes'
+- **O que fez nesta etapa: '[Auxiliou na escolha do modelo, realizou pesquisas sobre os assuntos afim de trazer uma visão sobre o assunto na hora de decidir qual utilizar, citando os pontos fortes e fracos ao tomar cada decisao]'
+- **Tempo dedicado (aprox.):'[1h]'
+- **Evidência da contribuição: 
+<img width="739" height="1600" alt="image" src="https://github.com/user-attachments/assets/022dd0cb-cc3f-4fbe-927b-2828707e6a82" />]
+<img width="739" height="1600" alt="image" src="https://github.com/user-attachments/assets/333e0c47-b474-4d55-9c22-22c3e60082d4" />]
+<img width="897" height="852" alt="Captura de tela 2026-09-08 203310" src="https://github.com/user-attachments/assets/cb5f8175-4137-4d09-9e86-ef9406260dec" />
+<img width="840" height="812" alt="Captura de tela 2026-09-08 203404" src="https://github.com/user-attachments/assets/dda9c9af-461f-4e5e-92bf-ed3019ace469" />
+
 
 ### Integrante 6 — `Wendel Henrique da Silva Rocha`
 - **O que fez nesta etapa:** `Contribuiu para a escolha do modelo utilizado, opinando nos benefícios e malefícios de cada escolha, além de explicar como chamar a API. Tambem definiiu o item 1. Situação.`
