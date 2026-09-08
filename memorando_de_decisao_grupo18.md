@@ -40,13 +40,12 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 <!-- O que foi encontrado sobre a API: autenticação, criação e consulta de medições. Cite a fonte de cada informação. -->
 
 - **Documentação consultada (link):** [ https://atlas.ripe.net/ ]
-- **Autenticação exigida:** [ ]
-- **Como se cria uma medição:** [ ]
-- **Como se consultam os resultados:** [ ]
+- **Autenticação exigida:** [Link do repositório]
+- **Como se cria uma medição:** [Com a utilização de créditos]
+- **Como se consultam os resultados:** [Com chamados para o resultado desejado]
 
-**Resumo do que foi encontrado:**
-
-[Escreva aqui, citando a fonte consultada]
+[A API Atlas utiliza de créditos oferecidos por hostear um probe em uma máquina em segundo plano após fornecer o link do repositório onde se vai utilizar a API,
+(https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/)]
 
 ## 4. Comparação
 
