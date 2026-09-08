@@ -67,13 +67,9 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
  Como dito na questão anterior, podemos ter total controle sobre as medições, aprendemos do zero como fazer na prática e dependendo da quantidade de mediçoes feitas, o modelo preditivo vai ficar bem mais preciso.
 
-[Escreva aqui]
-
 ## 7. Riscos e limitações
 
  Para o nosso grupo, as formas de se conseguir os crétidos para a api era incerto. Não tinhamos certeza se conseguiríamos um pc que serviria de sonda para conseguir os créditos da RIPE. Além disso, depois de conseguir os créditos, não sabíamos se seriam suficientes - é uma limitação da api, as medições tem um custo, e esse custo é diário, limitando a quantidade de requisições por dia.
-
-[Escreva aqui]
 
 ## 8. Contribuição Individual dos Integrantes
 
@@ -84,6 +80,8 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 - **Tempo dedicado (aprox.):** `[ex.: 6h00]`
 - **Evidência da contribuição**:
 <img width="900" height="1600" alt="probe_ripe" src="https://github.com/user-attachments/assets/ecc4cd95-e9c0-413e-9a0e-09c4083959f3" />
+`[]` 
+`[]`
 
 ### Integrante 2 — `[Escreva nome completo do aluno ]`
 - **O que fez nesta etapa:** `[]`
