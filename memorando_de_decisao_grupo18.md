@@ -7,7 +7,9 @@
 | Projeto integrador | `[]` |
 | Orientador(a) | `Andrea Ono Sakai` |
 | Data de entrega desta etapa | `08/09/2026` |
-| Integrantes do grupo | `[]` |
+| Integrantes do grupo | `[Bruno Alves Ribeiro de Souza - 42276047
+                           Samuel de Oliveira Santos - 41761782
+                           ]` |
 
 ---
 
@@ -39,7 +41,7 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 <!-- O que foi encontrado sobre a API: autenticação, criação e consulta de medições. Cite a fonte de cada informação. -->
 
-- **Documentação consultada (link):** [ ]
+- **Documentação consultada (link):** [ https://atlas.ripe.net/ ]
 - **Autenticação exigida:** [ ]
 - **Como se cria uma medição:** [ ]
 - **Como se consultam os resultados:** [ ]
@@ -61,19 +63,17 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 ## 5. Recomendação
 
-<!-- Uma frase direta: qual opção você recomenda. -->
-
-[Escreva aqui]
+ Eu recomendaria a api do RIPE porque além de conseguir controlar quais medições fazer (ping, icmp, de quais probes e quais destinos), isso pesa em um cenário de projeto acadêmico, onde nós mesmos coletamos os dados e não dependemos de uma coleta de terceiros.
 
 ## 6. Justificativa
 
-<!-- Por que essa opção vence a outra, com base nas evidências das seções 2, 3 e 4 — não em preferência pessoal. -->
+ Como dito na questão anterios, podemos ter total controle sobre as medições, aprendemos do zero como fazer na prática e dependendo da quantidade de mediçoes feitas, o modelo preditivo vai ficar bem mais preciso.
 
 [Escreva aqui]
 
 ## 7. Riscos e limitações
 
-<!-- O que pode dar errado com a opção escolhida, e como isso poderia ser mitigado. -->
+ Para o nosso grupo, as formas de se conseguir os crétidos para a api era incerto. Não tinhamos certeza se conseguiríamos um pc que serviria de sonda para conseguir os créditos da RIPE. Além disso, depois de conseguir os créditos, não sabíamos se os créditos seriam suficientes - é uma limitação da api, as medições tem um custo, e esse custo é diário, limitando a quantidade de requisições por dia.
 
 [Escreva aqui]
 
@@ -81,9 +81,9 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 <!-- cada integrante deve descrever, com suas próprias palavras, o que efetivamente fez nesta etapa. Contribuições genéricas como "ajudei em tudo" não serão aceitas. Use verbos de ação e seja específico (ex.: "pesquisei , analisei, testei, ... apresentei prós/contras ao grupo, ...").-->
 
-### Integrante 1 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
+### Integrante 1 — `[ Bruno Alves Ribeiro de Souza ]`
+- **O que fez nesta etapa:** `[Disponibilizou e configurou uma máquina pessoal para a instalação da probe RIPE]`
+- **Tempo dedicado (aprox.):** `[ex.: 6h00]`
 - **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
 `[]` 
 `[]`
@@ -129,6 +129,6 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 <!-- Mínimo de 3 fontes. Liste todas as páginas de documentação, artigos ou repositórios usados. -->
 
-1. [ ]
+1. [https://atlas.ripe.net/]
 2. [ ]
 3. [ ]
