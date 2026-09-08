@@ -7,9 +7,7 @@
 | Projeto integrador | `[]` |
 | Orientador(a) | `Andrea Ono Sakai` |
 | Data de entrega desta etapa | `08/09/2026` |
-| Integrantes do grupo | `[Bruno Alves Ribeiro de Souza - 42276047
-                           Samuel de Oliveira Santos - 41761782
-                           ]` |
+| Integrantes do grupo | `[Bruno Alves Ribeiro de Souza - 42276047 | Samuel de Oliveira Santos - 41761782]` |
 
 ---
 
@@ -67,13 +65,13 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 ## 6. Justificativa
 
- Como dito na questão anterios, podemos ter total controle sobre as medições, aprendemos do zero como fazer na prática e dependendo da quantidade de mediçoes feitas, o modelo preditivo vai ficar bem mais preciso.
+ Como dito na questão anterior, podemos ter total controle sobre as medições, aprendemos do zero como fazer na prática e dependendo da quantidade de mediçoes feitas, o modelo preditivo vai ficar bem mais preciso.
 
 [Escreva aqui]
 
 ## 7. Riscos e limitações
 
- Para o nosso grupo, as formas de se conseguir os crétidos para a api era incerto. Não tinhamos certeza se conseguiríamos um pc que serviria de sonda para conseguir os créditos da RIPE. Além disso, depois de conseguir os créditos, não sabíamos se os créditos seriam suficientes - é uma limitação da api, as medições tem um custo, e esse custo é diário, limitando a quantidade de requisições por dia.
+ Para o nosso grupo, as formas de se conseguir os crétidos para a api era incerto. Não tinhamos certeza se conseguiríamos um pc que serviria de sonda para conseguir os créditos da RIPE. Além disso, depois de conseguir os créditos, não sabíamos se seriam suficientes - é uma limitação da api, as medições tem um custo, e esse custo é diário, limitando a quantidade de requisições por dia.
 
 [Escreva aqui]
 
