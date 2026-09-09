@@ -7,7 +7,7 @@
 | Projeto integrador | `Modelo Preditivo de Rede` |
 | Orientador(a) | `Andrea Ono Sakai` |
 | Data de entrega desta etapa | `08/09/2026` |
-| Integrantes do grupo | `[Bruno Alves Ribeiro de Souza 42276047 -  Samuel de Oliveira Santos 41761782 - Victoria Agatha Rodrigues Fagundes 43756042 - Wendel Henrique da Silva Rocha 42614945 - Igor da Silva Alves Correa 41885163]`
+| Integrantes do grupo | `[Bruno Alves Ribeiro de Souza 42276047 -  Samuel de Oliveira Santos 41761782 - Victoria Agatha Rodrigues Fagundes 43756042 - Wendel Henrique da Silva Rocha 42614945 - Igor da Silva Alves Correa 41885163 - Pedro Henrique Alexandre da Silva 42947049]`
 
 
 ---
@@ -55,10 +55,10 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 | Critério | Opção A — Dataset real | Opção B — API RIPE Atlas |
 |---|---|---|
-| Controle sobre a coleta | | |
-| Diversidade geográfica | | |
-| Custo / complexidade de implementação | | |
-| Tempo até os primeiros dados estarem disponíveis | | |
+| Controle sobre a coleta |Baixo, pois os dados já foram coletados e disponibilizados pelo projeto IODA. |Alto, pois o grupo pode definir as medições, probes e destinos utilizados. |
+| Diversidade geográfica |Alta, por trabalhar com dados de conectividade em escala ampla. |Alta, dependendo dos probes disponíveis e selecionados pelo grupo. |
+| Custo / complexidade de implementação |Baixo, pois os dados já estão disponíveis e não é necessário realizar uma nova coleta. |Médio/alto, pois exige configurar o acesso à API, utilizar créditos e estruturar a coleta dos dados. |
+| Tempo até os primeiros dados estarem disponíveis |Imediato, pois o dataset já está disponível para consulta. |Depende da configuração e realização das medições, embora o grupo já tenha conseguido os créditos necessários. |
 
 ## 5. Recomendação
 
@@ -99,10 +99,10 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 `[]`
 
 
-### Integrante 3 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
+### Integrante 3 — `[Pedro Henrique Alexandre da Silva ]`
+- **O que fez nesta etapa:** `[Realizei um estudo sobre as alternativas de fonte de dados consideradas pelo grupo, buscando principalmente as diferenças entre usar um dataset já disponível e realizar a coleta por meio da API do RIPE Atlas. A partir dessa análise, organizei os principais pontos relacionados ao controle da coleta, diversidade geográfica, complexidade de implementação e disponibilidade dos dados, levando essas considerações para discussão com o grupo e contribuindo para a comparação entre as opções.]`
+- **Tempo dedicado (aprox.):** `[1h:15]`
+- **Evidência da contribuição** *(<img width="709" height="1536" alt="image" src="https://github.com/user-attachments/assets/f988fc0a-089b-41f1-9648-3c59789df2c3" />)*: 
 `[]` 
 `[]`
 
