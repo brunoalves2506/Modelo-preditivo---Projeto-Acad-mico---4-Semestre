@@ -22,7 +22,7 @@ O pipeline do projeto já está definido: qualquer fonte de dados precisa produz
 
 Conseguimos definir a forma como vamos conseguir os dados, que é via API e já conseguimos os créditos para isso. Agora devemos definir o pipeline para podermos dar continuidade no projeto e mapear nossos passos.
 
-## 2. Opção A — Dataset real
+## 2. Opção A — IODA
 
 <!-- O que foi encontrado sobre um dataset real de ICMP. Cite a fonte de cada informação. -->
 
