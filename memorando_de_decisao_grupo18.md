@@ -82,12 +82,20 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 `[]` 
 `[]`
 
-### Integrante 2 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
+### Integrante 2 — `[Samuel de Oliveira Santos ]`
+- **O que fez nesta etapa:** `Realizei pesquisas em grupo focadas na escolha mais adequada da API, pesquisa na qual utilizamos de fontes tanto oferecidas em em aula com
+- nas fontes externas de pessoas capacitas que tem experiencia no assunto, também contribui com um estudo relacionado ao uso da API em python o quel disponibilizei a todos
+- os integrantes no grupo para que todos fossem se familiarizando com o conceito já que é algo novo para todos.`
+- **Tempo dedicado (aprox.):** `2:50
+`
 - **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
+- <img width="720" height="1600" alt="3c1b4de0-b6be-4fbc-a747-e9ade5f1bdf3" src="https://github.com/user-attachments/assets/9e714658-873c-4602-9a5a-d067c958f3da" />
+-<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/51eea31a-d57e-4a6b-b4a0-8c0a29e81518" />
+-<img width="1628" height="1046" alt="image" src="https://github.com/user-attachments/assets/bb73ab55-e13c-4bab-b7d7-bd1408e4ea7c" />
+
 `[]` 
 `[]`
+
 
 ### Integrante 3 — `[Escreva nome completo do aluno ]`
 - **O que fez nesta etapa:** `[]`
