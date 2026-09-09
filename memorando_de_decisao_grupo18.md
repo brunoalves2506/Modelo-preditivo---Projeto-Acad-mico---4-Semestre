@@ -4,7 +4,7 @@
 | Campo | Informação |
 |---|---|
 | Curso / Disciplina | `CC` |
-| Projeto integrador | `[]` |
+| Projeto integrador | `Modelo Preditivo de Rede` |
 | Orientador(a) | `Andrea Ono Sakai` |
 | Data de entrega desta etapa | `08/09/2026` |
 | Integrantes do grupo | `[Bruno Alves Ribeiro de Souza 42276047 -  Samuel de Oliveira Santos 41761782 - Victoria Agatha Rodrigues Fagundes 43756042 - Wendel Henrique da Silva Rocha 42614945 - Igor da Silva Alves Correa 41885163]`
@@ -26,15 +26,16 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 <!-- O que foi encontrado sobre um dataset real de ICMP. Cite a fonte de cada informação. -->
 
-- **Origem / link:** [ ]
-- **Formato:** [ ]
-- **Período coberto:** [ ]
-- **Campos disponíveis:** [ ]
-- **Licença de uso:** [ ]
+- **Origem / link:** [https://catalog.caida.org/dataset/ioda]
+- **Formato:** [JSON, com exportação para CSV]
+- **Período coberto:** [Desde 2016]
+- **Campos disponíveis:** [Timestamp e Identificador geográfico]
+- **Licença de uso:** [Dados públicos para pesquisa e uso acadêmico/aberto]
 
 **Resumo do que foi encontrado:**
 
-[Escreva aqui, citando a fonte consultada]
+[O IODA é um projeto originalmente concebido pelo CAIDA identifica e quantifica apagões de conectividade da Internet em escala macroscópica em tempo quase real, (https://catalog.caida.org/dataset/ioda)]
+
 
 ## 3. Opção B — API do RIPE Atlas
 
