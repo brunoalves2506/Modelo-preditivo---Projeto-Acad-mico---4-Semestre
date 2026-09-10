@@ -22,14 +22,14 @@ O pipeline do projeto já está definido: qualquer fonte de dados precisa produz
 
 Conseguimos definir a forma como vamos conseguir os dados, que é via API e já conseguimos os créditos para isso. Agora devemos definir o pipeline para podermos dar continuidade no projeto e mapear nossos passos.
 
-## 2. Opção A — IODA
+## 2. Opção A — DATASET REAL - 11-Day Starlink Ping Measurements Dataset
 
 <!-- O que foi encontrado sobre um dataset real de ICMP. Cite a fonte de cada informação. -->
 
-- **Origem / link:** [https://catalog.caida.org/dataset/ioda]
-- **Formato:** [JSON, com exportação para CSV]
-- **Período coberto:** [Desde 2016]
-- **Campos disponíveis:** [Timestamp e Identificador geográfico]
+- **Origem / link:** [https://zenodo.org/records/14987305?preview_file=ping_metrics_2024-05-09.csv]
+- **Formato:** [CSV]
+- **Período coberto:** [09/05/2024 até 20/05/2024]
+- **Campos disponíveis:** [PacketLossCount, RTTAvg (latência), RTTMin e RTTMax (possibilitando o cálculo de jitter)]
 - **Licença de uso:** [Dados públicos para pesquisa e uso acadêmico/aberto]
 
 **Resumo do que foi encontrado:**
