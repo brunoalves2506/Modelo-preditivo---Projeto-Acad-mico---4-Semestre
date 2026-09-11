@@ -62,15 +62,15 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 ## 5. Recomendação
 
- Eu recomendaria a api do RIPE porque além de conseguir controlar quais medições fazer (ping, icmp, de quais probes e quais destinos), isso pesa em um cenário de projeto acadêmico, onde nós mesmos coletamos os dados e não dependemos de uma coleta de terceiros.
+ Recomendamos a opção B, Ripe Atlas, como fonte de dados para o treinamento do modelo.
 
 ## 6. Justificativa
 
- Como dito na questão anterior, podemos ter total controle sobre as medições, aprendemos do zero como fazer na prática e dependendo da quantidade de mediçoes feitas, o modelo preditivo vai ficar bem mais preciso.
+ Optamos pela API pois é uma fonte de dados dinâmica, assim como os dados de rede que possuem n fatores que podem influenciar no treinamento do modelo. A adoção da opção A, o dataset, colocaria em cheque essa dinâmica que buscamos, pois o mesmo representa apenas um retrato isolado da rede, limitando o treinamento do modelo apenas naquele período, maleficio esse que não se repete com os dados dinâmicos provenientes da API. Além disso, a API fornece um controle maior sobre os dados, sendo possível evitar vieses geograficos.
 
 ## 7. Riscos e limitações
 
- Para o nosso grupo, as formas de se conseguir os crétidos para a api era incerto. Não tinhamos certeza se conseguiríamos um pc que serviria de sonda para conseguir os créditos da RIPE. Além disso, depois de conseguir os créditos, não sabíamos se seriam suficientes - é uma limitação da api, as medições tem um custo, e esse custo é diário, limitando a quantidade de requisições por dia.
+ O principal risco para o uso da API é o esgotamento de tokens, que desde o início buscamos mitigar ao acumular uma quantidade considerável de créditos.
 
 ## 8. Contribuição Individual dos Integrantes
 
