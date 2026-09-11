@@ -55,7 +55,7 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 | Critério | Opção A — Dataset real | Opção B — API RIPE Atlas |
 |---|---|---|
-| Controle sobre a coleta |Controle nulo de parâmetros, Disponibilidade total do hardware e Dados estáticos imutáveis para quem consome . |Controle API RIPE ATLAS possui um alto nivel de controle acerca dos dados adquiridos. |
+| Controle sobre a coleta |Controle absoluto de parâmetros, Disponibilidade total do hardware e Dados estáticos imutáveis para quem consome . |Controle API RIPE ATLAS é Limitado Compartilhado pois é preciso serguir as regras e diretrizes da plataforma. |
 | Diversidade geográfica |Escopo Baixo, parametros baseados de um unico ponto Palo Alto, EUA (Cliente) → Servidor Terrestre. |Escopo: Muito alto / Global,  a plataforma conta com uma rede distribuída de mais de 10.000 sondas ativas em mais de 170 países e milhares de Redes/ASNs diferentes. |
 | Custo / complexidade de implementação |Custos Altos na coleta primaria, muitos gastos com pacotes de internet, rede e infraestrutura porém, nenhum gasto para usuarios que utilizam o dataset proto já publicado e com o acesso aberto. Complexidade baixa para os que utilizam o pacote  publicado pois basta fazer o download do arquivo tabular no repositório público (Zenodo) e aplicar rotinas simples de análise (Python, R ou Excel) para processar os pings e derivar a perda e o jitter.  |Custo Financeiro Variavel. A consulta a dados públicos e a obtenção de chaves basicas de API são gratuitas, mas testes personalizados(User Defined Measurements) consomem créditos do RIPE Atlas. Créditos são obtidos hospedando uma sonda física/virtual atrelada à comunidade ou por doaçoes/parcerias formais. Complexidade Média Alta. Exige aprender a estrutura da REST API da plataforma, manipular requisiçoes HTTP controlar paginação de múltiplos pontos de vantagem e tratar o formato JSON de resposta antes de poder calcular latência, perda ou jitter. |
 | Tempo até os primeiros dados estarem disponíveis |Imediato (para o usuário do dataset pronto) / Longo (caso você precisasse realizar a amostragem do zero). Análise: Por se tratar de um conjunto de dados histórico já coletado, formatado e disponibilizado em acesso aberto no repositório Zenodo, o tempo até os primeiros dados estarem disponíveis resume-se ao tempo de download dos arquivos .csv. No entanto, se fosse realizar uma nova amostragem idêntica na rede Starlink, seria necessário aguardar os 11 dias inteiros de execução da rotina de testes. |Tempo: Rápido, em alguns minutos ou horas. Análise: A plataforma permite acessar via API os resultados de mediçoes públicas passadas quase que instantaneamente é possivel fazer novas mediçoes personalizadas(User-Defined Measurement), o sistema agenda o teste com as sondas selecionadas e disponibiliza o retorno via requisição HTTP pouco tempo após o término da execução. |
@@ -78,55 +78,40 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 ### Integrante 1 — `[ Bruno Alves Ribeiro de Souza ]`
 - **O que fez nesta etapa:** `[Disponibilizou e configurou uma máquina pessoal para a instalação da probe RIPE]`
-- **Tempo dedicado (aprox.):** `[ex.: 6h00]`
+- **Tempo dedicado (aprox.):** `[6h00]`
 - **Evidência da contribuição**:
 <img width="900" height="1600" alt="probe_ripe" src="https://github.com/user-attachments/assets/ecc4cd95-e9c0-413e-9a0e-09c4083959f3" />
-`[]` 
-`[]`
 
 ### Integrante 2 — `[Samuel de Oliveira Santos ]`
-- **O que fez nesta etapa:** `Realizei pesquisas em grupo focadas na escolha mais adequada da API, pesquisa na qual utilizamos de fontes tanto oferecidas em em aula com
-- nas fontes externas de pessoas capacitas que tem experiencia no assunto, também contribui com um estudo relacionado ao uso da API em python o quel disponibilizei a todos
-- os integrantes no grupo para que todos fossem se familiarizando com o conceito já que é algo novo para todos.`
-- **Tempo dedicado (aprox.):** `2:50
-`
+- **O que fez nesta etapa:** Realizei pesquisas em grupo focadas na escolha mais adequada da API, utilizando fontes oferecidas em aula e fontes externas de pessoas com experiência no assunto. Também contribuí com um estudo sobre o uso da API em Python, que disponibilizei a todos os integrantes do grupo para que se familiarizassem com o conceito, já que é algo novo para todos.
+- **Tempo dedicado (aprox.):** `2h50`
 - **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
-- <img width="720" height="1600" alt="3c1b4de0-b6be-4fbc-a747-e9ade5f1bdf3" src="https://github.com/user-attachments/assets/9e714658-873c-4602-9a5a-d067c958f3da" />
--<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/51eea31a-d57e-4a6b-b4a0-8c0a29e81518" />
--<img width="1628" height="1046" alt="image" src="https://github.com/user-attachments/assets/bb73ab55-e13c-4bab-b7d7-bd1408e4ea7c" />
-
-`[]` 
-`[]`
-
+  <img width="720" height="1600" alt="3c1b4de0-b6be-4fbc-a747-e9ade5f1bdf3" src="https://github.com/user-attachments/assets/9e714658-873c-4602-9a5a-d067c958f3da" />
+  <img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/51eea31a-d57e-4a6b-b4a0-8c0a29e81518" />
+  <img width="1628" height="1046" alt="image" src="https://github.com/user-attachments/assets/bb73ab55-e13c-4bab-b7d7-bd1408e4ea7c" />
 
 ### Integrante 3 — `[Pedro Henrique Alexandre da Silva ]`
 - **O que fez nesta etapa:** `[Realizei um estudo sobre as alternativas de fonte de dados consideradas pelo grupo, buscando principalmente as diferenças entre usar um dataset já disponível e realizar a coleta por meio da API do RIPE Atlas. A partir dessa análise, organizei os principais pontos relacionados ao controle da coleta, diversidade geográfica, complexidade de implementação e disponibilidade dos dados, levando essas considerações para discussão com o grupo e contribuindo para a comparação entre as opções.]`
-- **Tempo dedicado (aprox.):** `[1h:15]`
-- **Evidência da contribuição** *(<img width="709" height="1536" alt="image" src="https://github.com/user-attachments/assets/f988fc0a-089b-41f1-9648-3c59789df2c3" />)*: 
-`[]` 
-`[]`
+- **Tempo dedicado (aprox.):** `[1h15]`
+- **Evidência da contribuição** *(<img width="709" height="1536" alt="image" src="https://github.com/user-attachments/assets/f988fc0a-089b-41f1-9648-3c59789df2c3" />)*
 
 ### Integrante 4 — `[Igor da Silva Alves Correa]`
 - **O que fez nesta etapa:** `[Contribuiu com a pesquisa para o projeto]`
-- **Tempo dedicado (aprox.):** `[ex.: 2h]`
-- **Evidência da contribuição** <img width="877" height="760" alt="image" src="https://github.com/user-attachments/assets/56a0a29f-0060-4ac4-afae-c9ab2fc89e1d" />
- 
-`[]` 
-`[]`
+- **Tempo dedicado (aprox.):** `[2h30]`
+- **Evidência da contribuição:**
+  <img width="877" height="760" alt="image" src="https://github.com/user-attachments/assets/56a0a29f-0060-4ac4-afae-c9ab2fc89e1d" />
 
-### Integrante 5 —'Victoria Agatha Rodrigues Fagundes'
-- **O que fez nesta etapa: '[Auxiliou na escolha do modelo, realizou pesquisas sobre os assuntos afim de trazer uma visão sobre o assunto na hora de decidir qual utilizar, citando os pontos fortes e fracos ao tomar cada decisao]'
-- **Tempo dedicado (aprox.):'[1h]'
-- **Evidência da contribuição: 
-<img width="897" height="852" alt="Captura de tela 2026-09-08 203310" src="https://github.com/user-attachments/assets/cb5f8175-4137-4d09-9e86-ef9406260dec" />
-<img width="840" height="812" alt="Captura de tela 2026-09-08 203404" src="https://github.com/user-attachments/assets/dda9c9af-461f-4e5e-92bf-ed3019ace469" />
-
+### Integrante 5 — `Victoria Agatha Rodrigues Fagundes`
+- **O que fez nesta etapa:** `Auxiliou na escolha do modelo, realizou pesquisas sobre os assuntos a fim de trazer uma visão sobre o tema na hora de decidir qual utilizar, citando os pontos fortes e fracos de cada decisão.`
+- **Tempo dedicado (aprox.):** `1h`
+- **Evidência da contribuição:**
+  <img width="897" height="852" alt="Captura de tela 2026-09-08 203310" src="https://github.com/user-attachments/assets/cb5f8175-4137-4d09-9e86-ef9406260dec" />
+  <img width="840" height="812" alt="Captura de tela 2026-09-08 203404" src="https://github.com/user-attachments/assets/dda9c9af-461f-4e5e-92bf-ed3019ace469" />
 
 ### Integrante 6 — `Wendel Henrique da Silva Rocha`
 - **O que fez nesta etapa:** `Contribuiu para a escolha do modelo utilizado, opinando nos benefícios e malefícios de cada escolha, além de explicar como chamar a API. Tambem definiiu o item 1. Situação.`
 - **Tempo dedicado (aprox.):** `1h30`
-- **Evidência da contribuição** **: 
-
+- **Evidência da contribuição:** `[]`
 
 ---
 
@@ -134,7 +119,7 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 <!-- Mínimo de 3 fontes. Liste todas as páginas de documentação, artigos ou repositórios usados. -->
 
-1. [https://atlas.ripe.net/]
+1. [https://atlas.ripe.net/docs/apis/rest-api-manual/]
 2. [https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/]
-3. [https://catalog.caida.org/dataset/ioda]
+3. [https://zenodo.org/records/14987305]
 
