@@ -34,8 +34,14 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 **Resumo do que foi encontrado:**
 
-[O IODA é um projeto originalmente concebido pelo CAIDA identifica e quantifica apagões de conectividade da Internet em escala macroscópica em tempo quase real, (https://catalog.caida.org/dataset/ioda)]
+O dataset 11-Day Starlink Ping Measurements é um conjunto de dados de 11 dias de medições de ping ICMP coletadas de uma antena Starlink localizada em Palo Alto, EUA. As medições foram realizadas como parte de uma avaliação do desempenho da rede Starlink.
 
+Período de medição: 9 a 20 de maio de 2024 (11 dias)
+Método de amostragem: Rajadas de 10 pacotes ICMP a cada 10 segundos
+Localização: Palo Alto, EUA (Cliente) → Servidor Terrestre
+Infraestrutura:
+Terminal de usuário Starlink (antena parabólica)
+Identificados GS e PoP em San Jose, EUA
 
 ## 3. Opção B — API do RIPE Atlas
 
