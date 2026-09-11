@@ -34,23 +34,17 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 
 **Resumo do que foi encontrado:**
 
-O dataset 11-Day Starlink Ping Measurements é um conjunto de dados de 11 dias de medições de ping ICMP coletadas de uma antena Starlink localizada em Palo Alto, EUA. As medições foram realizadas como parte de uma avaliação do desempenho da rede Starlink.
+[O IODA é um projeto originalmente concebido pelo CAIDA identifica e quantifica apagões de conectividade da Internet em escala macroscópica em tempo quase real, (https://catalog.caida.org/dataset/ioda)]
 
-Período de medição: 9 a 20 de maio de 2024 (11 dias)
-Método de amostragem: Rajadas de 10 pacotes ICMP a cada 10 segundos
-Localização: Palo Alto, EUA (Cliente) → Servidor Terrestre
-Infraestrutura:
-Terminal de usuário Starlink (antena parabólica)
-Identificados GS e PoP em San Jose, EUA
 
 ## 3. Opção B — API do RIPE Atlas
 
 <!-- O que foi encontrado sobre a API: autenticação, criação e consulta de medições. Cite a fonte de cada informação. -->
 
-- **Documentação consultada (link):** [ https://atlas.ripe.net/ ]
-- **Autenticação exigida:** [Link do repositório]
-- **Como se cria uma medição:** [Com a utilização de créditos]
-- **Como se consultam os resultados:** [Com chamados para o resultado desejado]
+- **Documentação consultada (link):** [https://atlas.ripe.net/docs/apis/rest-api-manual/]
+- **Autenticação exigida:** [A API RIPE Atlas suporta dois métodos de autenticação, as chaves de API e a autenticação baseada em sessão]
+- **Como se cria uma medição:** [Para criar uma medição, você POSTA uma carga JSON https://atlas.ripe.net/api/v2/measurements/ com três coisas, pelo menos uma definição de medição - o que você deseja medir, Pelo menos uma seleção de sonda - de onde você deseja medir e tempo opcional e campos globais]
+- **Como se consultam os resultados:** [Obtenha o histórico completo de resultados através do GET /api/v2/measurements/2000000/results/]
 
 [A API Atlas utiliza de créditos oferecidos por hostear um probe em uma máquina em segundo plano após fornecer o link do repositório onde se vai utilizar a API,
 (https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/)]
@@ -144,3 +138,4 @@ Identificados GS e PoP em San Jose, EUA
 1. [https://atlas.ripe.net/]
 2. [https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/]
 3. [https://catalog.caida.org/dataset/ioda]
+
