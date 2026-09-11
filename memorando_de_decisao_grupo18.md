@@ -111,8 +111,8 @@ Iremos usar a API Ripe Atlas, pois a mesma oferece os dados dinâmicos, controle
 ### Integrante 6 — `Wendel Henrique da Silva Rocha`
 - **O que fez nesta etapa:** `Contribuiu para a escolha do modelo utilizado, opinando nos benefícios e malefícios de cada escolha, além de explicar como chamar a API. Também definiu e revisou itens do documento, implementando explicações e reformulando frases.`
 - **Tempo dedicado (aprox.):** `1h30`
-- **Evidência da contribuição:** `<img width="1171" height="476" alt="image" src="https://github.com/user-attachments/assets/8843477f-1358-4696-9939-55c24afa2f17" />
-`
+- **Evidência da contribuição:** <img width="1171" height="476" alt="image" src="https://github.com/user-attachments/assets/8843477f-1358-4696-9939-55c24afa2f17" />
+
 
 ---
 
