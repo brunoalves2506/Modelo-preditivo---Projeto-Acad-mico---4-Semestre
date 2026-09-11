@@ -1,0 +1,43 @@
+# Ambientes virtuais e arquivos de configuração local
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Cache e arquivos compilados do Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Dados e artefatos gerados localmente
+data/raw/
+data/processed/
+models/
+outputs/
+*.csv
+*.parquet
+*.pkl
+*.joblib
+
+# Configurações e arquivos temporários de editores
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
