@@ -34,7 +34,7 @@ Iremos usar a API Ripe Atlas, pois a mesma oferece os dados dinâmicos, controle
 
 **Resumo do que foi encontrado:**
 
-[O IODA é um projeto originalmente concebido pelo CAIDA identifica e quantifica apagões de conectividade da Internet em escala macroscópica em tempo quase real, (https://catalog.caida.org/dataset/ioda)]
+O dataset consultado no repositório Zenodo contém medições contínuas de ping realizadas na rede Starlink durante um período de 11 dias em maio de 2024. Ele fornece um histórico tabular estruturado com métricas diretas de rede, como contagem de pacotes perdidos (PacketLossCount) e tempos mínimo, máximo e médio de ida e volta (RTT), oferecendo a base exata para derivar os parâmetros de latência, perda e jitter sem a necessidade de realizar novas medições ativas.
 
 
 ## 3. Opção B — API do RIPE Atlas
