@@ -27,7 +27,7 @@ Grupo 18 - Ciência da computação (Noite)
 
 ## Link do repositório
 
-[Modelo preditivo de Rede]https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre
+[Modelo preditivo de Rede](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre)
 
 ## Branch principal utilizada
 
@@ -35,9 +35,10 @@ main
 
 ## Estrutura e organização
 
+```
 .
-├── memorando.md
-├── readme.md
 ├── .gitignore
+├── README.md
+├── memorando_de_decisao_grupo18.md
 └── notebook/
-    └── coleta_de_dados.ipynb
+```
