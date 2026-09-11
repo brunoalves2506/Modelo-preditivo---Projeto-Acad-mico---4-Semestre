@@ -66,11 +66,11 @@ Iremos usar a API Ripe Atlas, pois a mesma oferece os dados dinâmicos, controle
 
 ## 6. Justificativa
 
- Optamos pela API pois é uma fonte de dados dinâmica, assim como os dados de rede que possuem n fatores que podem influenciar no treinamento do modelo. A adoção da opção A, o dataset, colocaria em cheque essa dinâmica que buscamos, pois o mesmo representa apenas um retrato isolado da rede, limitando o treinamento do modelo apenas naquele período, maleficio esse que não se repete com os dados dinâmicos provenientes da API. Além disso, a API fornece um controle maior sobre os dados, sendo possível evitar vieses geograficos.
+ Optamos pela API pois é uma fonte de dados dinâmica, assim como os dados de rede que possuem n fatores que podem influenciar no treinamento do modelo. A adoção da opção A, o dataset, colocaria em cheque essa dinâmica que buscamos, pois o mesmo representa apenas um retrato isolado da rede, limitando o treinamento do modelo apenas naquele período, maleficio esse que não se repete com os dados dinâmicos provenientes da API. Além disso, a API fornece um controle maior sobre os dados, o que garante que as medições sejam feitas em cenários mais próximos da realidade operacional. Para mais, a API oferece maior diversidade geográfica e maior flexibilidade para adaptar a coleta às necessidades do modelo, o que torna a opção mais adequada para a fase de treinamento de validação.
 
 ## 7. Riscos e limitações
 
- O principal risco para o uso da API é o esgotamento de tokens, que desde o início buscamos mitigar ao acumular uma quantidade considerável de créditos.
+ O principal risco para o uso da API é consumo de créditos para medições personalizadas, o que pode limitar a quantidade de dados coletados se nós não planejarmos bem a coleta. Outro ponto relevante é a necessidade de lidar com a response da API, validando o JSON proveniente antes de transformar em dados para o treinamento. Para mitigar esses riscos, acumulamos créditos de API e monitoraremos o saldo, planejando a coleta e validando os dados antes do treinamento, de modo a reduzir erros de processamento.
 
 ## 8. Contribuição Individual dos Integrantes
 
@@ -109,7 +109,7 @@ Iremos usar a API Ripe Atlas, pois a mesma oferece os dados dinâmicos, controle
   <img width="840" height="812" alt="Captura de tela 2026-09-08 203404" src="https://github.com/user-attachments/assets/dda9c9af-461f-4e5e-92bf-ed3019ace469" />
 
 ### Integrante 6 — `Wendel Henrique da Silva Rocha`
-- **O que fez nesta etapa:** `Contribuiu para a escolha do modelo utilizado, opinando nos benefícios e malefícios de cada escolha, além de explicar como chamar a API. Tambem definiiu o item 1. Situação.`
+- **O que fez nesta etapa:** `Contribuiu para a escolha do modelo utilizado, opinando nos benefícios e malefícios de cada escolha, além de explicar como chamar a API. Também definiu e revisou itens do documento, implementando explicações e reformulando frases.`
 - **Tempo dedicado (aprox.):** `1h30`
 - **Evidência da contribuição:** `[]`
 
