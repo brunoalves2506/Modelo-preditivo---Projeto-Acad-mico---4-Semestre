@@ -12,7 +12,7 @@ Como fonte de dados, o grupo avaliou duas opções — um dataset real já publi
 
 ## Integrantes do grupo
 
-| Nome | RA |
+| Nome | RGM |
 |---|---|
 | Bruno Alves Ribeiro de Souza | 42276047 |
 | Samuel de Oliveira Santos | 41761782 |
