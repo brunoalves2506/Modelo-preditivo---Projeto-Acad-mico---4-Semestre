@@ -126,7 +126,6 @@ Conseguimos definir a forma como vamos conseguir os dados, que é via API e já 
 - **O que fez nesta etapa:** `Contribuiu para a escolha do modelo utilizado, opinando nos benefícios e malefícios de cada escolha, além de explicar como chamar a API. Tambem definiiu o item 1. Situação.`
 - **Tempo dedicado (aprox.):** `1h30`
 - **Evidência da contribuição** **: 
-<img width="540" height="1170" alt="image" src="https://github.com/user-attachments/assets/06c573a1-c1f7-4650-95b2-ab51186dcca0" />
 
 
 ---
