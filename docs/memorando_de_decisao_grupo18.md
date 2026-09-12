@@ -30,7 +30,7 @@ Iremos usar a API Ripe Atlas, pois a mesma oferece os dados dinâmicos, controle
 - **Formato:** CSV
 - **Período coberto:** 09/05/2024 até 20/05/2024
 - **Campos disponíveis:** PacketLossCount, RTTAvg (latência), RTTMin e RTTMax (possibilitando o cálculo de jitter)
-- **Licença de uso:** Dados públicos para pesquisa e uso acadêmico/aberto
+- **Licença de uso:** Creative Commons Attribution 4.0 (CC BY 4.0) — uso e redistribuição livres com crédito ao autor
 
 **Resumo do que foi encontrado:**
 
@@ -43,11 +43,12 @@ O dataset consultado no repositório Zenodo contém medições contínuas de pin
 
 - **Documentação consultada (link):** https://atlas.ripe.net/docs/apis/rest-api-manual/
 - **Autenticação exigida:** A REST API do RIPE Atlas requer autenticação baseada em chaves de API (API keys). Essas chaves são criadas no painel do usuário e devem ser enviadas no cabeçalho das requisições (como um parâmetro de autorização) para realizar operações que consomem créditos, como a criação de medições personalizadas.
-- **Como se cria uma medição:** Como se cria uma medição: A criação de testes customizados (User-Defined Measurements) é feita enviando uma requisição POST para o endpoint [https://atlas.ripe.net/api/v2/measurements/](https://atlas.ripe.net/api/v2/measurements/). O payload da requisição deve conter, em formato JSON, a definição da medição (ex: protocolo ICMP para ping, alvo/destino) e a seleção das sondas (probes) de onde os pings partirão. Essa ação debita os créditos da conta associada à API key.
-- **Como se consultam os resultados:** Como se consultam os resultados: Após o teste ser concluído, os dados são recuperados enviando uma requisição GET para o endpoint de resultados da medição específica, seguindo o padrão da URL [https://atlas.ripe.net/api/v2/measurements/](https://atlas.ripe.net/api/v2/measurements/){id_da_medicao}/results/. A resposta da API retorna os dados detalhados da amostragem em formato JSON, incluindo os RTTs e pacotes perdidos.
+- **Como se cria uma medição:** A criação de testes customizados (User-Defined Measurements) é feita enviando uma requisição POST para o endpoint [https://atlas.ripe.net/api/v2/measurements/](https://atlas.ripe.net/api/v2/measurements/). O payload da requisição deve conter, em formato JSON, a definição da medição (ex: protocolo ICMP para ping, alvo/destino) e a seleção das sondas (probes) de onde os pings partirão. Essa ação debita os créditos da conta associada à API key.
+- **Como se consultam os resultados:** Após o teste ser concluído, os dados são recuperados enviando uma requisição GET para o endpoint de resultados da medição específica, seguindo o padrão da URL [https://atlas.ripe.net/api/v2/measurements/](https://atlas.ripe.net/api/v2/measurements/){id_da_medicao}/results/. A resposta da API retorna os dados detalhados da amostragem em formato JSON, incluindo os RTTs e pacotes perdidos.
 
-A API Atlas utiliza de créditos oferecidos por hostear um probe em uma máquina em segundo plano após fornecer o link do repositório onde se vai utilizar a API,
-(https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/)
+**Resumo do que foi encontrado:**
+
+A API RIPE Atlas permite consultar medições públicas existentes ou criar medições próprias (User-Defined Measurements), autenticando por chave de API ou sessão. A criação é feita via POST /api/v2/measurements/, informando o que será medido e de quais sondas; os resultados são obtidos via GET /api/v2/measurements/{id}/results/, em formato JSON. Medições personalizadas consomem créditos, que o grupo já garantiu ao hospedar uma probe própria.
 
 ## 4. Comparação
 
@@ -123,4 +124,5 @@ A API Atlas utiliza de créditos oferecidos por hostear um probe em uma máquina
 1. [https://atlas.ripe.net/docs/apis/rest-api-manual/]
 2. [https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/]
 3. [https://zenodo.org/records/14987305]
+4. [https://creativecommons.org/licenses/by/4.0/legalcode.en]
 
