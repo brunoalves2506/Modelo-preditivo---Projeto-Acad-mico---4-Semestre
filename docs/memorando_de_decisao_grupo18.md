@@ -7,7 +7,7 @@
 | Projeto integrador | `Modelo Preditivo de Rede` |
 | Orientador(a) | `Andrea Ono Sakai` |
 | Data de entrega desta etapa | `08/09/2026` |
-| Integrantes do grupo | `[Bruno Alves Ribeiro de Souza 42276047 -  Samuel de Oliveira Santos 41761782 - Victoria Agatha Rodrigues Fagundes 43756042 - Wendel Henrique da Silva Rocha 42614945 - Igor da Silva Alves Correa 41885163 - Pedro Henrique Alexandre da Silva 42947049]`
+| Integrantes do grupo | `Bruno Alves Ribeiro de Souza 42276047 -  Samuel de Oliveira Santos 41761782 - Victoria Agatha Rodrigues Fagundes 43756042 - Wendel Henrique da Silva Rocha 42614945 - Igor da Silva Alves Correa 41885163 - Pedro Henrique Alexandre da Silva 42947049`
 
 
 ---
@@ -26,11 +26,11 @@ Iremos usar a API Ripe Atlas, pois a mesma oferece os dados dinâmicos, controle
 
 <!-- O que foi encontrado sobre um dataset real de ICMP. Cite a fonte de cada informação. -->
 
-- **Origem / link:** [https://zenodo.org/records/14987305?preview_file=ping_metrics_2024-05-09.csv]
-- **Formato:** [CSV]
-- **Período coberto:** [09/05/2024 até 20/05/2024]
-- **Campos disponíveis:** [PacketLossCount, RTTAvg (latência), RTTMin e RTTMax (possibilitando o cálculo de jitter)]
-- **Licença de uso:** [Dados públicos para pesquisa e uso acadêmico/aberto]
+- **Origem / link:** https://zenodo.org/records/14987305?preview_file=ping_metrics_2024-05-09.csv
+- **Formato:** CSV
+- **Período coberto:** 09/05/2024 até 20/05/2024
+- **Campos disponíveis:** PacketLossCount, RTTAvg (latência), RTTMin e RTTMax (possibilitando o cálculo de jitter)
+- **Licença de uso:** Dados públicos para pesquisa e uso acadêmico/aberto
 
 **Resumo do que foi encontrado:**
 
@@ -41,13 +41,13 @@ O dataset consultado no repositório Zenodo contém medições contínuas de pin
 
 <!-- O que foi encontrado sobre a API: autenticação, criação e consulta de medições. Cite a fonte de cada informação. -->
 
-- **Documentação consultada (link):** [https://atlas.ripe.net/docs/apis/rest-api-manual/]
-- **Autenticação exigida:** [A API RIPE Atlas suporta dois métodos de autenticação, as chaves de API e a autenticação baseada em sessão]
-- **Como se cria uma medição:** [Para criar uma medição, você POSTA uma carga JSON https://atlas.ripe.net/api/v2/measurements/ com três coisas, pelo menos uma definição de medição - o que você deseja medir, Pelo menos uma seleção de sonda - de onde você deseja medir e tempo opcional e campos globais]
-- **Como se consultam os resultados:** [Obtenha o histórico completo de resultados através do GET /api/v2/measurements/2000000/results/]
+- **Documentação consultada (link):** https://atlas.ripe.net/docs/apis/rest-api-manual/
+- **Autenticação exigida:** A REST API do RIPE Atlas requer autenticação baseada em chaves de API (API keys). Essas chaves são criadas no painel do usuário e devem ser enviadas no cabeçalho das requisições (como um parâmetro de autorização) para realizar operações que consomem créditos, como a criação de medições personalizadas.
+- **Como se cria uma medição:** Como se cria uma medição: A criação de testes customizados (User-Defined Measurements) é feita enviando uma requisição POST para o endpoint [https://atlas.ripe.net/api/v2/measurements/](https://atlas.ripe.net/api/v2/measurements/). O payload da requisição deve conter, em formato JSON, a definição da medição (ex: protocolo ICMP para ping, alvo/destino) e a seleção das sondas (probes) de onde os pings partirão. Essa ação debita os créditos da conta associada à API key.
+- **Como se consultam os resultados:** Como se consultam os resultados: Após o teste ser concluído, os dados são recuperados enviando uma requisição GET para o endpoint de resultados da medição específica, seguindo o padrão da URL [https://atlas.ripe.net/api/v2/measurements/](https://atlas.ripe.net/api/v2/measurements/){id_da_medicao}/results/. A resposta da API retorna os dados detalhados da amostragem em formato JSON, incluindo os RTTs e pacotes perdidos.
 
-[A API Atlas utiliza de créditos oferecidos por hostear um probe em uma máquina em segundo plano após fornecer o link do repositório onde se vai utilizar a API,
-(https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/)]
+A API Atlas utiliza de créditos oferecidos por hostear um probe em uma máquina em segundo plano após fornecer o link do repositório onde se vai utilizar a API,
+(https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/)
 
 ## 4. Comparação
 
@@ -76,13 +76,13 @@ O dataset consultado no repositório Zenodo contém medições contínuas de pin
 
 <!-- cada integrante deve descrever, com suas próprias palavras, o que efetivamente fez nesta etapa. Contribuições genéricas como "ajudei em tudo" não serão aceitas. Use verbos de ação e seja específico (ex.: "pesquisei , analisei, testei, ... apresentei prós/contras ao grupo, ...").-->
 
-### Integrante 1 — `[ Bruno Alves Ribeiro de Souza ]`
+### Integrante 1 — ` Bruno Alves Ribeiro de Souza `
 - **O que fez nesta etapa:** `[Disponibilizou e configurou uma máquina pessoal para a instalação da probe RIPE]`
 - **Tempo dedicado (aprox.):** `[6h00]`
 - **Evidência da contribuição**:
 <img width="900" height="1600" alt="probe_ripe" src="https://github.com/user-attachments/assets/ecc4cd95-e9c0-413e-9a0e-09c4083959f3" />
 
-### Integrante 2 — `[Samuel de Oliveira Santos ]`
+### Integrante 2 — `Samuel de Oliveira Santos `
 - **O que fez nesta etapa:** Realizei pesquisas em grupo focadas na escolha mais adequada da API, utilizando fontes oferecidas em aula e fontes externas de pessoas com experiência no assunto. Também contribuí com um estudo sobre o uso da API em Python, que disponibilizei a todos os integrantes do grupo para que se familiarizassem com o conceito, já que é algo novo para todos.
 - **Tempo dedicado (aprox.):** `2h50`
 - **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
@@ -90,12 +90,12 @@ O dataset consultado no repositório Zenodo contém medições contínuas de pin
   <img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/51eea31a-d57e-4a6b-b4a0-8c0a29e81518" />
   <img width="1628" height="1046" alt="image" src="https://github.com/user-attachments/assets/bb73ab55-e13c-4bab-b7d7-bd1408e4ea7c" />
 
-### Integrante 3 — `[Pedro Henrique Alexandre da Silva ]`
+### Integrante 3 — `Pedro Henrique Alexandre da Silva `
 - **O que fez nesta etapa:** `[Realizei um estudo sobre as alternativas de fonte de dados consideradas pelo grupo, buscando principalmente as diferenças entre usar um dataset já disponível e realizar a coleta por meio da API do RIPE Atlas. A partir dessa análise, organizei os principais pontos relacionados ao controle da coleta, diversidade geográfica, complexidade de implementação e disponibilidade dos dados, levando essas considerações para discussão com o grupo e contribuindo para a comparação entre as opções.]`
 - **Tempo dedicado (aprox.):** `[1h15]`
 - **Evidência da contribuição** *(<img width="709" height="1536" alt="image" src="https://github.com/user-attachments/assets/f988fc0a-089b-41f1-9648-3c59789df2c3" />)*
 
-### Integrante 4 — `[Igor da Silva Alves Correa]`
+### Integrante 4 — `Igor da Silva Alves Correa`
 - **O que fez nesta etapa:** `[Contribuiu com a pesquisa para o projeto]`
 - **Tempo dedicado (aprox.):** `[2h30]`
 - **Evidência da contribuição:**
