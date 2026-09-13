@@ -26,7 +26,7 @@ Preferimos utilizar a Opção B (API RIPE Atlas) porque, diante das dimensões c
 
 <!-- O que foi encontrado sobre um dataset real de ICMP. Cite a fonte de cada informação. -->
 
-- **Origem / link:** https://zenodo.org/records/14987305?preview_file=ping_metrics_2024-05-09.csv
+- **Origem / link:** https://zenodo.org/records/14987305
 - **Formato:** CSV
 - **Período coberto:** 09/05/2024 até 20/05/2024
 - **Campos disponíveis:** PacketLossCount, RTTAvg (latência), RTTMin e RTTMax (possibilitando o cálculo de jitter)
