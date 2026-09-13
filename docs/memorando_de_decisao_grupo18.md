@@ -78,10 +78,11 @@ A API RIPE Atlas permite consultar medições públicas existentes ou criar medi
 <!-- cada integrante deve descrever, com suas próprias palavras, o que efetivamente fez nesta etapa. Contribuições genéricas como "ajudei em tudo" não serão aceitas. Use verbos de ação e seja específico (ex.: "pesquisei , analisei, testei, ... apresentei prós/contras ao grupo, ...").-->
 
 ### Integrante 1 — ` Bruno Alves Ribeiro de Souza `
-- **O que fez nesta etapa:** `Disponibilizou e configurou uma máquina pessoal para a instalação da probe RIPE`
+- **O que fez nesta etapa:** `Disponibilizou e configurou uma máquina pessoal para a instalação da probe RIPE - Apresentou e analisou a possibilidade de utilização do dataset 11-Day Starlink Ping Measurements `
 - **Tempo dedicado (aprox.):** `6h00`
 - **Evidência da contribuição**:
 <img width="900" height="1600" alt="probe_ripe" src="https://github.com/user-attachments/assets/ecc4cd95-e9c0-413e-9a0e-09c4083959f3" />
+<img width="1174" height="892" alt="image" src="https://github.com/user-attachments/assets/dd0ab00c-c502-408b-9cf7-4825b3a58c2c" />
 
 ### Integrante 2 — `Samuel de Oliveira Santos `
 - **O que fez nesta etapa:** Realizei pesquisas em grupo focadas na escolha mais adequada da API, utilizando fontes oferecidas em aula e fontes externas de pessoas com experiência no assunto. Também contribuí com um estudo sobre o uso da API em Python, que disponibilizei a todos os integrantes do grupo para que se familiarizassem com o conceito, já que é algo novo para todos.
