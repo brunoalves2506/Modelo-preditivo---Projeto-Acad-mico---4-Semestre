@@ -39,6 +39,7 @@ main
 .
 ├── .gitignore
 ├── README.md
+├── .env.example
 ├── docs/
 │   └── memorando_de_decisao_grupo18.md
 ├── notebook/
