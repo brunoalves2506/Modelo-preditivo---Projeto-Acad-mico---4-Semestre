@@ -20,7 +20,7 @@
 O pipeline do projeto já está definido: qualquer fonte de dados precisa produzir registros que se transformem em janelas e, por fim, em X = [latência, perda, jitter]. Falta decidir de onde virão esses dados na próxima fase. A equipe do projeto precisa recomendar, com base em pesquisa e não em preferência pessoal, se a próxima etapa deve usar um dataset real já publicado ou a API do RIPE Atlas. O grupo deve produzir um memorando de decisão com a recomendação da tomada de decisão. A recomendação só tem valor se for sustentada por pesquisa real — não existe resposta pronta para copiar; ela precisa ser construída a partir do que vocês encontraram.
 -->
 
-Preferimos utilizar a Opção B (API RIPE Atlas) porque, diante das dimensões comparadas que devem ser realizadas, ela se destaca em atualidade do arquivo e diversidade geográfica - uma rede que possui mais de 10.000 sondas ativas, com dinamismo em todos os dados, e o principal, poder trabalhar com atualizações entre as métricas de rede (latência, perda, jitter) que variam conforme os fatores externos, o modelo se encaixa perfeitamente ao atuar com as coletas de amostras contínuas e sob demanda, ao invés de ficar restrito a um único recorte histórico de um certo período ou a uma única rede, como por exemplo a opção A (Dataset). A Opção A também possui os seus benefícios como um controle mais estável e imediato sobre os dados, por se tratar de um conjunto já fechado e publicado, além de menor complexidade de análise. Através desses fatos, para a fase de treinamento e validação do modelo, a Opção B se destaca, sua diversidade geográfica e a flexibilidade de adaptar as necessidades específicas conforme o necessário, atendem melhor os pré-requisitos do objetivo do modelo.
+Para que o modelo preditivo de falhas de rede seja treinado, a equipe precisa decidir, com base em pesquisa, se os dados de latência, perda e jitter virão do 11-Day Starlink Ping Measurements Dataset (já publicado) ou de medições próprias coletadas via API RIPE Atlas.
 
 ## 2. Opção A — DATASET REAL - 11-Day Starlink Ping Measurements Dataset
 
@@ -78,8 +78,8 @@ A API RIPE Atlas permite consultar medições públicas existentes ou criar medi
 <!-- cada integrante deve descrever, com suas próprias palavras, o que efetivamente fez nesta etapa. Contribuições genéricas como "ajudei em tudo" não serão aceitas. Use verbos de ação e seja específico (ex.: "pesquisei , analisei, testei, ... apresentei prós/contras ao grupo, ...").-->
 
 ### Integrante 1 — ` Bruno Alves Ribeiro de Souza `
-- **O que fez nesta etapa:** `[Disponibilizou e configurou uma máquina pessoal para a instalação da probe RIPE]`
-- **Tempo dedicado (aprox.):** `[6h00]`
+- **O que fez nesta etapa:** `Disponibilizou e configurou uma máquina pessoal para a instalação da probe RIPE`
+- **Tempo dedicado (aprox.):** `6h00`
 - **Evidência da contribuição**:
 <img width="900" height="1600" alt="probe_ripe" src="https://github.com/user-attachments/assets/ecc4cd95-e9c0-413e-9a0e-09c4083959f3" />
 
@@ -92,13 +92,13 @@ A API RIPE Atlas permite consultar medições públicas existentes ou criar medi
   <img width="1628" height="1046" alt="image" src="https://github.com/user-attachments/assets/bb73ab55-e13c-4bab-b7d7-bd1408e4ea7c" />
 
 ### Integrante 3 — `Pedro Henrique Alexandre da Silva `
-- **O que fez nesta etapa:** `[Realizei um estudo sobre as alternativas de fonte de dados consideradas pelo grupo, buscando principalmente as diferenças entre usar um dataset já disponível e realizar a coleta por meio da API do RIPE Atlas. A partir dessa análise, organizei os principais pontos relacionados ao controle da coleta, diversidade geográfica, complexidade de implementação e disponibilidade dos dados, levando essas considerações para discussão com o grupo e contribuindo para a comparação entre as opções.]`
-- **Tempo dedicado (aprox.):** `[1h15]`
+- **O que fez nesta etapa:** `Realizei um estudo sobre as alternativas de fonte de dados consideradas pelo grupo, buscando principalmente as diferenças entre usar um dataset já disponível e realizar a coleta por meio da API do RIPE Atlas. A partir dessa análise, organizei os principais pontos relacionados ao controle da coleta, diversidade geográfica, complexidade de implementação e disponibilidade dos dados, levando essas considerações para discussão com o grupo e contribuindo para a comparação entre as opções.`
+- **Tempo dedicado (aprox.):** `1h15`
 - **Evidência da contribuição** *(<img width="709" height="1536" alt="image" src="https://github.com/user-attachments/assets/f988fc0a-089b-41f1-9648-3c59789df2c3" />)*
 
 ### Integrante 4 — `Igor da Silva Alves Correa`
-- **O que fez nesta etapa:** `[Contribuiu com a pesquisa para o projeto]`
-- **Tempo dedicado (aprox.):** `[2h30]`
+- **O que fez nesta etapa:** `Contribuiu com a pesquisa para o projeto`
+- **Tempo dedicado (aprox.):** `2h30`
 - **Evidência da contribuição:**
   <img width="877" height="760" alt="image" src="https://github.com/user-attachments/assets/56a0a29f-0060-4ac4-afae-c9ab2fc89e1d" />
 
