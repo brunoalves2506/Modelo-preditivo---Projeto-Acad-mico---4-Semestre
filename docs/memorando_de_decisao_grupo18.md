@@ -88,9 +88,7 @@ A API RIPE Atlas permite consultar medições públicas existentes ou criar medi
 - **O que fez nesta etapa:** Realizei pesquisas em grupo focadas na escolha mais adequada da API, utilizando fontes oferecidas em aula e fontes externas de pessoas com experiência no assunto. Também contribuí com um estudo sobre o uso da API em Python, que disponibilizei a todos os integrantes do grupo para que se familiarizassem com o conceito, já que é algo novo para todos.
 - **Tempo dedicado (aprox.):** `2h50`
 - **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
-  <img width="720" height="1600" alt="3c1b4de0-b6be-4fbc-a747-e9ade5f1bdf3" src="https://github.com/user-attachments/assets/9e714658-873c-4602-9a5a-d067c958f3da" />
-  <img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/51eea31a-d57e-4a6b-b4a0-8c0a29e81518" />
-  <img width="1628" height="1046" alt="image" src="https://github.com/user-attachments/assets/bb73ab55-e13c-4bab-b7d7-bd1408e4ea7c" />
+ https://github.com/Samulesantos20045/Evidencias.git
 
 ### Integrante 3 — `Pedro Henrique Alexandre da Silva `
 - **O que fez nesta etapa:** `Realizei um estudo sobre as alternativas de fonte de dados consideradas pelo grupo, buscando principalmente as diferenças entre usar um dataset já disponível e realizar a coleta por meio da API do RIPE Atlas. A partir dessa análise, organizei os principais pontos relacionados ao controle da coleta, diversidade geográfica, complexidade de implementação e disponibilidade dos dados, levando essas considerações para discussão com o grupo e contribuindo para a comparação entre as opções.`
