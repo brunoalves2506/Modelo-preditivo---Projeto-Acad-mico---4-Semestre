@@ -22,7 +22,6 @@ data/raw/
 data/processed/
 models/
 outputs/
-*.csv
 *.parquet
 *.pkl
 *.joblib
