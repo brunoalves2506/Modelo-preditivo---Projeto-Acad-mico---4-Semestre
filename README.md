@@ -37,15 +37,18 @@ main
 
 ```
 .
+├── .env.example
 ├── .gitignore
 ├── README.md
-├── .env.example
+├── data_ripe_atlas/
+│   └── raw/
+│       ├── ripe_atlas_m1009_20260914T030005Z.csv
+│       ├── ripe_atlas_m1009_20260914T030005Z.json
+│       └── ripe_atlas_m1009_20260914T030005Z_metadata.json
 ├── docs/
 │   └── memorando_de_decisao_grupo18.md
-├── notebook/
-│   └── coleta_de_dados.ipynb
-├── data_ripe_atlas/
-│   └── arquivos_brutos.csv(3)
+└── notebook/
+    └── coleta_de_dados.ipynb
 ```
 
 O ambiente virtual `.venv/` é utilizado localmente para executar o projeto, mas não é versionado. Portanto, antes de executar o projeto, confirme se o ambiente virtual está ativo para manter as dependências isoladas.
