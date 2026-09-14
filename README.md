@@ -44,6 +44,8 @@ main
 │   └── memorando_de_decisao_grupo18.md
 ├── notebook/
 │   └── coleta_de_dados.ipynb
+├── data_ripe_atlas/
+│   └── arquivos_brutos.csv(3)
 ```
 
 O ambiente virtual `.venv/` é utilizado localmente para executar o projeto, mas não é versionado. Portanto, antes de executar o projeto, confirme se o ambiente virtual está ativo para manter as dependências isoladas.
