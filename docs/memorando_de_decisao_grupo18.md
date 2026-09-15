@@ -86,6 +86,8 @@ A API RIPE Atlas permite consultar medições públicas existentes ou criar medi
 
 ### Integrante 2 — `Samuel de Oliveira Santos `
 - **O que fez nesta etapa:** Realizei pesquisas em grupo focadas na escolha mais adequada da API, utilizando fontes oferecidas em aula e fontes externas de pessoas com experiência no assunto. Também contribuí com um estudo sobre o uso da API em Python, que disponibilizei a todos os integrantes do grupo para que se familiarizassem com o conceito, já que é algo novo para todos.
+* Trabalhei na construção da tabela comparativa entre API e DataFrame, na qual foi realizada uma pesquisa minuciosa na documentação de ambos os métodos, para realizar uma comparação com precisão.
+
 - **Tempo dedicado (aprox.):** `2h50`
 - **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
  https://github.com/Samulesantos20045/Evidencias.git
