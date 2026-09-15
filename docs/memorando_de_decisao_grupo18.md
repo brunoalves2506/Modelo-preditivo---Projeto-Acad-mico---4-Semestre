@@ -81,9 +81,11 @@ O principal risco para o uso da API é o consumo de créditos para medições pe
  https://github.com/Samulesantos20045/Evidencias.git
 
 ### Integrante 3 — `Pedro Henrique Alexandre da Silva `
-- **O que fez nesta etapa:** `Realizei o estudo comparativo inicial entre o dataset da Starlink e a API do RIPE Atlas (Seção 4). Atuei como Revisor de Qualidade (QA) na reta final, realizando a auditoria do repositório: corrigi divergências na data de entrega, ajustei a ortografia do memorando, removi resquícios do template base, alinhei a árvore do README.md e garanti a ocultação de dados sensíveis (números de telefone) nas evidências do grupo.`
+- **O que fez nesta etapa:** `Realizei o estudo comparativo inicial entre o dataset da Starlink e a API do RIPE Atlas (Seção 4). Atuei como Revisor de Qualidade (QA) na reta final, realizando a auditoria do repositório: corrigi divergências na data de entrega, ajustei a ortografia do memorando, removi resquícios do template base, alinhei a árvore do README.md e garanti a ocultação de dados sensíveis nas evidências do grupo.`
 - **Tempo dedicado (aprox.):** `1h15`
-- **Evidência da contribuição** *(<img width="709" height="1536" alt="image" src="https://github.com/user-attachments/assets/f988fc0a-089b-41f1-9648-3c59789df2c3" />)*
+- **Evidência da contribuição**
+- <img width="1317" height="367" alt="Captura de tela 2026-09-15 121636" src="https://github.com/user-attachments/assets/5bd2f1fd-0f8a-4a79-b46e-34de648b1d8a" />
+- <img width="910" height="74" alt="Captura de tela 2026-09-15 111529" src="https://github.com/user-attachments/assets/d3d2532c-12d7-44f4-b42e-9a844d0582ee" />
 
 ### Integrante 4 — `Igor da Silva Alves Correa`
 - **O que fez nesta etapa:** `Contribuiu com a pesquisa para o projeto`
