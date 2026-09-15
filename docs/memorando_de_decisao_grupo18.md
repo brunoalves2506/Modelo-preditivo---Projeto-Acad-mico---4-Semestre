@@ -6,7 +6,7 @@
 | Curso / Disciplina | `CC` |
 | Projeto integrador | `Modelo Preditivo de Rede` |
 | Orientador(a) | `Andrea Ono Sakai` |
-| Data de entrega desta etapa | `08/09/2026` |
+| Data de entrega desta etapa | `15/09/2026` |
 | Integrantes do grupo | `Bruno Alves Ribeiro de Souza 42276047 -  Samuel de Oliveira Santos 41761782 - Victoria Agatha Rodrigues Fagundes 43756042 - Wendel Henrique da Silva Rocha 42614945 - Igor da Silva Alves Correa 41885163 - Pedro Henrique Alexandre da Silva 42947049`
 
 
@@ -16,15 +16,9 @@
 
 ## 1. Situação
 
-<!-- Em uma frase: qual decisão precisa ser tomada e por quê. 
-O pipeline do projeto já está definido: qualquer fonte de dados precisa produzir registros que se transformem em janelas e, por fim, em X = [latência, perda, jitter]. Falta decidir de onde virão esses dados na próxima fase. A equipe do projeto precisa recomendar, com base em pesquisa e não em preferência pessoal, se a próxima etapa deve usar um dataset real já publicado ou a API do RIPE Atlas. O grupo deve produzir um memorando de decisão com a recomendação da tomada de decisão. A recomendação só tem valor se for sustentada por pesquisa real — não existe resposta pronta para copiar; ela precisa ser construída a partir do que vocês encontraram.
--->
-
 Para que o modelo preditivo de falhas de rede seja treinado, a equipe precisa decidir, com base em pesquisa, se os dados de latência, perda e jitter virão do 11-Day Starlink Ping Measurements Dataset (já publicado) ou de medições próprias coletadas via API RIPE Atlas.
 
 ## 2. Opção A — DATASET REAL - 11-Day Starlink Ping Measurements Dataset
-
-<!-- O que foi encontrado sobre um dataset real de ICMP. Cite a fonte de cada informação. -->
 
 - **Origem / link:** https://zenodo.org/records/14987305
 - **Formato:** CSV
@@ -39,8 +33,6 @@ O dataset consultado no repositório Zenodo contém medições contínuas de pin
 
 ## 3. Opção B — API do RIPE Atlas
 
-<!-- O que foi encontrado sobre a API: autenticação, criação e consulta de medições. Cite a fonte de cada informação. -->
-
 - **Documentação consultada (link):** https://atlas.ripe.net/docs/apis/rest-api-manual/
 - **Autenticação exigida:** A REST API do RIPE Atlas requer autenticação baseada em chaves de API (API keys). Essas chaves são criadas no painel do usuário e devem ser enviadas no cabeçalho das requisições (como um parâmetro de autorização) para realizar operações que consomem créditos, como a criação de medições personalizadas.
 - **Como se cria uma medição:** A criação de testes customizados (User-Defined Measurements) é feita enviando uma requisição POST para o endpoint [https://atlas.ripe.net/api/v2/measurements/](https://atlas.ripe.net/api/v2/measurements/). O payload da requisição deve conter, em formato JSON, a definição da medição (ex: protocolo ICMP para ping, alvo/destino) e a seleção das sondas (probes) de onde os pings partirão. Essa ação debita os créditos da conta associada à API key.
@@ -51,8 +43,6 @@ O dataset consultado no repositório Zenodo contém medições contínuas de pin
 A API RIPE Atlas permite consultar medições públicas existentes ou criar medições próprias (User-Defined Measurements), autenticando por chave de API ou sessão. A criação é feita via POST /api/v2/measurements/, informando o que será medido e de quais sondas; os resultados são obtidos via GET /api/v2/measurements/{id}/results/, em formato JSON. Medições personalizadas consomem créditos, que o grupo já garantiu ao hospedar uma probe própria.
 
 ## 4. Comparação
-
-<!-- Preencha a tabela com base no que você levantou nas seções 2 e 3. -->
 
 | Critério | Opção A — Dataset real | Opção B — API RIPE Atlas |
 |---|---|---|
@@ -74,8 +64,6 @@ A API RIPE Atlas permite consultar medições públicas existentes ou criar medi
  O principal risco para o uso da API é consumo de créditos para medições personalizadas, o que pode limitar a quantidade de dados coletados se nós não planejarmos bem a coleta. Outro ponto relevante é a necessidade de lidar com a response da API, validando o JSON proveniente antes de transformar em dados para o treinamento. Para mitigar esses riscos, acumulamos créditos de API e monitoraremos o saldo, planejando a coleta e validando os dados antes do treinamento, de modo a reduzir erros de processamento.
 
 ## 8. Contribuição Individual dos Integrantes
-
-<!-- cada integrante deve descrever, com suas próprias palavras, o que efetivamente fez nesta etapa. Contribuições genéricas como "ajudei em tudo" não serão aceitas. Use verbos de ação e seja específico (ex.: "pesquisei , analisei, testei, ... apresentei prós/contras ao grupo, ...").-->
 
 ### Integrante 1 — ` Bruno Alves Ribeiro de Souza `
 - **O que fez nesta etapa:** `Disponibilizou e configurou uma máquina pessoal para a instalação da probe RIPE - Apresentou e analisou a possibilidade de utilização do dataset 11-Day Starlink Ping Measurements `
@@ -119,8 +107,6 @@ A API RIPE Atlas permite consultar medições públicas existentes ou criar medi
 ---
 
 ## Fontes consultadas
-
-<!-- Mínimo de 3 fontes. Liste todas as páginas de documentação, artigos ou repositórios usados. -->
 
 1. [https://atlas.ripe.net/docs/apis/rest-api-manual/]
 2. [https://www.ripe.net/analyse/internet-measurements/ripe-atlas/make-a-measurement/]
