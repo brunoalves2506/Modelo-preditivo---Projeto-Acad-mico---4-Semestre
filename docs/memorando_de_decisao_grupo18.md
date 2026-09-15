@@ -88,8 +88,8 @@ O principal risco para o uso da API é o consumo de créditos para medições pe
 - <img width="910" height="74" alt="Captura de tela 2026-09-15 111529" src="https://github.com/user-attachments/assets/d3d2532c-12d7-44f4-b42e-9a844d0582ee" />
 
 ### Integrante 4 — `Igor da Silva Alves Correa`
-- **O que fez nesta etapa:** `Contribuiu com a pesquisa para o projeto`
-- **Tempo dedicado (aprox.):** `2h30`
+- **O que fez nesta etapa:** `Contribuiu com a pesquisa para o projeto, revisão após correções próprias e dos demais integrantes`
+- **Tempo dedicado (aprox.):** `3h30`
 - **Evidência da contribuição:**
   <img width="877" height="760" alt="image" src="https://github.com/user-attachments/assets/56a0a29f-0060-4ac4-afae-c9ab2fc89e1d" />
 
