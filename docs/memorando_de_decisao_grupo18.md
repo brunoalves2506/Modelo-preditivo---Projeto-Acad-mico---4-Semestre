@@ -81,7 +81,7 @@ O principal risco para o uso da API é o consumo de créditos para medições pe
  https://github.com/Samulesantos20045/Evidencias.git
 
 ### Integrante 3 — `Pedro Henrique Alexandre da Silva `
-- **O que fez nesta etapa:** `Realizei um estudo sobre as alternativas de fonte de dados consideradas pelo grupo, buscando principalmente as diferenças entre usar um dataset já disponível e realizar a coleta por meio da API do RIPE Atlas. A partir dessa análise, organizei os principais pontos relacionados ao controle da coleta, diversidade geográfica, complexidade de implementação e disponibilidade dos dados, levando essas considerações para discussão com o grupo e contribuindo para a comparação entre as opções.`
+- **O que fez nesta etapa:** `Realizei o estudo comparativo inicial entre o dataset da Starlink e a API do RIPE Atlas (Seção 4). Atuei como Revisor de Qualidade (QA) na reta final, realizando a auditoria do repositório: corrigi divergências na data de entrega, ajustei a ortografia do memorando, removi resquícios do template base, alinhei a árvore do README.md e garanti a ocultação de dados sensíveis (números de telefone) nas evidências do grupo.`
 - **Tempo dedicado (aprox.):** `1h15`
 - **Evidência da contribuição** *(<img width="709" height="1536" alt="image" src="https://github.com/user-attachments/assets/f988fc0a-089b-41f1-9648-3c59789df2c3" />)*
 
