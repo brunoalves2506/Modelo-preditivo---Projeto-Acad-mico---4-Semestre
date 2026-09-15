@@ -73,15 +73,15 @@ O principal risco para o uso da API é o consumo de créditos para medições pe
 <img width="1174" height="892" alt="image" src="https://github.com/user-attachments/assets/dd0ab00c-c502-408b-9cf7-4825b3a58c2c" />
 
 ### Integrante 2 — `Samuel de Oliveira Santos `
-- **O que fez nesta etapa:** Realizei pesquisas em grupo focadas na escolha mais adequada da API, utilizando fontes oferecidas em aula e fontes externas de pessoas com experiência no assunto. Também contribuí com um estudo sobre o uso da API em Python, que disponibilizei a todos os integrantes do grupo para que se familiarizassem com o conceito, já que é algo novo para todos.
-* Trabalhei na Seção 4, construção da tabela comparativa entre API e Dataset, na qual foi realizada uma pesquisa minuciosa na documentação de ambos os métodos, para realizar uma comparação com precisão.
+- **O que fez nesta etapa:** Realizou pesquisas em grupo focadas na escolha mais adequada da API, utilizando fontes oferecidas em aula e fontes externas de pessoas com experiência no assunto. Também contribuiu com um estudo sobre o uso da API em Python, que foi disponibilizado a todos os integrantes do grupo para que se familiarizassem com o conceito.
+* Trabalhou na Seção 4, construção da tabela comparativa entre API e Dataset, na qual foi realizada uma pesquisa minuciosa na documentação de ambos os métodos, para realizar uma comparação com precisão.
 
 - **Tempo dedicado (aprox.):** `2h50`
 - **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
  https://github.com/Samulesantos20045/Evidencias.git
 
 ### Integrante 3 — `Pedro Henrique Alexandre da Silva `
-- **O que fez nesta etapa:** `Realizei o estudo comparativo inicial entre o dataset da Starlink e a API do RIPE Atlas (Seção 4). Atuei como Revisor de Qualidade (QA) na reta final, realizando a auditoria do repositório: corrigi divergências na data de entrega, ajustei a ortografia do memorando, removi resquícios do template base, alinhei a árvore do README.md e garanti a ocultação de dados sensíveis nas evidências do grupo.`
+- **O que fez nesta etapa:** `Realizou o estudo comparativo inicial entre o dataset da Starlink e a API do RIPE Atlas (Seção 4). Atuou como Revisor de Qualidade (QA) na reta final, realizando a auditoria do repositório: corrigiu divergências na data de entrega, ajustou a ortografia do memorando, removeu resquícios do template base, alinhou árvore do README.md e garantiu a ocultação de dados sensíveis nas evidências do grupo.`
 - **Tempo dedicado (aprox.):** `1h15`
 - **Evidência da contribuição**
 - <img width="1317" height="367" alt="Captura de tela 2026-09-15 121636" src="https://github.com/user-attachments/assets/5bd2f1fd-0f8a-4a79-b46e-34de648b1d8a" />
