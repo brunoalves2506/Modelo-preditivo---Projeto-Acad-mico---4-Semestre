@@ -47,12 +47,14 @@
 `data/raw/` permanece intocado. A auditoria vai para o diário; a tabela de trabalho, para `data/interim/`.
 
 - [ ] Contagem de linhas, fluxos, duplicatas e RTT vazio
-- [ ] Nenhum RTT ausente foi gravado como 0
+- [X] Nenhum RTT ausente foi gravado como 0
 - [ ] Período A e Período B não compartilham timestamp do mesmo fluxo
 
-**N bruto:**  
-**N de fluxos:**  
-**Evidências:**
+**N bruto:** 89.071 (ou 273.312 Se forem somadas as três capturas separadas)
+**N de fluxos:**  13.709 (ou 14.434 combinado)
+**Evidências: Arquivo CSV, e Inspeção dos dados**
+* **Ficheiro CSV com os dados brutos** ['data_ripe_atlas/raw/ripe_atlas_m1009_20260914T030005Z.csv'](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/data_ripe_atlas/raw/ripe_atlas_m1009_20260914T030005Z.csv)
+* **Inspeção do ficheiro CSV** Nenhum RTT foi gravado como 0; os 701 timeouts usam o valor sentinela -1 nas colunas min/max/avg (ex.: linha 483, prb_id=1008567, rcvd=0, avg=-1.0), tratado como ausência antes de qualquer cálculo. Dados brutos em data/raw/
 
 ## 2. Como obter o baseline
 
@@ -72,18 +74,19 @@ Uma ficha por `fluxo_id`. Só o Período A. O Período B não entra na conta e n
 | Campo da ficha  | Fórmula, somente Período A                                 |
 | --------------- | ---------------------------------------------------------- |
 | `mediana`       | mediana dos RTT válidos (ms)                               |
-| `MAD`           | mediana(                                                   |
+| `MAD`           | mediana()                                                   |
 | `jitter_tipico` | mediana do jitter nas medições em que o jitter existe (ms) |
 | `perda_tipica`  | mediana de `perda_pct`, inclusive timeout (%)              |
 | `prop_resposta` | medições com RTT válido / medições do período              |
 
 
 - [ ] Ficha conferida em pelo menos um fluxo curto e um fluxo longo (as medianas podem ser muito diferentes; as duas são “normal”)
-- [ ] Lista dos fluxos excluídos e o motivo (contagem abaixo de 1.500)
+- [X] Lista dos fluxos excluídos e o motivo (contagem abaixo de 1.500)
 
-**Fluxos com ficha:**  
-**Fluxos excluídos:**  
-**Exemplo auditável (fluxo curto: mediana; fluxo longo: mediana):**
+**Fluxos com ficha:**  0
+**Fluxos excluídos:**  14.434 — motivo: nenhum fluxo atinge o piso de 1.500 RTTs válidos (máximo observado, somando as 3 coletas: 39 medições em um único fluxo)
+**Exemplo auditável (fluxo curto: mediana; fluxo longo: mediana):** os dois fluxos acima, com a ressalva explícita de que os números vêm de um teste de validação da fórmula, não de uma ficha oficial (já que nenhum fluxo tem volume suficiente ainda)
+**Achado a registrar no diário:** mudança abrupta de RTT do fluxo 7092 entre 14/09 e 26/09, como evidência de por que Período A precisa ser contínuo
 
 ## 3. Métricas de cada medição do Período B
 
@@ -111,8 +114,6 @@ Calcular só com a ficha congelada daquele `fluxo_id`.
 | Jitter atual vazio                     | O critério de jitter não dispara                                                |
 | `jitter_tipico` = 0 e jitter atual = 0 | `jitter_relativo` = 1                                                           |
 | `jitter_tipico` = 0 e jitter atual > 0 | Tratar como `jitter_relativo` ≥ 3                                               |
-
-
 
 
 ## 4. Tabela de rotulagem — parar na primeira linha verdadeira
