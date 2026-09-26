@@ -109,7 +109,7 @@ Cada registro bruto guarda, quando a API trouxer:
 ## 4. Scrum
 
 - [x] Product Owner = docente; Scrum Master da tarefa: [Nome do Aluno/Scrum Master]; time de desenvolvimento: Bruno Alves, Wendel, [Outros Integrantes]
-- [ ] Board com To do / Doing / Done
+- [X] Board com To do / Doing / Done
 - [x] Pelo menos 3 histórias: coletar fluxos diversos; preservar o bruto com timeout; separar Período A e Período B sem rotular
 
 **Histórias:**
@@ -117,7 +117,7 @@ Cada registro bruto guarda, quando a API trouxer:
 2. **História 2 — Preservação de dados brutos com timeout:** Como engenheiro de dados, quero manter os registos originais em `data_ripe_atlas/raw/` preservando os timeouts (sem preencher RTT com zero) para garantir a integridade da medição.
 3. **História 3 — Separação temporal sem rotulagem:** Como cientista de dados, quero estruturar os dados nos Períodos A e B sem atribuir classes (`OK`, `RISCO`, `FALHA`) para estar em conformidade com as restrições da Tarefa 1.
 
-**Link do board:** [Quadro Kanban do Projeto (GitHub Projects / Trello)]()
+**Link do board:** [Quadro Kanban do Projeto (GitHub Projects / Trello)](https://github.com/users/brunoalves2506/projects/1/views/1)
 
 ## 5. Diário de bordo
 
@@ -132,9 +132,9 @@ Cada registro bruto guarda, quando a API trouxer:
 
 ## 6. Evidências gerais
 
-- Link do RFC:
-- Link do dicionário v0.1:
-- Link dos commits:
+- Link do RFC: [](https://github.com/users/brunoalves2506/projects/1/views/1)
+- Link do dicionário v0.1: [](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/Tarefa1_Coleta_Bruta.md)
+- Link dos commits:[](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/commits/main/)
 - Link de `data/raw/` e do `config/`:
 
 ---
