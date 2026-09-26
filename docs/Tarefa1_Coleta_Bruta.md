@@ -132,10 +132,12 @@ Cada registro bruto guarda, quando a API trouxer:
 
 ## 6. Evidências gerais
 
-- Link do RFC: [](https://github.com/users/brunoalves2506/projects/1/views/1)
-- Link do dicionário v0.1: [](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/Tarefa1_Coleta_Bruta.md)
-- Link dos commits:[](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/commits/main/)
-- Link de `data/raw/` e do `config/`:
+- **Link do RFC:** [Guia do Projeto e Especificações RFC](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/Guia_Coleta_RIPE_Atlas.md)
+- **Link do dicionário v0.1:** [Dicionário de Variáveis Brutas v0.1](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/Tarefa1_Coleta_Bruta.md#2-o-que-coletar-e-o-que-n%C3%A3o-criar)
+- **Link dos commits:** [Histórico de Commits do Repositório](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/commits/main/)
+- **Link de `data/raw/` e do `config/`:**
+  - [Diretório data_ripe_atlas/raw/](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/tree/main/data_ripe_atlas/raw)
+  - [Diretório config/](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/tree/main/notebook)
 
 ---
 
