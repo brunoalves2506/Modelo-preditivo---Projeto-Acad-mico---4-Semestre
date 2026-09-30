@@ -89,8 +89,8 @@ Cada registro bruto guarda, quando a API trouxer:
 * **Exemplo de caminho longo:** `prb_id = 1015060` (RTT mediano ~761,78 ms)
 * **Arquivo de exemplo de variáveis de ambiente:** [`.env.exemplo`](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/.env.example)
 * **Total de timeouts identificados:** 701 registros sem resposta (`rcvd = 0`, RTT ausente preservado)
-* **Dicionário v0.1:** [`docs/dicionario_v0.1.md`](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/dicionario_v0.1.md)
-
+* **Dicionário v0.1:** [`docs/dicionario_v0.1.md`](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/dicionario_v0.1.md) e seção 3.1 deste documento
+  
 ## 3. Relatório de qualidade — ainda sem classe
 
 - [x] Registros por `fluxo_id`
