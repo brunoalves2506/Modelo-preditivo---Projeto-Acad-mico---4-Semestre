@@ -42,6 +42,41 @@ main
 - [RFC — Preditor de degradação](docs/RFC_Preditor_Degradacao_Rede.md)
 - [Guia da coleta RIPE Atlas](docs/Guia_Coleta_RIPE_Atlas.md)
 
+## Como reproduzir
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre.git
+   cd Modelo-preditivo---Projeto-Acad-mico---4-Semestre
+   ```
+
+2. Crie o ambiente virtual:
+   ```bash
+   python3 -m venv .venv
+   ```
+
+3. Ative o ambiente virtual:
+   - Linux/Mac:
+     ```bash
+     source .venv/bin/activate
+     ```
+   - Windows:
+     ```bash
+     .venv\Scripts\activate
+     ```
+
+4. Instale as dependências listadas em `requirements.txt`:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. Abra o notebook e execute as células na ordem:
+   ```
+   notebook/coleta_de_dados.ipynb
+   ```
+
+O ambiente virtual `.venv/` é utilizado localmente para executar o projeto, mas não é versionado. Portanto, antes de executar o projeto, confirme se o ambiente virtual está ativo para manter as dependências isoladas.
+
 ## Estrutura e organização
 
 ```text
