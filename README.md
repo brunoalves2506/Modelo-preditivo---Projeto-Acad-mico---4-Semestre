@@ -44,9 +44,12 @@ main
 
 ## Estrutura e organização
 
+```text
 .
 ├── requirements.txt
 ├── README.md
+├── .env.example
+├── .gitignore
 ├── config/
 │   └── parametros.yaml
 ├── data_ripe_atlas/
@@ -57,6 +60,10 @@ main
 ├── docs/
 │   ├── dicionario_v0.1.md
 │   ├── memorando_de_decisao_grupo18.md
-│   └── Tarefa1_Coleta_Bruta.md
+│   ├── Tarefa1_Coleta_Bruta.md
+│   ├── Tarefa2_Baseline_e_Rotulagem.md
+│   ├── RFC_Preditor_Degradacao_Rede.md
+│   └── Guia_Coleta_RIPE_Atlas.md
 └── notebook/
     └── coleta_de_dados.ipynb
+```
