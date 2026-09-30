@@ -62,7 +62,7 @@ Essas pertencem à Tarefa 2 e vão para o dicionário v0.2.
 Derivado: `prb_id | dst_addr`. É a chave estável do fluxo. Mesmo probe + mesmo destino = mesmo fluxo. Outro probe = outro fluxo. Mesmo probe + outro destino = outro fluxo.
 
 ### `avg`, `min`, `max`
-RTT da rajada (tipicamente 3 pacotes). Vazio quando não há resposta. **Não preencher com 0.** No CSV atual, a sentinela `-1` aparece em `min/max/avg` quando `rcvd = 0`; tratar como ausência antes de qualquer cálculo.
+RTT da rajada (tipicamente 3 pacotes). Vazio quando não há resposta. **Não preencher com 0.** No CSV, a sentinela `-1` aparece em `min/max/avg` quando `rcvd = 0`; tratar como ausência antes de qualquer cálculo.
 
 ### `perda_pct`
 Derivado: `(sent − rcvd) / sent × 100`. Se `sent` for vazio, a linha sai. Se `rcvd = 0`, a perda é 100%.
@@ -76,7 +76,7 @@ Derivado: 1 se `avg` vazio ou `perda_pct = 100`; senão 0. Timeout permanece no 
 ### Colunas de auditoria
 `from`, `dst_name`, `msm_id`, `lts`, `stored_timestamp` servem para rastrear e auditar. **Não entram como feature do modelo.**
 
-### Colunas proibidas no modelo (já sinalizadas)
+### Colunas proibidas no modelo
 País, IP, `rota_id`, `fluxo_id` e RTT absoluto como substituto das métricas relativas. Ficam no bruto apenas para auditoria.
 
 ---
