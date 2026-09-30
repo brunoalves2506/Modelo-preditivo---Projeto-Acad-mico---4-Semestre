@@ -177,7 +177,7 @@ Para definições detalhadas de cada coluna, ver [`docs/dicionario_v0.1.md`](htt
 | **Igor da Silva Alves Correa** | | | |
 | **Pedro Henrique Alexandre da Silva** | | | |
 | **Samuel de Oliveira Santos** | | | |
-| **Victoria Agatha Rodrigues Fagundes** | **Victoria Agatha Rodrigues Fagundes** | Escrevi a introdução do Dicionário v0.1 definindo o que **não** entra nele (rótulo, `z_robusto`, `aumento_pct`, `mediana`, `MAD`) e a regra “RTT vazio ≠ 0”. Repliquei a tabela de colunas brutas na seção 3.1 e linkei a versão canônica em `docs/dicionario_v0.1.md`. | Confundir v0.1 com v0.2 e conferir quais colunas realmente existiam no CSV. | Manter o escopo e a regra “RTT vazio ≠ 0”; no v0.2, automatizar a conferência das colunas. |
+| **Victoria Agatha Rodrigues Fagundes** | Escrevi a introdução do Dicionário v0.1 definindo o que **não** entra nele (rótulo, `z_robusto`, `aumento_pct`, `mediana`, `MAD`) e a regra “RTT vazio ≠ 0”. Repliquei a tabela de colunas brutas na seção 3.1 e linkei a versão canônica em `docs/dicionario_v0.1.md`. | Confundir v0.1 com v0.2 e conferir quais colunas realmente existiam no CSV. | Manter o escopo e a regra “RTT vazio ≠ 0”; no v0.2, automatizar a conferência das colunas. |
 | **Wendel Henrique da Silva Rocha** *(Scrum Master)* | | | |
 
 ## 6. Evidências gerais
