@@ -113,6 +113,8 @@ Não há rótulo, classe, mediana, MAD ou métrica relativa. Essas pertencem à 
 
 RTT ausente permanece **vazio** no CSV. Nunca é gravado como 0.
 
+> **Versão completa e canônica:** [`docs/dicionario_v0.1.md`](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/dicionario_v0.1.md)
+
 ### Colunas do bruto
 
 | Coluna | Tipo | Unidade | Origem | Papel |
@@ -151,6 +153,8 @@ RTT ausente permanece **vazio** no CSV. Nunca é gravado como 0.
 - **Colunas de auditoria** (`from`, `dst_name`, `msm_id`) não vão para a árvore.
 - **País, IP e `rota_id` não entram no modelo.** Ficam só para auditoria.
 - **Nenhuma coluna de rótulo (OK/RISCO/FALHA) existe neste bruto.** Isso é Tarefa 2.
+
+Para definições detalhadas de cada coluna, ver [`docs/dicionario_v0.1.md`](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/dicionario_v0.1.md).
 
 ## 4. Scrum
 
