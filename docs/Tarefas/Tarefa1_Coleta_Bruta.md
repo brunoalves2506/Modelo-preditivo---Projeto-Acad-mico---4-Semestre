@@ -106,7 +106,50 @@ Cada registro bruto guarda, quando a API trouxer:
 * **Caminho longo:** `prb_id = 1015060` (RTT mediano ~761,78 ms)
 
 ## 3.1 Dicionário v0.1 — variáveis brutas
-... (NOVO — cole aqui)
+
+Este dicionário lista apenas as colunas coletadas ou derivadas diretamente da API do RIPE Atlas.
+Não há rótulo, classe, mediana, MAD ou métrica relativa. Essas pertencem à Tarefa 2.
+
+RTT ausente permanece **vazio** no CSV. Nunca é gravado como 0.
+
+### Colunas do bruto
+
+| Coluna | Tipo | Unidade | Origem | Papel |
+|---|---|---|---|---|
+| `timestamp` | inteiro | segundos (epoch UTC) | API | Ordenar o fluxo no tempo |
+| `msm_id` | inteiro | — | API | Identidade da medição |
+| `prb_id` | inteiro | — | API | Sonda de origem |
+| `dst_addr` | texto | — | API | IP do destino |
+| `dst_name` | texto | — | API | Nome do destino (auditoria) |
+| `fluxo_id` | texto | — | derivado | `prb_id \| dst_addr` |
+| `avg` | float | ms | API | RTT médio da rajada. Vazio se sem resposta |
+| `min` | float | ms | API | RTT mínimo da rajada. Vazio se sem resposta |
+| `max` | float | ms | API | RTT máximo da rajada. Vazio se sem resposta |
+| `sent` | inteiro | pacotes | API | Pacotes enviados na rajada |
+| `rcvd` | inteiro | pacotes | API | Pacotes respondidos na rajada |
+| `perda_pct` | float | % | derivado | `(sent − rcvd) / sent × 100` |
+| `jitter_ms` | float | ms | derivado | Desvio-padrão de `result[].rtt`, com 2+ respostas |
+| `timeout_atual` | inteiro | 0/1 | derivado | 1 se `avg` vazio ou `perda_pct = 100` |
+| `from` | texto | — | API | IP de origem (auditoria; muda com NAT) |
+| `proto` | texto | — | API | Protocolo (`ICMP`) |
+| `af` | inteiro | — | API | Família de endereço (4 ou 6) |
+| `size` | inteiro | bytes | API | Tamanho do pacote |
+| `ttl` | inteiro | — | API | TTL observado. Pode ser vazio |
+| `mver` | texto | — | API | Versão do formato da medição. Pode ser vazio |
+| `result` | lista | — | API | Lista de RTTs individuais da rajada |
+| `lts` | inteiro | — | API | Timestamp local da sonda |
+| `stored_timestamp` | inteiro | segundos | API | Quando a RIPE armazenou |
+| `step` | inteiro | segundos | API | Intervalo entre medições (240 s no mesh) |
+
+### Regras que este dicionário garante
+
+- **RTT vazio é ausência, não zero.** Zero seria um OK falso.
+- **`timeout_atual` fica no arquivo.** Não descarta linha.
+- **`fluxo_id` é derivado**, não vem da API.
+- **`perda_pct` e `jitter_ms` são derivados** do JSON bruto.
+- **Colunas de auditoria** (`from`, `dst_name`, `msm_id`) não vão para a árvore.
+- **País, IP e `rota_id` não entram no modelo.** Ficam só para auditoria.
+- **Nenhuma coluna de rótulo (OK/RISCO/FALHA) existe neste bruto.** Isso é Tarefa 2.
 
 ## 4. Scrum
 
