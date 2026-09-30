@@ -46,8 +46,7 @@ Responder no diário. A resposta tem de bater com o RFC.
 | Quem usa o alerta? | Quem opera o enlace: investigar (FALHA), observar (RISCO) ou não agir (OK). |
 | O que está proibido como definição de falha? | Limiar global de RTT, país, continente ou nome da rota. |
 
-- [ X] RFC do grupo preenchido a partir desta tabela
-- [ ] Dicionário v0.1 só com variáveis brutas
+- [X] Dicionário v0.1 só com variáveis brutas
 
 ## 2. O que coletar (e o que não criar)
 
