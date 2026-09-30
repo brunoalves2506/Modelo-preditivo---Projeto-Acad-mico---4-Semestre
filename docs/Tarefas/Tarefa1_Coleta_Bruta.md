@@ -183,7 +183,7 @@ Para definições detalhadas de cada coluna, ver [`docs/dicionario_v0.1.md`](htt
 ## 6. Evidências gerais
 
 - **Link do RFC:** [Guia do Projeto e Especificações RFC](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/Guia_Coleta_RIPE_Atlas.md)
-- **Link do dicionário v0.1:** [Dicionário de Variáveis Brutas v0.1](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/Tarefa1_Coleta_Bruta.md#2-o-que-coletar-e-o-que-n%C3%A3o-criar)
+- **Link do dicionário v0.1:** [`docs/dicionario_v0.1.md`](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/docs/dicionario_v0.1.md) (versão completa) e [seção 3.1 deste documento](#31-dicionário-v01--variáveis-brutas) (versão de leitura)
 - **Link dos commits:** [Histórico de Commits do Repositório](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/commits/main/)
 - **Link de `data/raw/` e do `config/`:**
   - [Diretório data/raw/](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/tree/main/data/raw)
