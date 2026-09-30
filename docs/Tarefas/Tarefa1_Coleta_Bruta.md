@@ -106,6 +106,9 @@ Cada registro bruto guarda, quando a API trouxer:
 * **Caminho curto:** `prb_id = 7092` (RTT mediano ~0,25 ms)
 * **Caminho longo:** `prb_id = 1015060` (RTT mediano ~761,78 ms)
 
+## 3.1 Dicionário v0.1 — variáveis brutas
+... (NOVO — cole aqui)
+
 ## 4. Scrum
 
 - [x] Product Owner = docente; Scrum Master da tarefa: [Nome do Aluno/Scrum Master]; time de desenvolvimento: Bruno Alves, Wendel, [Outros Integrantes]
