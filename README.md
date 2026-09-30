@@ -33,6 +33,15 @@ Grupo 18 - Ciência da computação (Noite)
 
 main
 
+## Documentação
+
+- [Memorando de decisão](docs/memorando_de_decisao_grupo18.md)
+- [Dicionário de variáveis brutas v0.1](docs/dicionario_v0.1.md)
+- [Tarefa 1 — Coleta bruta](docs/Tarefa1_Coleta_Bruta.md)
+- [Tarefa 2 — Baseline e rotulagem](docs/Tarefa2_Baseline_e_Rotulagem.md)
+- [RFC — Preditor de degradação](docs/RFC_Preditor_Degradacao_Rede.md)
+- [Guia da coleta RIPE Atlas](docs/Guia_Coleta_RIPE_Atlas.md)
+
 ## Estrutura e organização
 
 ```
