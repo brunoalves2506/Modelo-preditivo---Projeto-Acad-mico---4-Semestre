@@ -36,6 +36,8 @@
 
 **Não sai daqui:** árvore treinada, profundidade escolhida, acurácia, F1.
 
+**Observação sobre a coleta:** esta tarefa usa a segunda coleta **(v2, `v2-ping-ipv4`)**, e não a v1. A v1 (medição 1009, cerca de 27 minutos) foi curta demais: nenhum fluxo atingiu 1.500 RTTs válidos. A v2 usa 14 dias do mesh de anchors (06/09 a 20/09/2026, `seed = 42`, 12 rotas, 322 requisições à API), com Período A de 06 a 13/09 e Período B de 13 a 20/09 (UTC). A troca foi versionada em `data_ripe_atlas/raw/v2/`, e o `raw` da v1 foi mantido intocado. Os nomes das colunas da v2 diferem do dicionário v0.1; o mapeamento fica no v0.2.
+
 - [X] O notebook lê o bruto da Tarefa 1
 
 ---
