@@ -204,7 +204,13 @@ Dentro do Período B, por fluxo, em ordem de tempo:
 
 | Integrante | O que fiz nesta tarefa | Dificuldades | O que pretendo manter/ajustar |
 | ---------- | ---------------------- | ------------ | ----------------------------- |
-|            |                        |              |                               |
+|Bruno Alves Ribeiro de Souza            |Auxiliei no suporte ao ambiente e verificação da pipeline de dados.                        |Organização dos diretórios temporários.              |Manter a consistência na estrutura do pipeline.                               |
+|Igor da Silva Alves Correa            |Apoiei o desvinculamento das variáveis de identificação geográfica em relação ao rótulo.                        |Garantir o isolamento das colunas de auditoria.              |Automatizar a validação das colunas proibidas.                               |
+|Pedro Henrique Alexandre da Silva            |Revisão do diário e validação do cálculo das métricas relativas no Período B.                        |Entendimento das regras de fallback para MAD = 0.              |Manter o rigor conceitual nas análises.                               |
+|Samuel de Oliveira Santos            |Atuei na inspeção dos dados brutos e na verificação do piso de 1.500 RTTs para a ficha de baseline.                        |Tratar adequadamente a grande quantidade de timeouts sem zerar o RTT.              |Manter o foco na qualidade da extração.                               |
+|Victoria Agatha Rodrigues Fagundes            |Responsável pela documentação do Dicionário v0.2, discriminando colunas brutas, relativas e proibidas.                        |Separação estrita dos escopos das versões v0.1 e v0.2 do dicionário.              |Automatizar a checagem do schema de saída.                               |
+|Wendel Henrique da Silva Rocha (Scrum Master)            |Coordenei a execução da tarefa, montagem das fichas congeladas no Período A e separação dos blocos temporalmente.                        |Garantir que a ordem de precedência da rotulagem fosse aplicada estritamente sem inversões.              |Ajustar e otimizar os fluxos do Scrum para a Tarefa 3.                               |
+
 
 
 ---
