@@ -120,7 +120,7 @@ Calcular só com a ficha congelada daquele `fluxo_id`.
 | `aumento_pct`     | (RTT atual − mediana) / mediana × 100                                   |
 | `jitter_relativo` | jitter atual / `jitter_tipico`                                          |
 | `perda_pct`       | (enviados − recebidos) / enviados × 100                                 |
-| `timeout_atual`   | 1 se não há RTT ou `perda_pct` == 100                          |
+| `timeout_atual`   | 1 se não há RTT ou `perda_pct` = 100; senão 0                          |
 | `n5_timeout`      | timeouts nas últimas 5 medições deste fluxo, incluindo a atual (0 a 5)  |
 | `n5_aumento80`    | quantas das últimas 5 têm `aumento_pct` > 80                            |
 | `n5_risco`        | quantas das últimas 5 cumprem o critério da linha 5 da tabela de rótulo |
