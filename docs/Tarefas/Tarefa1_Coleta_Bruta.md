@@ -167,7 +167,7 @@ Para definições detalhadas de cada coluna, ver [`docs/dicionario_v0.1.md`](htt
 2. **História 2 — Preservação de dados brutos com timeout:** Como engenheiro de dados, quero manter os registos originais em `data/raw/` preservando os timeouts (sem preencher RTT com zero) para garantir a integridade da medição.
 3. **História 3 — Separação temporal sem rotulagem:** Como cientista de dados, quero estruturar os dados nos Períodos A e B sem atribuir classes (`OK`, `RISCO`, `FALHA`) para estar em conformidade com as restrições da Tarefa 1.
 
-**Link do board:** [Quadro Kanban do Projeto (GitHub Projects / Trello)](https://github.com/users/brunoalves2506/projects/1/views/1)
+**Link do board:** [Quadro Trello do Projeto (GitHub Projects / Trello)](https://trello.com/b/igglkwdJ/desenvolvimento-preditor-de-falhas-e-rede)
 
 ## 5. Diário de bordo
 
