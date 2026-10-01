@@ -67,6 +67,7 @@
 * A coluna `fluxo_id` foi criada no notebook a partir de `prb_id | dst_addr`, porque o CSV bruto não a trazia.
 * Os 701 RTTs ausentes usam a sentinela `-1` nas colunas `min/max/avg`. Tratados como ausência, não como zero. Coincidem com os 701 timeouts (`rcvd = 0`).
 * **Pendência:** a coleta cobre apenas 27 minutos (14/09/2026 02:33–03:00 UTC). Sem os 7 + 7 dias do RFC, não há como separar Período A e Período B. Este item depende de refazer a coleta com `start=06/09/2026 04:32 UTC` e `stop=20/09/2026 04:32 UTC`.
+* **Leitura rápida:** todos os 13.709 fluxos apontam para o mesmo destino (o A-root anycast). O número de probes distintas coincide com o de fluxos porque há apenas um destino. Os 701 timeouts representam cerca de 0,79% do total. O RTT mediano de 24 ms é coerente com o esperado para um alvo anycast com instâncias próximas.
 
 ## 2. Como obter o baseline
 
