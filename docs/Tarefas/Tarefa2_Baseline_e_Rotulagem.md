@@ -58,14 +58,13 @@
 - [X] Nenhum RTT ausente foi gravado como 0
 - [X] Período A e Período B não compartilham timestamp do mesmo fluxo
 
-**N bruto:** 442.587 registros (Período A: 221.520 | Período B: 221.067)
-**N de fluxos:** 92 (`prb_id | dst_addr`) no Período A e 88 no Período B (total único de 92 fluxos)
-**Probes distintas:** 24
-**Destinos distintos:** 23
-**Duplicatas (timestamp, prb_id, dst_addr):** 0
-**RTT vazio (sentinela -1):** 701
-**Timeouts (rcvd = 0):** 61.102
-**RTT (ms) — mínimo / mediana / máximo:** 0,44 / 57,74 / 1.001,10
+**N bruto:** 442.587 registros (Período A: 221.520 | Período B: 221.067)  
+**N de fluxos:** 92 (`prb_id | dst_addr`) no Período A e 88 no Período B (total único de 92 fluxos)  
+**Probes distintas:** 24  
+**Destinos distintos:** 23  
+**Duplicatas (timestamp, prb_id, dst_addr):** 0  
+**RTT vazio (timeouts, rcvd = 0):** 61.102 (na v2 o RTT ausente fica vazio; não há sentinela -1)
+**RTT (ms) — mínimo / mediana / máximo:** 0,44 / 57,74 / 1.001,10  
 
 **Evidências:**
 * **Arquivo CSV:** [`data_ripe_atlas/raw/v2/ripe_atlas_mesh_v2_ping_ipv4_periodo_a.csv`]
@@ -73,8 +72,8 @@
 * **Metadados:** [`data_ripe_atlas/raw/v2/ripe_atlas_mesh_v2_ping_ipv4_metadata.json`]
 
 **Observações:**
-* RTTs ausentes/timeouts foram preservados como nulos ou com a sentinela [`-1`] e sinalizados em `timeout_atual = 1`, sem preenchimento artificial com zero.
-* Os Períodos A e B possuem contiguidade temporal estrita de 7 dias cada (Período A: 06/09/2026 04:32 a 13/09/2026 04:32 UTC; Período B: 13/09/2026 04:32 a 20/09/2026 04:32 UTC). Não há sobreposição de timestamps no mesmo fluxo
+* RTTs ausentes/timeouts foram preservados como vazios (nulos) e sinalizados em `timeout_atual = 1`, sem preenchimento artificial com zero.  
+* Os Períodos A e B possuem contiguidade temporal estrita de 7 dias cada (Período A: 06/09/2026 04:32 a 13/09/2026 04:32 UTC; Período B: 13/09/2026 04:32 a 20/09/2026 04:32 UTC). Não há sobreposição de timestamps no mesmo fluxo  
 
 ## 2. Como obter o baseline
 
@@ -94,7 +93,7 @@ Uma ficha por `fluxo_id`. Só o Período A. O Período B não entra na conta e n
 | Campo da ficha  | Fórmula, somente Período A                                 |
 | --------------- | ---------------------------------------------------------- |
 | `mediana`       | mediana dos RTT válidos (ms)                               |
-| `MAD`           | mediana()                                                   |
+| `MAD`           | mediana()                                                  |
 | `jitter_tipico` | mediana do jitter nas medições em que o jitter existe (ms) |
 | `perda_tipica`  | mediana de `perda_pct`, inclusive timeout (%)              |
 | `prop_resposta` | medições com RTT válido / medições do período              |
@@ -168,24 +167,30 @@ Cada linha do Período B, de um fluxo que tenha ficha. FALHA ganha de RISCO; RIS
 - OK: [`142.384 medições`] (74,6%)
 - FALHA: [`32.788 medições`] (17,2%)
 - RISCO: [`15.684 medições`] (8,2%)
+
+**Cobertura:** 12 fluxos do Período B não têm ficha (`baseline_insuficiente`) e não recebem classe (30.211 linhas). Os 190.856 registros rotulados (OK + RISCO + FALHA) são os de fluxos com ficha.
+
+**Observação:** a linha 3 (`z_robusto` ≥ 3,5) é a que dispara 31.274 dos 32.788 FALHA (95%), pois o MAD de vários fluxos é da ordem de 0,1 ms. Isso segue a regra da tabela, mas deve ser considerado na Tarefa 3 (desbalanceamento das classes).
+
 **Evidências (três linhas reais, com as métricas e a ordem que disparou a classe):**
-**Exemplo OK:** (`fluxo_id = 6396|185.32.189.249`):
+  
+**Exemplo OK (caminho longo):** (`fluxo_id = 6659|103.167.46.8`, 13/09/2026 04:39:08 UTC):
 
-RTT: [`42,68 ms`] | z_robusto: [`2,74`] | aumento_pct: 0,99% | perda_pct: [`0`],0% | n5_timeout: [`0`] | Classe: `OK`
+RTT: 283,20 ms | mediana: 283,27 ms | z_robusto: −0,16 | aumento_pct: −0,02% | jitter_relativo: 0,45 | perda_pct: 0,0% | n5_timeout: 0 | n5_aumento80: 0 | Classe: `OK`
 
-Regra de disparo: Nenhuma regra das linhas 1 a 5 disparou (pico isolado sem persistência acumulada).
+Regra de disparo: linha 6. Nenhuma das linhas 1 a 5 disparou. O RTT é alto (283 ms), mas normal para este fluxo, e por isso `z_robusto` é baixo.
 
 **Exemplo RISCO:** (`fluxo_id = 6396|185.32.189.249`):
 
-RTT: [`42,52 ms`] | z_robusto: [`1,72`] | aumento_pct: 0,62% | perda_pct: 0,0% | crit_risco_ind: [`1`] | n5_risco: [`2`] | Classe: `RISCO`
+RTT: 42,52 ms | z_robusto: 1,72 | aumento_pct: 0,62% | jitter_relativo: 4,25 | perda_pct: 0,0% | crit_risco_ind: 1 | n5_risco: 2 | Classe: `RISCO`
 
-Regra de disparo: Linha 5 da tabela (`crit_risco_ind = 1` e `n5_risco >= 2`).
+Regra de disparo: linha 5. O critério individual foi `jitter_relativo` ≥ 3 (4,25); `z_robusto` e `aumento_pct` estão abaixo dos limiares. Com `n5_risco` ≥ 2, vira RISCO.
 
-**Exemplo FALHA:** (`fluxo_id = 6396|185.32.189.249`):
+**Exemplo FALHA (caminho curto):** (`fluxo_id = 6659|23.179.216.22`, 14/09/2026 13:27:04 UTC):
 
-RTT: [`42,94 ms`] | z_robusto: [`4,47`] | aumento_pct: 1,62% | perda_pct: [`0`],0% | n5_timeout: [`0`] | Classe: `FALHA`
+RTT: 6,60 ms | mediana: 1,63 ms | z_robusto: 24,85 | aumento_pct: 305,6% | perda_pct: 33,33% | n5_timeout: 0 | n5_aumento80: 1 | Classe: `FALHA`
 
-Regra de disparo: Linha 3 da tabela (`z_robusto >= 3.5` nesta medição com RTT presente).
+Regra de disparo: linha 1 (`perda_pct` ≥ 10: 1 pacote perdido em 3 = 33,33%). Como é a primeira linha verdadeira, a avaliação para aqui (a linha 3 também seria verdadeira).
 
 ## 5. Recorte para a árvore (ainda sem treinar)
 
@@ -202,6 +207,10 @@ Dentro do Período B, por fluxo, em ordem de tempo:
 * Validação (20% do meio): [`N = 38.138`] | Início: `2026-09-16T14:10:11Z` | Fim: `2026-09-18T03:04:22Z`.
 
 * Teste (30% mais recente): [`N = 57.312`] | Início: `2026-09-17T22:46:09Z` | Fim: `2026-09-20T04:31:38Z`.
+
+**Regra do corte:** feito por `fluxo_id`, em ordem de tempo: treino = primeiros ⌊0,5·n⌋ registros do fluxo, validação = próximos ⌊0,2·n⌋, teste = o restante. As faixas de datas acima se sobrepõem porque cada fluxo é cortado no seu próprio ponto; dentro de um mesmo fluxo, treino < validação < teste, sem sobreposição e sem registros do Período A.
+
+**Classes por bloco (OK / RISCO / FALHA):** treino 72.857 / 6.582 / 15.967 | validação 27.180 / 3.388 / 7.570 | teste 42.347 / 5.714 / 9.251. Nenhum bloco ficou sem RISCO, então a proporção 50/20/30 não precisou de ajuste.
 
 ## 6. Scrum e diário
 
