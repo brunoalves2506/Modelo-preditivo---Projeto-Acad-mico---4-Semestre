@@ -46,15 +46,27 @@
 
 `data/raw/` permanece intocado. A auditoria vai para o diário; a tabela de trabalho, para `data/interim/`.
 
-- [ ] Contagem de linhas, fluxos, duplicatas e RTT vazio
+- [X] Contagem de linhas, fluxos, duplicatas e RTT vazio
 - [X] Nenhum RTT ausente foi gravado como 0
 - [ ] Período A e Período B não compartilham timestamp do mesmo fluxo
 
-**N bruto:** 89.071 (ou 273.312 Se forem somadas as três capturas separadas)
-**N de fluxos:**  13.709 (ou 14.434 combinado)
-**Evidências: Arquivo CSV, e Inspeção dos dados**
-* **Ficheiro CSV com os dados brutos** ['data_ripe_atlas/raw/ripe_atlas_m1009_20260914T030005Z.csv'](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/data_ripe_atlas/raw/ripe_atlas_m1009_20260914T030005Z.csv)
-* **Inspeção do ficheiro CSV** Nenhum RTT foi gravado como 0; os 701 timeouts usam o valor sentinela -1 nas colunas min/max/avg (ex.: linha 483, prb_id=1008567, rcvd=0, avg=-1.0), tratado como ausência antes de qualquer cálculo. Dados brutos em data/raw/
+**N bruto:** 89.071 registros
+**N de fluxos:** 13.709 (`prb_id | dst_addr`)
+**Probes distintas:** 13.709
+**Destinos distintos:** 1 (A-root `198.41.0.4`)
+**Duplicatas (timestamp, prb_id, dst_addr):** 0
+**RTT vazio (sentinela -1):** 701
+**Timeouts (rcvd = 0):** 701
+**RTT (ms) — mínimo / mediana / máximo:** 0,19 / 24,23 / 2.485,03
+
+**Evidências:**
+* **Arquivo CSV:** [`data_ripe_atlas/raw/v1/ripe_atlas_m1009_20260914T030005Z.csv`](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/data_ripe_atlas/raw/v1/ripe_atlas_m1009_20260914T030005Z.csv)
+* **Inspeção:** célula do notebook com `pandas` que gera as contagens acima.
+
+**Observações:**
+* A coluna `fluxo_id` foi criada no notebook a partir de `prb_id | dst_addr`, porque o CSV bruto não a trazia.
+* Os 701 RTTs ausentes usam a sentinela `-1` nas colunas `min/max/avg`. Tratados como ausência, não como zero. Coincidem com os 701 timeouts (`rcvd = 0`).
+* **Pendência:** a coleta cobre apenas 27 minutos (14/09/2026 02:33–03:00 UTC). Sem os 7 + 7 dias do RFC, não há como separar Período A e Período B. Este item depende de refazer a coleta com `start=06/09/2026 04:32 UTC` e `stop=20/09/2026 04:32 UTC`.
 
 ## 2. Como obter o baseline
 
