@@ -1,0 +1,63 @@
+{
+  "rotas": [
+    [
+      "BR",
+      "BR"
+    ],
+    [
+      "BR",
+      "UY"
+    ],
+    [
+      "BR",
+      "BO"
+    ],
+    [
+      "BR",
+      "JP"
+    ],
+    [
+      "BR",
+      "IN"
+    ],
+    [
+      "BR",
+      "ZA"
+    ],
+    [
+      "DE",
+      "DE"
+    ],
+    [
+      "DE",
+      "PT"
+    ],
+    [
+      "AR",
+      "AR"
+    ],
+    [
+      "ES",
+      "PL"
+    ],
+    [
+      "ZA",
+      "KE"
+    ],
+    [
+      "IN",
+      "SG"
+    ]
+  ],
+  "probes_por_origem": 4,
+  "alvos_por_destino": 2,
+  "seed": 42,
+  "af": 4,
+  "dias_periodo_a": 7,
+  "dias_periodo_b": 7,
+  "fim_utc": "2026-09-20T04:32:00",
+  "formato_tabular": "csv",
+  "timeout_requisicao": 120,
+  "tentativas": 3,
+  "min_rtts_baseline": 1500
+}

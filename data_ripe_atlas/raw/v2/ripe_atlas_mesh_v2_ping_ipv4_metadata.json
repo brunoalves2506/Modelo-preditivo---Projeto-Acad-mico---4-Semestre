@@ -1,0 +1,5848 @@
+{
+  "versao": "v2-ping-ipv4",
+  "motivo": "Coleta v1 (medição 1009, ~27 min) foi curta demais: nenhum fluxo atingiu 1.500 RTTs válidos. A v2 usa 14 dias do mesh de anchors, escolhidos por rota de país.",
+  "url_base": "https://atlas.ripe.net/api/v2",
+  "inicio_utc": "2026-09-06T04:32:00+00:00",
+  "fim_utc": "2026-09-20T04:32:00+00:00",
+  "periodo_a_utc": [
+    "2026-09-06T04:32:00+00:00",
+    "2026-09-13T04:32:00+00:00"
+  ],
+  "periodo_b_utc": [
+    "2026-09-13T04:32:00+00:00",
+    "2026-09-20T04:32:00+00:00"
+  ],
+  "coletado_em_utc": "2026-09-30T02:48:16.791710+00:00",
+  "dias": 14,
+  "bloco_dias": 1,
+  "af": 4,
+  "tipo_medicao": "ping",
+  "seed": 42,
+  "probes_por_origem": 4,
+  "alvos_por_destino": 2,
+  "rotas": [
+    "BR→BR",
+    "BR→UY",
+    "BR→BO",
+    "BR→JP",
+    "BR→IN",
+    "BR→ZA",
+    "DE→DE",
+    "DE→PT",
+    "AR→AR",
+    "ES→PL",
+    "ZA→KE",
+    "IN→SG"
+  ],
+  "quantidade_registros_brutos": 442587,
+  "quantidade_colunas_dataframe": 26,
+  "registros_tabela_tratada": 442587,
+  "registros_periodo_a": 221520,
+  "registros_periodo_b": 221067,
+  "descartadas_sem_sent": 0,
+  "arquivo_bruto": "ripe_atlas_mesh_v2_ping_ipv4_bruto.csv",
+  "arquivo_periodo_a": "ripe_atlas_mesh_v2_ping_ipv4_periodo_a.csv",
+  "arquivo_periodo_b": "ripe_atlas_mesh_v2_ping_ipv4_periodo_b.csv",
+  "pasta_json": "json",
+  "quantidade_arquivos_json": 322,
+  "config": "coleta_v2.json",
+  "plano": "plano_coleta.json",
+  "requisicoes": [
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:16.794091+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:21.213194+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:24.056866+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:27.585392+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:30.929570+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:34.230156+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:37.271436+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:39.326495+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:42.327331+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:45.498477+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:47.616658+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:49.668196+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:51.412838+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1426,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 22680685,
+      "url": "https://atlas.ripe.net/api/v2/measurements/22680685/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:53.430165+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1431,
+      "arquivo_json": "msm_22680685_BR-BR_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:56.048266+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:48:59.187503+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:02.036084+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:04.920458+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:07.080704+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:09.849435+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:12.034201+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:14.033359+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:16.944784+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:20.059860+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:22.128109+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:24.077841+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1437,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:25.959959+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1415,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BR",
+      "measurement_id": 155932418,
+      "url": "https://atlas.ripe.net/api/v2/measurements/155932418/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:28.146031+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1432,
+      "arquivo_json": "msm_155932418_BR-BR_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:30.052735+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:33.392171+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:36.464883+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:39.320298+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:42.201603+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:44.960528+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:48.284737+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:51.410534+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:53.984588+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:56.124642+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:58.176604+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:49:59.915684+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:02.169583+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1428,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 86022641,
+      "url": "https://atlas.ripe.net/api/v2/measurements/86022641/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:04.349216+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1431,
+      "arquivo_json": "msm_86022641_BR-UY_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:06.068893+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:09.784470+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:16.975996+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:19.673112+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:25.283242+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:28.791580+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:31.995769+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:36.713081+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:40.296526+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:42.762219+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:44.806556+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:46.744690+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:48.858857+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1428,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→UY",
+      "measurement_id": 46652883,
+      "url": "https://atlas.ripe.net/api/v2/measurements/46652883/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:50.822090+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_46652883_BR-UY_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:53.574255+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:56.468701+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:50:59.296881+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:01.765768+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:04.013343+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:06.778775+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:09.976858+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:12.550458+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:15.876896+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:18.283047+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:20.191534+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:22.074162+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:25.313899+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1424,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→BO",
+      "measurement_id": 125059414,
+      "url": "https://atlas.ripe.net/api/v2/measurements/125059414/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:28.067238+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1432,
+      "arquivo_json": "msm_125059414_BR-BO_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:30.961867+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:35.025207+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:38.017181+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:40.761792+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:43.341434+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:45.993069+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:48.452826+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:51.531810+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:54.494578+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:51:57.363404+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:00.739277+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:03.809603+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1437,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:06.350295+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1414,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 109366776,
+      "url": "https://atlas.ripe.net/api/v2/measurements/109366776/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:09.140375+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1432,
+      "arquivo_json": "msm_109366776_BR-JP_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:11.888445+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:15.022437+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:18.230821+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:21.121955+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:24.128156+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:27.819824+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:30.755266+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:34.179528+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:36.798126+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:39.676137+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:43.090340+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:45.040581+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:47.139315+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1416,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→JP",
+      "measurement_id": 88535118,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88535118/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:49.100114+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1435,
+      "arquivo_json": "msm_88535118_BR-JP_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:51.155186+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:55.027964+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:52:59.331773+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:03.719786+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:07.723243+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:11.816856+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:15.104208+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:17.755826+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:21.337293+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:24.822534+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:27.607885+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:29.609276+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:33.320033+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1430,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 29349585,
+      "url": "https://atlas.ripe.net/api/v2/measurements/29349585/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:36.163365+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_29349585_BR-IN_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:39.401999+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:42.673318+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:45.643443+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1437,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:48.202818+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:51.484704+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:54.206896+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:53:57.176633+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:00.781961+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:03.875424+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:07.053665+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:09.387452+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:12.230477+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1435,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:14.078685+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1424,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→IN",
+      "measurement_id": 143876307,
+      "url": "https://atlas.ripe.net/api/v2/measurements/143876307/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:16.062901+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1433,
+      "arquivo_json": "msm_143876307_BR-IN_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:18.034131+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:21.754148+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:25.787186+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:30.420126+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:34.363777+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:37.536150+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:40.946649+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:44.016714+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:47.690461+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:50.865209+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:52.864413+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:55.370205+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:57.471624+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1426,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 168288242,
+      "url": "https://atlas.ripe.net/api/v2/measurements/168288242/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:54:59.268964+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1433,
+      "arquivo_json": "msm_168288242_BR-ZA_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:01.621205+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:05.277755+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:08.588232+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:11.954867+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:15.684369+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:19.328165+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:22.591106+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:25.775679+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:29.040787+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:31.929429+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:34.734558+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:36.693575+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:39.708968+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1425,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "BR→ZA",
+      "measurement_id": 188944367,
+      "url": "https://atlas.ripe.net/api/v2/measurements/188944367/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "6977,6891,6790,6659",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:42.585123+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1432,
+      "arquivo_json": "msm_188944367_BR-ZA_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:45.852274+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:48.851205+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1085,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:51.269574+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1094,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:54.033324+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:57.087189+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:55:59.761794+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:01.916073+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1079,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:04.684191+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:07.485275+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:10.729680+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:13.080409+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1077,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:15.274866+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1077,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:17.382232+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1073,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 20815287,
+      "url": "https://atlas.ripe.net/api/v2/measurements/20815287/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:20.244747+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_20815287_DE-DE_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:22.917321+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:25.983183+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1085,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:27.822920+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1093,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:29.908884+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:32.113376+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:34.782805+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:37.125996+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1079,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:38.881220+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:41.233507+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:44.006094+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:45.984675+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1077,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:47.479560+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1077,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:49.102752+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1074,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→DE",
+      "measurement_id": 94305941,
+      "url": "https://atlas.ripe.net/api/v2/measurements/94305941/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:50.547702+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_94305941_DE-DE_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:51.874328+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:55.206534+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1084,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:56:57.967667+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1093,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:00.796247+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:03.766966+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:06.942882+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1079,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:09.794058+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1079,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:12.413622+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:15.125676+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:18.204704+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:20.760784+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1079,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:22.643273+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1077,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:25.010273+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1072,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 137277732,
+      "url": "https://atlas.ripe.net/api/v2/measurements/137277732/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:27.009302+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_137277732_DE-PT_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:29.206273+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:31.855818+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1085,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:34.429559+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1096,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:37.181266+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:40.120069+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:42.577469+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:45.038883+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1079,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:47.801973+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:50.150695+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:52.608226+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:54.599793+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1077,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:56.902813+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1077,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:57:59.074144+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1076,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "DE→PT",
+      "measurement_id": 10590227,
+      "url": "https://atlas.ripe.net/api/v2/measurements/10590227/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7618,6826,6447,6396",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:01.525701+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1080,
+      "arquivo_json": "msm_10590227_DE-PT_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:03.982281+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:07.268277+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:10.192519+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1403,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:13.509987+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:16.213352+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:19.483492+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:22.015932+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:25.696589+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:28.666461+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:31.226700+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:33.794565+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:35.664764+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:37.636212+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 41365644,
+      "url": "https://atlas.ripe.net/api/v2/measurements/41365644/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:39.607287+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_41365644_AR-AR_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:41.354914+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:43.493879+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:45.524368+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1403,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:47.647748+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:50.228410+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:52.691348+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1437,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:58:58.522000+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:00.993739+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:03.431437+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:05.898938+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:08.050078+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:10.219986+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:12.051365+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "AR→AR",
+      "measurement_id": 23119200,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23119200/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7617,7505,7414,7542",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:13.756376+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_23119200_AR-AR_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:15.525278+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:18.453255+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:21.093251+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:24.077149+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:27.175037+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:30.400278+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1436,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:33.706313+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:37.390900+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:40.144346+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1388,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:43.236744+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:45.553442+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1437,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:47.875066+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:49.966459+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 25562100,
+      "url": "https://atlas.ripe.net/api/v2/measurements/25562100/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:51.929082+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_25562100_ES-PL_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:53.796710+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:57.249815+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T02:59:59.873089+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:02.330451+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:05.278219+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:08.420137+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:11.626135+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:15.241887+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:18.745785+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1388,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:22.388074+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:25.763845+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:28.548007+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1437,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:31.229398+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1431,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ES→PL",
+      "measurement_id": 159458473,
+      "url": "https://atlas.ripe.net/api/v2/measurements/159458473/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7703,6687,6926,7393",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:33.591229+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_159458473_ES-PL_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:35.707174+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:39.744722+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:42.344147+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:44.710327+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:47.724960+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1343,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:51.102345+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:54.177772+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:00:57.394983+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:01.303858+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:04.524832+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:07.394513+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:09.411799+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:11.337592+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1427,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 27849462,
+      "url": "https://atlas.ripe.net/api/v2/measurements/27849462/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:13.638425+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1371,
+      "arquivo_json": "msm_27849462_ZA-KE_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:15.782922+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:19.274269+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:22.691649+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:25.620090+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:29.005566+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1343,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:32.485506+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:36.263605+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:39.556488+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:42.623349+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:45.682549+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:48.558962+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1437,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:50.725165+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1437,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:53.367552+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1434,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "ZA→KE",
+      "measurement_id": 207185195,
+      "url": "https://atlas.ripe.net/api/v2/measurements/207185195/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7782,6935,7467,6993",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:55.928675+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1371,
+      "arquivo_json": "msm_207185195_ZA-KE_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:01:58.564508+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:01.146661+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:03.597357+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:06.101129+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:08.869855+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:11.283368+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:13.738988+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:16.223002+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:19.477515+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:22.660796+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:25.143750+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:27.292431+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:29.205900+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1430,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 88123092,
+      "url": "https://atlas.ripe.net/api/v2/measurements/88123092/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:31.391837+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_88123092_IN-SG_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1788669120,
+        "stop": 1788755519,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:33.542393+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-06.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1788755520,
+        "stop": 1788841919,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:37.140265+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-07.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1788841920,
+        "stop": 1788928319,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:40.166621+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-08.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1788928320,
+        "stop": 1789014719,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:43.174036+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-09.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789014720,
+        "stop": 1789101119,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:46.929580+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-10.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789101120,
+        "stop": 1789187519,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:50.304509+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1438,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-11.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789187520,
+        "stop": 1789273919,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:54.575494+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-12.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789273920,
+        "stop": 1789360319,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:02:58.234586+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-13.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789360320,
+        "stop": 1789446719,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:03:01.314779+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-14.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789446720,
+        "stop": 1789533119,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:03:04.986083+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-15.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789533120,
+        "stop": 1789619519,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:03:07.727702+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-16.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789619520,
+        "stop": 1789705919,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:03:10.264896+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1439,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-17.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789705920,
+        "stop": 1789792319,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:03:13.654201+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1426,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-18.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    },
+    {
+      "rota": "IN→SG",
+      "measurement_id": 23501970,
+      "url": "https://atlas.ripe.net/api/v2/measurements/23501970/results/",
+      "parametros": {
+        "start": 1789792320,
+        "stop": 1789878719,
+        "probe_ids": "7375,7269,6954,7277",
+        "format": "json"
+      },
+      "coletado_em_utc": "2026-09-30T03:03:16.720215+00:00",
+      "status_http": 200,
+      "quantidade_registros": 1440,
+      "arquivo_json": "msm_23501970_IN-SG_2026-09-19.json",
+      "reaproveitado": false,
+      "tipo": "ping",
+      "af": 4
+    }
+  ]
+}
