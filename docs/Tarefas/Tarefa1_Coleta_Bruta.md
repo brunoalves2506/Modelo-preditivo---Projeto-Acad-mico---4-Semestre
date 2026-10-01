@@ -176,7 +176,7 @@ Para definições detalhadas de cada coluna, ver [`docs/dicionario_v0.1.md`](htt
 | **Bruno Alves Ribeiro de Souza** | | | |
 | **Igor da Silva Alves Correa** | | | |
 | **Pedro Henrique Alexandre da Silva** | | | |
-| **Samuel de Oliveira Santos** | | | |
+| **Samuel de Oliveira Santos** | Realizei o  preenchimento de todos os topicos da tarefa 1.  Realizei o preenchimento do contrato de tarefas de acordo com o RFC. Realizei o Preenchimento do primeiro topico "Definição do problema" conforme estavam no RFC. Fiz o preenchimento do segundo topico "O que Coletar (e o que não criar) " Também fiz o preenchimento do topico 3, "Relatório de qualidade" também atuei no tópico quatro "Scrum" com o desenvolvimento das das três historias.| | |
 | **Victoria Agatha Rodrigues Fagundes** | Escrevi a introdução do Dicionário v0.1 definindo o que **não** entra nele (rótulo, `z_robusto`, `aumento_pct`, `mediana`, `MAD`) e a regra “RTT vazio ≠ 0”. Repliquei a tabela de colunas brutas na seção 3.1 e linkei a versão canônica em `docs/dicionario_v0.1.md`. | Confundir v0.1 com v0.2 e conferir quais colunas realmente existiam no CSV. | Manter o escopo e a regra “RTT vazio ≠ 0”; no v0.2, automatizar a conferência das colunas. |
 | **Wendel Henrique da Silva Rocha** *(Scrum Master)* | | | |
 
