@@ -36,6 +36,14 @@
 
 **Não sai daqui:** árvore treinada, profundidade escolhida, acurácia, F1.
 
+> **Observação sobre a coleta:** esta tarefa usa a **segunda coleta (v2, `v2-ping-ipv4`)**, e não a v1.
+> A v1 (medição 1009, cerca de 27 minutos) foi curta demais: nenhum fluxo atingiu 1.500 RTTs válidos.
+> A v2 usa 14 dias do mesh de anchors (06/09 a 20/09/2026, `seed = 42`, 12 rotas, 322 requisições à API):
+> Período A de 06 a 13/09 e Período B de 13 a 20/09 (UTC). A troca foi versionada em
+> `data_ripe_atlas/raw/v2/`, e o `raw` da v1 foi mantido intocado. Os nomes das colunas da v2
+> (`latencia_ms`, `enviados`, `recebidos`, `probe_id`) diferem do dicionário v0.1
+> (`avg`, `sent`, `rcvd`, `prb_id`); o mapeamento fica no dicionário v0.2.
+
 - [X] O notebook lê o bruto da Tarefa 1
 
 ---
@@ -46,15 +54,26 @@
 
 `data/raw/` permanece intocado. A auditoria vai para o diário; a tabela de trabalho, para `data/interim/`.
 
-- [ ] Contagem de linhas, fluxos, duplicatas e RTT vazio
+- [X] Contagem de linhas, fluxos, duplicatas e RTT vazio
 - [X] Nenhum RTT ausente foi gravado como 0
-- [ ] Período A e Período B não compartilham timestamp do mesmo fluxo
+- [X] Período A e Período B não compartilham timestamp do mesmo fluxo
 
-**N bruto:** 89.071 (ou 273.312 Se forem somadas as três capturas separadas)
-**N de fluxos:**  13.709 (ou 14.434 combinado)
-**Evidências: Arquivo CSV, e Inspeção dos dados**
-* **Ficheiro CSV com os dados brutos** ['data_ripe_atlas/raw/ripe_atlas_m1009_20260914T030005Z.csv'](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre/blob/main/data_ripe_atlas/raw/ripe_atlas_m1009_20260914T030005Z.csv)
-* **Inspeção do ficheiro CSV** Nenhum RTT foi gravado como 0; os 701 timeouts usam o valor sentinela -1 nas colunas min/max/avg (ex.: linha 483, prb_id=1008567, rcvd=0, avg=-1.0), tratado como ausência antes de qualquer cálculo. Dados brutos em data/raw/
+**N bruto:** 442.587 registros (Período A: 221.520 | Período B: 221.067)  
+**N de fluxos:** 92 (`prb_id | dst_addr`) no Período A e 88 no Período B (total único de 92 fluxos)  
+**Probes distintas:** 24  
+**Destinos distintos:** 23  
+**Duplicatas (timestamp, prb_id, dst_addr):** 0  
+**RTT vazio (timeouts, rcvd = 0):** 61.102 (na v2 o RTT ausente fica vazio; não há sentinela -1)
+**RTT (ms) — mínimo / mediana / máximo:** 0,44 / 57,74 / 1.001,10  
+
+**Evidências:**
+* **Arquivo CSV:** [`data_ripe_atlas/raw/v2/ripe_atlas_mesh_v2_ping_ipv4_periodo_a.csv`]
+[`data_ripe_atlas/raw/v2/ripe_atlas_mesh_v2_ping_ipv4_periodo_b.csv`]
+* **Metadados:** [`data_ripe_atlas/raw/v2/ripe_atlas_mesh_v2_ping_ipv4_metadata.json`]
+
+**Observações:**
+* RTTs ausentes/timeouts foram preservados como vazios (nulos) e sinalizados em `timeout_atual = 1`, sem preenchimento artificial com zero.  
+* Os Períodos A e B possuem contiguidade temporal estrita de 7 dias cada (Período A: 06/09/2026 04:32 a 13/09/2026 04:32 UTC; Período B: 13/09/2026 04:32 a 20/09/2026 04:32 UTC). Não há sobreposição de timestamps no mesmo fluxo  
 
 ## 2. Como obter o baseline
 
@@ -74,19 +93,26 @@ Uma ficha por `fluxo_id`. Só o Período A. O Período B não entra na conta e n
 | Campo da ficha  | Fórmula, somente Período A                                 |
 | --------------- | ---------------------------------------------------------- |
 | `mediana`       | mediana dos RTT válidos (ms)                               |
-| `MAD`           | mediana()                                                   |
+| `MAD`           | mediana()                                                  |
 | `jitter_tipico` | mediana do jitter nas medições em que o jitter existe (ms) |
 | `perda_tipica`  | mediana de `perda_pct`, inclusive timeout (%)              |
 | `prop_resposta` | medições com RTT válido / medições do período              |
 
 
-- [ ] Ficha conferida em pelo menos um fluxo curto e um fluxo longo (as medianas podem ser muito diferentes; as duas são “normal”)
+- [X] Ficha conferida em pelo menos um fluxo curto e um fluxo longo (as medianas podem ser muito diferentes; as duas são “normal”)
 - [X] Lista dos fluxos excluídos e o motivo (contagem abaixo de 1.500)
 
-**Fluxos com ficha:**  0
-**Fluxos excluídos:**  14.434 — motivo: nenhum fluxo atinge o piso de 1.500 RTTs válidos (máximo observado, somando as 3 coletas: 39 medições em um único fluxo)
-**Exemplo auditável (fluxo curto: mediana; fluxo longo: mediana):** os dois fluxos acima, com a ressalva explícita de que os números vêm de um teste de validação da fórmula, não de uma ficha oficial (já que nenhum fluxo tem volume suficiente ainda)
-**Achado a registrar no diário:** mudança abrupta de RTT do fluxo 7092 entre 14/09 e 26/09, como evidência de por que Período A precisa ser contínuo
+**Fluxos com ficha(`status = ok`):**  76
+**Fluxos excluídos:**  16 — motivo: não atingiram o piso de 1.500 RTTs válidos no Período A.
+**Lista dos 16 fluxos excluídos:**  [`6396|18.153.158.127`] (0), [`6447|18.153.158.127`] (0), [`6447|185.32.189.249`] (23), [`6447|212.119.5.254`] (21), [`6447|91.209.16.127`] (17), [`6826|18.153.158.127`] (0), [`6954|102.130.67.116`] (0), [`7269|102.130.67.116`] (0), [`7277|102.130.67.116`] (0), [`7375|102.130.67.116`] (0), [`7414|138.204.7.245`] (0), [`7414|190.124.192.162`] (0), [`7505|138.204.7.245`] (0), [`7542|138.204.7.245`] (0), [`7617|138.204.7.245`] (0), [`7618|18.153.158.127`] (0).
+**Exemplo auditável (fluxo curto: mediana; fluxo longo: mediana):**
+- Caminho Curto (`fluxo_id = 6659|148.163.220.5`):
+    RTTs válidos no A: 2.519
+    `mediana`: [`0,79 ms`] | MAD: [`0,10 ms`] | `jitter_tipico`: [`0,14 ms`] | `perda_tipica`: 0,0% | `prop_resposta`: 1,00 (100%)
+
+- Caminho Longo (`fluxo_id = 6891|196.10.53.7`):
+    RTTs válidos no A: 2.519
+    `mediana`: [`356,18 ms`] | `MAD`: [`1,10 ms`] | `jitter_tipico`: [`0,16 ms`] | `perda_tipica`: 0,0% | `prop_resposta`: 1,00 (100%)
 
 ## 3. Métricas de cada medição do Período B
 
@@ -99,7 +125,7 @@ Calcular só com a ficha congelada daquele `fluxo_id`.
 | `aumento_pct`     | (RTT atual − mediana) / mediana × 100                                   |
 | `jitter_relativo` | jitter atual / `jitter_tipico`                                          |
 | `perda_pct`       | (enviados − recebidos) / enviados × 100                                 |
-| `timeout_atual`   | 1 se não há RTT ou `perda_pct` = 100; senão 0                           |
+| `timeout_atual`   | 1 se não há RTT ou `perda_pct` = 100; senão 0                          |
 | `n5_timeout`      | timeouts nas últimas 5 medições deste fluxo, incluindo a atual (0 a 5)  |
 | `n5_aumento80`    | quantas das últimas 5 têm `aumento_pct` > 80                            |
 | `n5_risco`        | quantas das últimas 5 cumprem o critério da linha 5 da tabela de rótulo |
@@ -131,36 +157,77 @@ Cada linha do Período B, de um fluxo que tenha ficha. FALHA ganha de RISCO; RIS
 | 6     | **OK**    | nenhuma linha anterior                                                                                    | pico isolado também é OK                            |
 
 
-- [ ] Três exemplos auditáveis no diário: um OK de caminho longo (RTT alto e `z_robusto` baixo), um RISCO, um FALHA de caminho curto ou de timeout
-- [ ] Contagem OK / RISCO / FALHA no Período B
-- [ ] A classe **não** foi definida por “RTT > 100 ms” nem pelo nome da rota
-- [ ] O Período A não foi rotulado
+- [X] Três exemplos auditáveis no diário: um OK de caminho longo (RTT alto e `z_robusto` baixo), um RISCO, um FALHA de caminho curto ou de timeout
+- [X] Contagem OK / RISCO / FALHA no Período B
+- [X] A classe **não** foi definida por “RTT > 100 ms” nem pelo nome da rota
+- [X] O Período A não foi rotulado
 - [ ] Dicionário v0.2 lista as colunas proibidas na árvore: país, IP, `rota_id`, `fluxo_id`, RTT absoluto como substituto das métricas relativas
 
 **Contagem OK / RISCO / FALHA:**  
+- OK: [`142.384 medições`] (74,6%)
+- FALHA: [`32.788 medições`] (17,2%)
+- RISCO: [`15.684 medições`] (8,2%)
+
+**Cobertura:** 12 fluxos do Período B não têm ficha (`baseline_insuficiente`) e não recebem classe (30.211 linhas). Os 190.856 registros rotulados (OK + RISCO + FALHA) são os de fluxos com ficha.
+
+**Observação:** a linha 3 (`z_robusto` ≥ 3,5) é a que dispara 31.274 dos 32.788 FALHA (95%), pois o MAD de vários fluxos é da ordem de 0,1 ms. Isso segue a regra da tabela, mas deve ser considerado na Tarefa 3 (desbalanceamento das classes).
+
 **Evidências (três linhas reais, com as métricas e a ordem que disparou a classe):**
+  
+**Exemplo OK (caminho longo):** (`fluxo_id = 6659|103.167.46.8`, 13/09/2026 04:39:08 UTC):
+
+RTT: 283,20 ms | mediana: 283,27 ms | z_robusto: −0,16 | aumento_pct: −0,02% | jitter_relativo: 0,45 | perda_pct: 0,0% | n5_timeout: 0 | n5_aumento80: 0 | Classe: `OK`
+
+Regra de disparo: linha 6. Nenhuma das linhas 1 a 5 disparou. O RTT é alto (283 ms), mas normal para este fluxo, e por isso `z_robusto` é baixo.
+
+**Exemplo RISCO:** (`fluxo_id = 6396|185.32.189.249`):
+
+RTT: 42,52 ms | z_robusto: 1,72 | aumento_pct: 0,62% | jitter_relativo: 4,25 | perda_pct: 0,0% | crit_risco_ind: 1 | n5_risco: 2 | Classe: `RISCO`
+
+Regra de disparo: linha 5. O critério individual foi `jitter_relativo` ≥ 3 (4,25); `z_robusto` e `aumento_pct` estão abaixo dos limiares. Com `n5_risco` ≥ 2, vira RISCO.
+
+**Exemplo FALHA (caminho curto):** (`fluxo_id = 6659|23.179.216.22`, 14/09/2026 13:27:04 UTC):
+
+RTT: 6,60 ms | mediana: 1,63 ms | z_robusto: 24,85 | aumento_pct: 305,6% | perda_pct: 33,33% | n5_timeout: 0 | n5_aumento80: 1 | Classe: `FALHA`
+
+Regra de disparo: linha 1 (`perda_pct` ≥ 10: 1 pacote perdido em 3 = 33,33%). Como é a primeira linha verdadeira, a avaliação para aqui (a linha 3 também seria verdadeira).
 
 ## 5. Recorte para a árvore (ainda sem treinar)
 
 Dentro do Período B, por fluxo, em ordem de tempo:
 
-- [ ] Treino = trecho mais antigo; validação = trecho do meio; teste = trecho mais recente
-- [ ] Proporção de partida 50% / 20% / 30%, ajustada se um bloco ficar sem RISCO
-- [ ] Nenhum registro do Período A no treino
-- [ ] Corte com data e N de cada bloco
+- [X] Treino = trecho mais antigo; validação = trecho do meio; teste = trecho mais recente
+- [X] Proporção de partida 50% / 20% / 30%, ajustada se um bloco ficar sem RISCO
+- [X] Nenhum registro do Período A no treino
+- [X] Corte com data e N de cada bloco
 
 **Corte (datas e N treino / validação / teste):**
+* Treino (50% mais antigo): [`N = 95.406`] | Início: `2026-09-13T04:32:06Z` | Fim: `2026-09-16T18:09:50Z`.
+
+* Validação (20% do meio): [`N = 38.138`] | Início: `2026-09-16T14:10:11Z` | Fim: `2026-09-18T03:04:22Z`.
+
+* Teste (30% mais recente): [`N = 57.312`] | Início: `2026-09-17T22:46:09Z` | Fim: `2026-09-20T04:31:38Z`.
+
+**Regra do corte:** feito por `fluxo_id`, em ordem de tempo: treino = primeiros ⌊0,5·n⌋ registros do fluxo, validação = próximos ⌊0,2·n⌋, teste = o restante. As faixas de datas acima se sobrepõem porque cada fluxo é cortado no seu próprio ponto; dentro de um mesmo fluxo, treino < validação < teste, sem sobreposição e sem registros do Período A.
+
+**Classes por bloco (OK / RISCO / FALHA):** treino 72.857 / 6.582 / 15.967 | validação 27.180 / 3.388 / 7.570 | teste 42.347 / 5.714 / 9.251. Nenhum bloco ficou sem RISCO, então a proporção 50/20/30 não precisou de ajuste.
 
 ## 6. Scrum e diário
 
-- [ ] Board atualizado
+- [ X] Board atualizado
 
 **Link do board:**
 
 
 | Integrante | O que fiz nesta tarefa | Dificuldades | O que pretendo manter/ajustar |
 | ---------- | ---------------------- | ------------ | ----------------------------- |
-|            |                        |              |                               |
+|Bruno Alves Ribeiro de Souza            |Auxiliei no suporte ao ambiente e verificação da pipeline de dados.                        |Organização dos diretórios temporários.              |Manter a consistência na estrutura do pipeline.                               |
+|Igor da Silva Alves Correa            |Apoiei o desvinculamento das variáveis de identificação geográfica em relação ao rótulo.                        |Garantir o isolamento das colunas de auditoria.              |Automatizar a validação das colunas proibidas.                               |
+|Pedro Henrique Alexandre da Silva            |Revisão do diário e validação do cálculo das métricas relativas no Período B.                        |Entendimento das regras de fallback para MAD = 0.              |Manter o rigor conceitual nas análises.                               |
+|Samuel de Oliveira Santos            |Atuei na inspeção dos dados brutos e na verificação do piso de 1.500 RTTs para a ficha de baseline.                        |Tratar adequadamente a grande quantidade de timeouts sem zerar o RTT.              |Manter o foco na qualidade da extração.                               |
+|Victoria Agatha Rodrigues Fagundes            |Responsável pela documentação do Dicionário v0.2, discriminando colunas brutas, relativas e proibidas.                        |Separação estrita dos escopos das versões v0.1 e v0.2 do dicionário.              |Automatizar a checagem do schema de saída.                               |
+|Wendel Henrique da Silva Rocha (Scrum Master)            |Coordenei a execução da tarefa, montagem das fichas congeladas no Período A e separação dos blocos temporalmente.                        |Garantir que a ordem de precedência da rotulagem fosse aplicada estritamente sem inversões.              |Ajustar e otimizar os fluxos do Scrum para a Tarefa 3.                               |
+
 
 
 ---

@@ -167,7 +167,7 @@ Para definições detalhadas de cada coluna, ver [`docs/dicionario_v0.1.md`](htt
 2. **História 2 — Preservação de dados brutos com timeout:** Como engenheiro de dados, quero manter os registos originais em `data/raw/` preservando os timeouts (sem preencher RTT com zero) para garantir a integridade da medição.
 3. **História 3 — Separação temporal sem rotulagem:** Como cientista de dados, quero estruturar os dados nos Períodos A e B sem atribuir classes (`OK`, `RISCO`, `FALHA`) para estar em conformidade com as restrições da Tarefa 1.
 
-**Link do board:** [Quadro Kanban do Projeto (GitHub Projects / Trello)](https://github.com/users/brunoalves2506/projects/1/views/1)
+**Link do board:** [Quadro Trello do Projeto (GitHub Projects / Trello)](https://trello.com/b/igglkwdJ/desenvolvimento-preditor-de-falhas-e-rede)
 
 ## 5. Diário de bordo
 
@@ -176,7 +176,7 @@ Para definições detalhadas de cada coluna, ver [`docs/dicionario_v0.1.md`](htt
 | **Bruno Alves Ribeiro de Souza** | | | |
 | **Igor da Silva Alves Correa** | | | |
 | **Pedro Henrique Alexandre da Silva** | | | |
-| **Samuel de Oliveira Santos** | | | |
+| **Samuel de Oliveira Santos** | Realizei o  preenchimento de todos os topicos da tarefa 1.  Realizei o preenchimento do contrato de tarefas de acordo com o RFC. Realizei o Preenchimento do primeiro topico "Definição do problema" conforme estavam no RFC. Fiz o preenchimento do segundo topico "O que Coletar (e o que não criar) " Também fiz o preenchimento do topico 3, "Relatório de qualidade" atuei no tópico quatro "Scrum" com o desenvolvimento das das três historias e também na criação do board de desenvolvimento do projeto.| Compreenção do que estava sendo pedido, para mim as informaçoes estão muito vagas e por muitas vezes me senti perdido. | Eu não mudaria nada, porém se fosse para citar um ponto de melhoria seria a ortografia, com tantas outras preocupaçoes esse ponto discreto  mas importante acaba sendo esquecido.  |
 | **Victoria Agatha Rodrigues Fagundes** | Escrevi a introdução do Dicionário v0.1 definindo o que **não** entra nele (rótulo, `z_robusto`, `aumento_pct`, `mediana`, `MAD`) e a regra “RTT vazio ≠ 0”. Repliquei a tabela de colunas brutas na seção 3.1 e linkei a versão canônica em `docs/dicionario_v0.1.md`. | Confundir v0.1 com v0.2 e conferir quais colunas realmente existiam no CSV. | Manter o escopo e a regra “RTT vazio ≠ 0”; no v0.2, automatizar a conferência das colunas. |
 | **Wendel Henrique da Silva Rocha** *(Scrum Master)* | | | |
 
