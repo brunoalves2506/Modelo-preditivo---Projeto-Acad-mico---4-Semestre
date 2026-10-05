@@ -1,0 +1,730 @@
+{
+  "seed": 42,
+  "af": 4,
+  "measurement_type": "ping",
+  "probes_por_origem": 4,
+  "alvos_por_destino": 2,
+  "rotas": [
+    [
+      "BR",
+      "BR"
+    ],
+    [
+      "BR",
+      "UY"
+    ],
+    [
+      "BR",
+      "BO"
+    ],
+    [
+      "BR",
+      "JP"
+    ],
+    [
+      "BR",
+      "IN"
+    ],
+    [
+      "BR",
+      "ZA"
+    ],
+    [
+      "DE",
+      "DE"
+    ],
+    [
+      "DE",
+      "PT"
+    ],
+    [
+      "AR",
+      "AR"
+    ],
+    [
+      "ES",
+      "PL"
+    ],
+    [
+      "ZA",
+      "KE"
+    ],
+    [
+      "IN",
+      "SG"
+    ]
+  ],
+  "origens": {
+    "AR": [
+      {
+        "anchor_id": 4240,
+        "fqdn": "ar-fte-as61510.anchors.atlas.ripe.net",
+        "probe_id": 7617
+      },
+      {
+        "anchor_id": 3816,
+        "fqdn": "ar-bue-as4270.anchors.atlas.ripe.net",
+        "probe_id": 7505
+      },
+      {
+        "anchor_id": 4007,
+        "fqdn": "ar-vgg-as11815.anchors.atlas.ripe.net",
+        "probe_id": 7414
+      },
+      {
+        "anchor_id": 4247,
+        "fqdn": "ar-cor-as27976.anchors.atlas.ripe.net",
+        "probe_id": 7542
+      }
+    ],
+    "BR": [
+      {
+        "anchor_id": 2474,
+        "fqdn": "br-sao-as12008.anchors.atlas.ripe.net",
+        "probe_id": 6977
+      },
+      {
+        "anchor_id": 2334,
+        "fqdn": "br-bhz-as10417-client.anchors.atlas.ripe.net",
+        "probe_id": 6891
+      },
+      {
+        "anchor_id": 1690,
+        "fqdn": "br-sao-as57695.anchors.atlas.ripe.net",
+        "probe_id": 6790
+      },
+      {
+        "anchor_id": 1974,
+        "fqdn": "br-sao-as199524.anchors.atlas.ripe.net",
+        "probe_id": 6659
+      }
+    ],
+    "DE": [
+      {
+        "anchor_id": 4402,
+        "fqdn": "de-fra-as214895.anchors.atlas.ripe.net",
+        "probe_id": 7618
+      },
+      {
+        "anchor_id": 2341,
+        "fqdn": "de-rhe-as42184.anchors.atlas.ripe.net",
+        "probe_id": 6826
+      },
+      {
+        "anchor_id": 1509,
+        "fqdn": "de-lej-as35065.anchors.atlas.ripe.net",
+        "probe_id": 6447
+      },
+      {
+        "anchor_id": 1430,
+        "fqdn": "de-muc-as5539.anchors.atlas.ripe.net",
+        "probe_id": 6396
+      }
+    ],
+    "ES": [
+      {
+        "anchor_id": 2784,
+        "fqdn": "es-gro-as198731.anchors.atlas.ripe.net",
+        "probe_id": 7703
+      },
+      {
+        "anchor_id": 1827,
+        "fqdn": "es-mjv-as39069.anchors.atlas.ripe.net",
+        "probe_id": 6687
+      },
+      {
+        "anchor_id": 2539,
+        "fqdn": "es-mad-as48386-client.anchors.atlas.ripe.net",
+        "probe_id": 6926
+      },
+      {
+        "anchor_id": 3890,
+        "fqdn": "es-abz-as56958.anchors.atlas.ripe.net",
+        "probe_id": 7393
+      }
+    ],
+    "IN": [
+      {
+        "anchor_id": 3957,
+        "fqdn": "in-sxr-as138800.anchors.atlas.ripe.net",
+        "probe_id": 7375
+      },
+      {
+        "anchor_id": 3220,
+        "fqdn": "in-maa-as45117.anchors.atlas.ripe.net",
+        "probe_id": 7269
+      },
+      {
+        "anchor_id": 2519,
+        "fqdn": "in-bom-as12008.anchors.atlas.ripe.net",
+        "probe_id": 6954
+      },
+      {
+        "anchor_id": 3589,
+        "fqdn": "in-gaw-as9829-client.anchors.atlas.ripe.net",
+        "probe_id": 7277
+      }
+    ],
+    "ZA": [
+      {
+        "anchor_id": 4766,
+        "fqdn": "za-dur-as37668.anchors.atlas.ripe.net",
+        "probe_id": 7782
+      },
+      {
+        "anchor_id": 2708,
+        "fqdn": "za-jnb-as57695.anchors.atlas.ripe.net",
+        "probe_id": 6935
+      },
+      {
+        "anchor_id": 4110,
+        "fqdn": "za-cpt-as37199.anchors.atlas.ripe.net",
+        "probe_id": 7467
+      },
+      {
+        "anchor_id": 2507,
+        "fqdn": "za-jnb-as12008.anchors.atlas.ripe.net",
+        "probe_id": 6993
+      }
+    ]
+  },
+  "destinos": {
+    "AR": [
+      {
+        "anchor_id": 3066,
+        "fqdn": "ar-bhi-as28109.anchors.atlas.ripe.net",
+        "address_v4": "190.124.192.162",
+        "probe_id": 7099,
+        "msm_id": 41365644
+      },
+      {
+        "anchor_id": 1938,
+        "fqdn": "ar-ttd-as263777.anchors.atlas.ripe.net",
+        "address_v4": "138.204.7.245",
+        "probe_id": 6633,
+        "msm_id": 23119200
+      }
+    ],
+    "BO": [
+      {
+        "anchor_id": 4371,
+        "fqdn": "bo-cbb-as27839.anchors.atlas.ripe.net",
+        "address_v4": "200.58.72.14",
+        "probe_id": 7586,
+        "msm_id": 125059414
+      }
+    ],
+    "BR": [
+      {
+        "anchor_id": 1869,
+        "fqdn": "br-sao-as36236.anchors.atlas.ripe.net",
+        "address_v4": "148.163.220.5",
+        "probe_id": 6602,
+        "msm_id": 22680685
+      },
+      {
+        "anchor_id": 4609,
+        "fqdn": "br-sao-as401612.anchors.atlas.ripe.net",
+        "address_v4": "23.179.216.22",
+        "probe_id": 7708,
+        "msm_id": 155932418
+      }
+    ],
+    "DE": [
+      {
+        "anchor_id": 1656,
+        "fqdn": "de-dus-as209915.anchors.atlas.ripe.net",
+        "address_v4": "212.119.5.254",
+        "probe_id": 6535,
+        "msm_id": 20815287
+      },
+      {
+        "anchor_id": 4177,
+        "fqdn": "de-fra-as16509-client.anchors.atlas.ripe.net",
+        "address_v4": "18.153.158.127",
+        "probe_id": 7503,
+        "msm_id": 94305941
+      }
+    ],
+    "IN": [
+      {
+        "anchor_id": 2523,
+        "fqdn": "in-del-as12008.anchors.atlas.ripe.net",
+        "address_v4": "156.154.184.254",
+        "probe_id": 6953,
+        "msm_id": 29349585
+      },
+      {
+        "anchor_id": 4530,
+        "fqdn": "in-nvm-as149251.anchors.atlas.ripe.net",
+        "address_v4": "103.179.107.33",
+        "probe_id": 7674,
+        "msm_id": 143876307
+      }
+    ],
+    "JP": [
+      {
+        "anchor_id": 4314,
+        "fqdn": "jp-osa-as45679.anchors.atlas.ripe.net",
+        "address_v4": "103.167.46.8",
+        "probe_id": 7560,
+        "msm_id": 109366776
+      },
+      {
+        "anchor_id": 1475,
+        "fqdn": "jp-tyo-as2497.anchors.atlas.ripe.net",
+        "address_v4": "202.214.97.16",
+        "probe_id": 6425,
+        "msm_id": 88535118
+      }
+    ],
+    "KE": [
+      {
+        "anchor_id": 2387,
+        "fqdn": "ke-nbo-as37578.anchors.atlas.ripe.net",
+        "address_v4": "196.6.220.42",
+        "probe_id": 6882,
+        "msm_id": 27849462
+      },
+      {
+        "anchor_id": 4807,
+        "fqdn": "ke-nbo-as37271.anchors.atlas.ripe.net",
+        "address_v4": "197.157.75.67",
+        "probe_id": 7798,
+        "msm_id": 207185195
+      }
+    ],
+    "PL": [
+      {
+        "anchor_id": 2253,
+        "fqdn": "pl-ozm-as16276.anchors.atlas.ripe.net",
+        "address_v4": "51.83.252.103",
+        "probe_id": 6800,
+        "msm_id": 25562100
+      },
+      {
+        "anchor_id": 4656,
+        "fqdn": "pl-gdn-as203662.anchors.atlas.ripe.net",
+        "address_v4": "151.245.112.32",
+        "probe_id": 7727,
+        "msm_id": 159458473
+      }
+    ],
+    "PT": [
+      {
+        "anchor_id": 4515,
+        "fqdn": "pt-lis-as212073.anchors.atlas.ripe.net",
+        "address_v4": "91.209.16.127",
+        "probe_id": 7647,
+        "msm_id": 137277732
+      },
+      {
+        "anchor_id": 1203,
+        "fqdn": "pt-lis-as62416.anchors.atlas.ripe.net",
+        "address_v4": "185.32.189.249",
+        "probe_id": 6328,
+        "msm_id": 10590227
+      }
+    ],
+    "SG": [
+      {
+        "anchor_id": 3355,
+        "fqdn": "sg-sin-as37468.anchors.atlas.ripe.net",
+        "address_v4": "102.130.67.116",
+        "probe_id": 7219,
+        "msm_id": 88123092
+      },
+      {
+        "anchor_id": 2018,
+        "fqdn": "sg-sin-as24482.anchors.atlas.ripe.net",
+        "address_v4": "203.175.175.206",
+        "probe_id": 6676,
+        "msm_id": 23501970
+      }
+    ],
+    "UY": [
+      {
+        "anchor_id": 4074,
+        "fqdn": "uy-mvd-as28000.anchors.atlas.ripe.net",
+        "address_v4": "200.7.84.24",
+        "probe_id": 7460,
+        "msm_id": 86022641
+      },
+      {
+        "anchor_id": 3080,
+        "fqdn": "uy-mvd-as6057.anchors.atlas.ripe.net",
+        "address_v4": "190.64.201.9",
+        "probe_id": 7147,
+        "msm_id": 46652883
+      }
+    ],
+    "ZA": [
+      {
+        "anchor_id": 4164,
+        "fqdn": "za-cpt-as328365.anchors.atlas.ripe.net",
+        "address_v4": "102.222.103.100",
+        "probe_id": 7746,
+        "msm_id": 168288242
+      },
+      {
+        "anchor_id": 4736,
+        "fqdn": "za-jnb-as37474.anchors.atlas.ripe.net",
+        "address_v4": "196.10.53.7",
+        "probe_id": 7776,
+        "msm_id": 188944367
+      }
+    ]
+  },
+  "lookup_strategy": "anchor-measurements-v3-ping-ipv4",
+  "inicio_utc": "2026-09-06T04:32:00+00:00",
+  "fim_utc": "2026-09-20T04:32:00+00:00",
+  "dias_periodo_a": 7,
+  "dias_periodo_b": 7,
+  "tarefas": [
+    {
+      "rota": "BR→BR",
+      "origem": "BR",
+      "destino": "BR",
+      "msm_id": 22680685,
+      "target_anchor_id": 1869,
+      "dst_fqdn": "br-sao-as36236.anchors.atlas.ripe.net",
+      "dst_addr_plano": "148.163.220.5",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→BR",
+      "origem": "BR",
+      "destino": "BR",
+      "msm_id": 155932418,
+      "target_anchor_id": 4609,
+      "dst_fqdn": "br-sao-as401612.anchors.atlas.ripe.net",
+      "dst_addr_plano": "23.179.216.22",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→UY",
+      "origem": "BR",
+      "destino": "UY",
+      "msm_id": 86022641,
+      "target_anchor_id": 4074,
+      "dst_fqdn": "uy-mvd-as28000.anchors.atlas.ripe.net",
+      "dst_addr_plano": "200.7.84.24",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→UY",
+      "origem": "BR",
+      "destino": "UY",
+      "msm_id": 46652883,
+      "target_anchor_id": 3080,
+      "dst_fqdn": "uy-mvd-as6057.anchors.atlas.ripe.net",
+      "dst_addr_plano": "190.64.201.9",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→BO",
+      "origem": "BR",
+      "destino": "BO",
+      "msm_id": 125059414,
+      "target_anchor_id": 4371,
+      "dst_fqdn": "bo-cbb-as27839.anchors.atlas.ripe.net",
+      "dst_addr_plano": "200.58.72.14",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→JP",
+      "origem": "BR",
+      "destino": "JP",
+      "msm_id": 109366776,
+      "target_anchor_id": 4314,
+      "dst_fqdn": "jp-osa-as45679.anchors.atlas.ripe.net",
+      "dst_addr_plano": "103.167.46.8",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→JP",
+      "origem": "BR",
+      "destino": "JP",
+      "msm_id": 88535118,
+      "target_anchor_id": 1475,
+      "dst_fqdn": "jp-tyo-as2497.anchors.atlas.ripe.net",
+      "dst_addr_plano": "202.214.97.16",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→IN",
+      "origem": "BR",
+      "destino": "IN",
+      "msm_id": 29349585,
+      "target_anchor_id": 2523,
+      "dst_fqdn": "in-del-as12008.anchors.atlas.ripe.net",
+      "dst_addr_plano": "156.154.184.254",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→IN",
+      "origem": "BR",
+      "destino": "IN",
+      "msm_id": 143876307,
+      "target_anchor_id": 4530,
+      "dst_fqdn": "in-nvm-as149251.anchors.atlas.ripe.net",
+      "dst_addr_plano": "103.179.107.33",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→ZA",
+      "origem": "BR",
+      "destino": "ZA",
+      "msm_id": 168288242,
+      "target_anchor_id": 4164,
+      "dst_fqdn": "za-cpt-as328365.anchors.atlas.ripe.net",
+      "dst_addr_plano": "102.222.103.100",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "BR→ZA",
+      "origem": "BR",
+      "destino": "ZA",
+      "msm_id": 188944367,
+      "target_anchor_id": 4736,
+      "dst_fqdn": "za-jnb-as37474.anchors.atlas.ripe.net",
+      "dst_addr_plano": "196.10.53.7",
+      "probe_ids": [
+        6977,
+        6891,
+        6790,
+        6659
+      ]
+    },
+    {
+      "rota": "DE→DE",
+      "origem": "DE",
+      "destino": "DE",
+      "msm_id": 20815287,
+      "target_anchor_id": 1656,
+      "dst_fqdn": "de-dus-as209915.anchors.atlas.ripe.net",
+      "dst_addr_plano": "212.119.5.254",
+      "probe_ids": [
+        7618,
+        6826,
+        6447,
+        6396
+      ]
+    },
+    {
+      "rota": "DE→DE",
+      "origem": "DE",
+      "destino": "DE",
+      "msm_id": 94305941,
+      "target_anchor_id": 4177,
+      "dst_fqdn": "de-fra-as16509-client.anchors.atlas.ripe.net",
+      "dst_addr_plano": "18.153.158.127",
+      "probe_ids": [
+        7618,
+        6826,
+        6447,
+        6396
+      ]
+    },
+    {
+      "rota": "DE→PT",
+      "origem": "DE",
+      "destino": "PT",
+      "msm_id": 137277732,
+      "target_anchor_id": 4515,
+      "dst_fqdn": "pt-lis-as212073.anchors.atlas.ripe.net",
+      "dst_addr_plano": "91.209.16.127",
+      "probe_ids": [
+        7618,
+        6826,
+        6447,
+        6396
+      ]
+    },
+    {
+      "rota": "DE→PT",
+      "origem": "DE",
+      "destino": "PT",
+      "msm_id": 10590227,
+      "target_anchor_id": 1203,
+      "dst_fqdn": "pt-lis-as62416.anchors.atlas.ripe.net",
+      "dst_addr_plano": "185.32.189.249",
+      "probe_ids": [
+        7618,
+        6826,
+        6447,
+        6396
+      ]
+    },
+    {
+      "rota": "AR→AR",
+      "origem": "AR",
+      "destino": "AR",
+      "msm_id": 41365644,
+      "target_anchor_id": 3066,
+      "dst_fqdn": "ar-bhi-as28109.anchors.atlas.ripe.net",
+      "dst_addr_plano": "190.124.192.162",
+      "probe_ids": [
+        7617,
+        7505,
+        7414,
+        7542
+      ]
+    },
+    {
+      "rota": "AR→AR",
+      "origem": "AR",
+      "destino": "AR",
+      "msm_id": 23119200,
+      "target_anchor_id": 1938,
+      "dst_fqdn": "ar-ttd-as263777.anchors.atlas.ripe.net",
+      "dst_addr_plano": "138.204.7.245",
+      "probe_ids": [
+        7617,
+        7505,
+        7414,
+        7542
+      ]
+    },
+    {
+      "rota": "ES→PL",
+      "origem": "ES",
+      "destino": "PL",
+      "msm_id": 25562100,
+      "target_anchor_id": 2253,
+      "dst_fqdn": "pl-ozm-as16276.anchors.atlas.ripe.net",
+      "dst_addr_plano": "51.83.252.103",
+      "probe_ids": [
+        7703,
+        6687,
+        6926,
+        7393
+      ]
+    },
+    {
+      "rota": "ES→PL",
+      "origem": "ES",
+      "destino": "PL",
+      "msm_id": 159458473,
+      "target_anchor_id": 4656,
+      "dst_fqdn": "pl-gdn-as203662.anchors.atlas.ripe.net",
+      "dst_addr_plano": "151.245.112.32",
+      "probe_ids": [
+        7703,
+        6687,
+        6926,
+        7393
+      ]
+    },
+    {
+      "rota": "ZA→KE",
+      "origem": "ZA",
+      "destino": "KE",
+      "msm_id": 27849462,
+      "target_anchor_id": 2387,
+      "dst_fqdn": "ke-nbo-as37578.anchors.atlas.ripe.net",
+      "dst_addr_plano": "196.6.220.42",
+      "probe_ids": [
+        7782,
+        6935,
+        7467,
+        6993
+      ]
+    },
+    {
+      "rota": "ZA→KE",
+      "origem": "ZA",
+      "destino": "KE",
+      "msm_id": 207185195,
+      "target_anchor_id": 4807,
+      "dst_fqdn": "ke-nbo-as37271.anchors.atlas.ripe.net",
+      "dst_addr_plano": "197.157.75.67",
+      "probe_ids": [
+        7782,
+        6935,
+        7467,
+        6993
+      ]
+    },
+    {
+      "rota": "IN→SG",
+      "origem": "IN",
+      "destino": "SG",
+      "msm_id": 88123092,
+      "target_anchor_id": 3355,
+      "dst_fqdn": "sg-sin-as37468.anchors.atlas.ripe.net",
+      "dst_addr_plano": "102.130.67.116",
+      "probe_ids": [
+        7375,
+        7269,
+        6954,
+        7277
+      ]
+    },
+    {
+      "rota": "IN→SG",
+      "origem": "IN",
+      "destino": "SG",
+      "msm_id": 23501970,
+      "target_anchor_id": 2018,
+      "dst_fqdn": "sg-sin-as24482.anchors.atlas.ripe.net",
+      "dst_addr_plano": "203.175.175.206",
+      "probe_ids": [
+        7375,
+        7269,
+        6954,
+        7277
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "registros_brutos": 442587,
+  "registros_tabela_tratada": 442587,
+  "descartadas_sem_sent": 0,
+  "n_fluxos": 92,
+  "caminhos_curtos": [
+    "AR→AR",
+    "BR→BR",
+    "DE→DE"
+  ],
+  "caminhos_longos": [
+    "BR→IN",
+    "BR→JP",
+    "BR→ZA"
+  ],
+  "duplicatas": 0,
+  "timeouts": 61102,
+  "registros_periodo_a": 221520,
+  "registros_periodo_b": 221067,
+  "fluxos_com_piso_no_A": 76,
+  "campos_ausentes": {
+    "fluxo_id": 0,
+    "probe_id": 0,
+    "dst_addr": 0,
+    "measurement_id": 0,
+    "timestamp": 0,
+    "datetime_utc": 0,
+    "latencia_ms": 61102,
+    "rtt_min_ms": 61102,
+    "rtt_max_ms": 61102,
+    "enviados": 0,
+    "recebidos": 0,
+    "perda_pct": 0,
+    "jitter_ms": 61434,
+    "timeout_atual": 0,
+    "pais_origem": 0,
+    "pais_destino": 0,
+    "rota": 0,
+    "periodo": 0
+  },
+  "rtt_perda_min_mediana_max": {
+    "latencia_ms": {
+      "min": 0.4429,
+      "median": 57.739,
+      "max": 1001.0965
+    },
+    "perda_pct": {
+      "min": 0.0,
+      "median": 0.0,
+      "max": 100.0
+    }
+  }
+}
