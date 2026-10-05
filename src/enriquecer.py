@@ -19,6 +19,6 @@ if __name__ == "__main__":
     df = pd.read_csv(CSV_TRATADO)
     df_enriquecido = enriquecer_dados(df)
     # Salva o arquivo final
-    caminho_saida = CSV_TRATADO.replace('.csv', '_enriquecido.csv')
+    caminho_saida = CSV_TRATADO.parent / (CSV_TRATADO.stem + '_enriquecido' + CSV_TRATADO.suffix)
     df_enriquecido.to_csv(caminho_saida, index=False)
     print(f"[enriquecer] Arquivo salvo em: {caminho_saida}")
