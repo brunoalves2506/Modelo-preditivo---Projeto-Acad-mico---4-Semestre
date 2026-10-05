@@ -161,7 +161,7 @@ Cada linha do Período B, de um fluxo que tenha ficha. FALHA ganha de RISCO; RIS
 - [X] Contagem OK / RISCO / FALHA no Período B
 - [X] A classe **não** foi definida por “RTT > 100 ms” nem pelo nome da rota
 - [X] O Período A não foi rotulado
-- [ ] Dicionário v0.2 lista as colunas proibidas na árvore: país, IP, `rota_id`, `fluxo_id`, RTT absoluto como substituto das métricas relativas
+- [X] Dicionário v0.2 lista as colunas proibidas na árvore: país, IP, `rota_id`, `fluxo_id`, RTT absoluto como substituto das métricas relativas
 
 **Contagem OK / RISCO / FALHA:**  
 - OK: [`142.384 medições`] (74,6%)
