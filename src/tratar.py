@@ -33,7 +33,7 @@ def tratar(df: pd.DataFrame) -> pd.DataFrame:
     df["dup"] = pd.to_numeric(df["dup"], errors="coerce").fillna(0).astype(int)
 
     df["sucesso"] = (df["rcvd"] > 0) & (df["min"].notna())
-    df["perda_pacotes"] = (1 - df["rcvd"] / df["sent"]).where(df["sent"] > 0, pd.NA)
+    df["perda_pacotes"] = (1 - df["rcvd"] / df["sent"]).where(df["sent"] > 0, pd.NA).clip(0, 1)
     
     return df
 
