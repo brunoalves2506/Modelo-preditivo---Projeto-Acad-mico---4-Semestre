@@ -6,8 +6,8 @@ from config import DATA_PROCESSED, DATA_RAW
 # ==========================================
 # 1. CONFIGURAÇÕES INICIAIS E CAMINHOS
 # ==========================================
-CSV_PERIODO_A = DATA_RAW / "ripe_atlas_mesh_v2_ping_ipv4_periodo_a.csv"
-CSV_PERIODO_B = DATA_RAW / "ripe_atlas_mesh_v2_ping_ipv4_periodo_b.csv"
+CSV_PERIODO_A = DATA_RAW.parent.parent / "data_ripe_atlas" / "raw" / "v2" / "ripe_atlas_mesh_v2_ping_ipv4_periodo_a.csv"
+CSV_PERIODO_B = DATA_RAW.parent.parent / "data_ripe_atlas" / "raw" / "v2" / "ripe_atlas_mesh_v2_ping_ipv4_periodo_b.csv"
 
 # Mapeamento de colunas (v2 -> Padrão do projeto)
 COLUNAS_MAP = {
