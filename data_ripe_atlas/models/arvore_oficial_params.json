@@ -1,0 +1,23 @@
+{
+  "criterio": "gini",
+  "max_depth_pedido": 4,
+  "min_samples_leaf": 100,
+  "random_state": 42,
+  "profundidade_obtida": 4,
+  "folhas": 8,
+  "features": [
+    "z_robusto",
+    "aumento_pct",
+    "jitter_relativo",
+    "perda_pct",
+    "timeout_atual",
+    "n5_timeout",
+    "n5_aumento80",
+    "n5_risco"
+  ],
+  "alvo": "classe",
+  "treinada_em": "treino.csv",
+  "escolha_de_hiperparametros": "validacao.csv (F1 macro, tolerancia 0.005)",
+  "f1_macro_validacao": 0.996938,
+  "scikit_learn": "1.9.1"
+}

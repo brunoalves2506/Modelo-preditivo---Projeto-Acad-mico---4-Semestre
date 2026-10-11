@@ -14,7 +14,7 @@
 **Scrum Master da tarefa:** Wendel Henrique da Silva Rocha 
 **Repositório GitHub:** [Modelo Preditivo - Projeto Académico](https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre.git)
 
-> Esta tarefa lê o `data/raw/` da Tarefa 1. Não troca a coleta sem versionar.
+> Esta tarefa lê o `data_ripe_atlas/raw/v2/` da Tarefa 1. Não troca a coleta sem versionar.
 >
 > O trabalho é **obter o baseline de cada fluxo e rotular o Período B** com a tabela desta página. A árvore não entra aqui. País, IP e rota não entram na tabela que a árvore vai ler.
 >
@@ -52,7 +52,7 @@
 
 ## 1. Inspeção do bruto (ainda sem rótulo)
 
-`data/raw/` permanece intocado. A auditoria vai para o diário; a tabela de trabalho, para `data/interim/`.
+`data_ripe_atlas/raw/v2/` permanece intocado. A auditoria vai para o diário; a tabela de trabalho, para `data_ripe_atlas/processed/`.
 
 - [X] Contagem de linhas, fluxos, duplicatas e RTT vazio
 - [X] Nenhum RTT ausente foi gravado como 0

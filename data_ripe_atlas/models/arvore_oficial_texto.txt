@@ -1,0 +1,22 @@
+|--- z_robusto <= 3.50
+|   |--- n5_risco <= 1.50
+|   |   |--- perda_pct <= 16.67
+|   |   |   |--- n5_aumento80 <= 0.50
+|   |   |   |   |--- class: OK
+|   |   |   |--- n5_aumento80 >  0.50
+|   |   |   |   |--- class: OK
+|   |   |--- perda_pct >  16.67
+|   |   |   |--- class: FALHA
+|   |--- n5_risco >  1.50
+|   |   |--- z_robusto <= 1.99
+|   |   |   |--- jitter_relativo <= 3.00
+|   |   |   |   |--- class: OK
+|   |   |   |--- jitter_relativo >  3.00
+|   |   |   |   |--- class: RISCO
+|   |   |--- z_robusto >  1.99
+|   |   |   |--- z_robusto <= 2.02
+|   |   |   |   |--- class: RISCO
+|   |   |   |--- z_robusto >  2.02
+|   |   |   |   |--- class: RISCO
+|--- z_robusto >  3.50
+|   |--- class: FALHA
