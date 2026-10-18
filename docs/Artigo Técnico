@@ -1,4 +1,7 @@
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Árvore, Floresta ou Boosting? Escolhendo o Modelo Ideal para Predição de Falhas em Redes</title>
     <style>
@@ -193,6 +196,10 @@
             font-size: 1.2rem;
         }
 
+        .table-wrap {
+            overflow-x: auto;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -228,6 +235,13 @@
             overflow-x: auto;
         }
 
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+            font-size: 0.85rem;
+        }
+
         .highlight-box {
             background-color: #eff6ff;
             border-left: 4px solid var(--secondary);
@@ -242,6 +256,16 @@
             padding: 1.25rem;
             margin: 1.5rem 0;
             border-radius: 0 8px 8px 0;
+        }
+
+        /* CAMPOS A PREENCHER COM OS RESULTADOS REAIS DO SCRIPT */
+        .fill {
+            background-color: #fef9c3;
+            border: 1px dashed #ca8a04;
+            border-radius: 4px;
+            padding: 0.05rem 0.4rem;
+            color: #713f12;
+            white-space: nowrap;
         }
 
         /* CARTÕES DE AUTORES NO FINAL */
@@ -300,8 +324,8 @@
             margin: 0.5rem 0;
         }
     </style>
-
-
+</head>
+<body>
 
     <!-- CABEÇALHO / NAVBAR -->
     <nav>
@@ -320,7 +344,7 @@
     <header>
         <h1>Árvore, floresta ou boosting? Escolhendo o modelo ideal para predição de falhas em rede</h1>
         <p>Um guia técnico prático para estudantes de TI justificando a escolha do <strong>Random Forest</strong> em cenários de infraestrutura de rede baseado em dados experimentais.</p>
-        
+
         <div class="authors-header">
             <div class="author-mini">
                 <img src="https://avatars.githubusercontent.com/u/245477457?v=4" alt="Foto Bruno Alves">
@@ -372,8 +396,8 @@
         <!-- INTRODUÇÃO -->
         <section id="introducao">
             <h2>1. Introdução ao Problema</h2>
-            <p>Imagine gerenciar uma rede corporativa onde um ataque de negação de serviço (DDoS) ou a degradação silenciosa de um enlace crítico de fibra passam despercebidos pelos sistemas tradicionais baseados em limites estáticos (*thresholds*), derrubando serviços essenciais antes que a equipe de TI consiga agir. O aprendizado de máquina entra exatamente para antecipar esses cenários analisando padrões complexos de telemetria.</p>
-            
+            <p>Imagine gerenciar uma rede corporativa onde um ataque de negação de serviço (DDoS) ou a degradação silenciosa de um enlace crítico de fibra passam despercebidos pelos sistemas tradicionais baseados em limites estáticos (<em>thresholds</em>), derrubando serviços essenciais antes que a equipe de TI consiga agir. O aprendizado de máquina entra exatamente para antecipar esses cenários analisando padrões complexos de telemetria.</p>
+
             <div class="highlight-box">
                 <strong>O que você vai aprender:</strong> Compreender a intuição por trás de Árvores de Decisão, Random Forest e XGBoost através de exemplos concretos, analisar dados reais de um experimento de rede, e entender por que escolhemos o <em>Random Forest</em> para o nosso preditor de falhas.
             </div>
@@ -430,7 +454,8 @@
         <section id="comparativo">
             <h2>3. Quadro Comparativo dos Modelos</h2>
             <p>A tabela abaixo resume o comportamento estrutural dos três modelos avaliados pelo grupo:</p>
-            
+
+            <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
@@ -485,63 +510,198 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </section>
 
         <!-- EXPERIMENTO E CÓDIGO -->
         <section id="experimento">
             <h2>4. Experimento no Preditor de Redes e Código</h2>
-            <p>Para fundamentar nossa decisão, estruturamos um experimento utilizando dados de telemetria de enlaces de rede divididos em <strong>80% para treino e 20% para teste</strong>, fixando a semente aleatória em <code>random_state=42</code>.</p>
-            
-            <h3>Trecho de Código em Python</h3>
-            <p>Utilizamos as bibliotecas <code>scikit-learn</code> (v1.4.0) e <code>xgboost</code> (v2.0.3):</p>
-            <pre><code>from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import DecisionTreeClassifier
-from xgboost import XGBClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, confusion_matrix
-import pandas as pd
+            <p>Para fundamentar nossa decisão, treinamos os três modelos com medições de rede do projeto <strong>RIPE Atlas</strong>. Os dados já foram processados e divididos em dois arquivos, <code>treino.csv</code> e <code>teste.csv</code>, na pasta <code>data_ripe_atlas/processed</code>. Cada medição recebe uma de três classes: <strong>OK</strong>, <strong>RISCO</strong> ou <strong>FALHA</strong>. Todos os modelos usam <code>random_state=42</code> para que o resultado seja reproduzível.</p>
 
-# Carregamento dos dados de telemetria de rede
-df = pd.read_csv("telemetria_rede.csv")
-X = df.drop(columns=['falha_enlace'])
-y = df['falha_enlace']
+            <h3>Preparação dos dados</h3>
+            <ol>
+                <li><strong>Leitura:</strong> o script carrega os dois CSVs e avisa se os arquivos não forem encontrados.</li>
+                <li><strong>Rótulos numéricos:</strong> as classes viram números (OK = 0, RISCO = 1, FALHA = 2), porque o XGBoost exige rótulos numéricos.</li>
+                <li><strong>Limpeza de colunas:</strong> identificadores, datas, endereços e rotas (como <code>fluxo_id</code>, <code>prb_id</code>, <code>dst_addr</code>, <code>timestamp</code> e <code>rota</code>) são removidos, para que o modelo aprenda apenas com as métricas de rede.</li>
+            </ol>
 
-# Divisão honesta treino/teste
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Modelos com ajuste comparável de hiperparâmetros
-rf_model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
-rf_model.fit(X_train, y_train)
-
-preds = rf_model.predict(X_test)
-print("Matriz de Confusão:\n", confusion_matrix(y_test, preds))
-print(classification_report(y_test, preds))
-</code></pre>
-            <p style="margin-top: 1rem;"><small>👉 O código completo do experimento e os notebooks de simulação estão disponíveis no nosso <a href="https://github.com" target="_blank" style="color: var(--secondary);">Repositório GitHub: Modelo Preditivo - Projeto Acadêmico</a>.</small></p>
-
-            <h3>Resultados e Matriz de Confusão</h3>
-            <p>Em redes, classes de falha são desbalanceadas. Relatar precisão, recall e matriz de confusão evita métricas enganosas:</p>
-            
-            <!-- FIGURA 3: Matriz de Confusão e Métricas -->
-            <div class="figure-box">
-                <div class="mock-diagram" style="text-align: left; display: inline-block;">
-                    Matriz de Confusão (Random Forest):<br>
-                    [[ 1850 (Verdadeiro Negativo) |  15 (Falso Positivo) ]]<br>
-                    [[   12 (Falso Negativo)       | 123 (Verdadeiro Positivo)]]<br><br>
-                    Métricas Globais: Acurácia: 98.6% | Precisão: 89.1% | Recall: 91.1% | F1-Score: 0.90
-                </div>
-                <div class="figure-caption">Figura 3: Matriz de confusão e relatório de desempenho obtido pelo Random Forest no conjunto de teste.</div>
+            <h3>Configuração dos três modelos</h3>
+            <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Hiperparâmetros usados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Árvore de Decisão</td>
+                        <td><code>max_depth=5</code>, <code>random_state=42</code></td>
+                    </tr>
+                    <tr>
+                        <td>Random Forest</td>
+                        <td><code>n_estimators=100</code>, <code>max_depth=5</code>, <code>random_state=42</code></td>
+                    </tr>
+                    <tr>
+                        <td>XGBoost</td>
+                        <td><code>n_estimators=100</code>, <code>max_depth=5</code>, <code>learning_rate=0.1</code>, <code>random_state=42</code></td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
 
-            <!-- FIGURA 4: Gráfico de Métricas -->
+            <h3>Script de treinamento em Python</h3>
+            <p>O script abaixo treina cada modelo, mede o tempo de treino e de predição, calcula as métricas no conjunto de teste e imprime a matriz de confusão e a tabela final. Ele usa as bibliotecas <code>pandas</code>, <code>scikit-learn</code> e <code>xgboost</code>; o método <code>to_markdown</code> exige também a biblioteca <code>tabulate</code>.</p>
+            <pre><code>import pandas as pd
+import time
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+
+print("Iniciando o treinamento dos Modelos - Equipe 18...\n")
+
+# Lendo os arquivos direto da pasta processada do projeto
+try:
+    df_treino = pd.read_csv('data_ripe_atlas/processed/treino.csv')
+    df_teste = pd.read_csv('data_ripe_atlas/processed/teste.csv')
+    print("Arquivos CSV carregados com sucesso!\n")
+except FileNotFoundError:
+    print("ERRO: O Python não achou os arquivos. Certifique-se de rodar o comando na pasta raiz do projeto.")
+    exit()
+
+# Mapeando OK = 0, RISCO = 1, FALHA = 2 (Exigência do XGBoost)
+mapeamento_classes = {'OK': 0, 'RISCO': 1, 'FALHA': 2}
+
+# Transformando a coluna de texto em números
+df_treino['classe_num'] = df_treino['classe'].map(mapeamento_classes)
+df_teste['classe_num'] = df_teste['classe'].map(mapeamento_classes)
+
+# Limpando colunas inúteis (ID, data, IP, etc) para a IA ler apenas as métricas de rede
+colunas_para_remover = [
+    'fluxo_id', 'prb_id', 'dst_addr', 'measurement_id', 'timestamp', 
+    'datetime_utc', 'pais_origem', 'pais_destino', 'rota', 'periodo', 
+    'classe', 'classe_num', 'conjunto'
+]
+
+X_train = df_treino.drop(colunas_para_remover, axis=1)
+y_train = df_treino['classe_num']
+X_test = df_teste.drop(colunas_para_remover, axis=1)
+y_test = df_teste['classe_num']
+
+# Configurando os 3 modelos exigidos
+modelos = {
+    "Árvore de Decisão": DecisionTreeClassifier(max_depth=5, random_state=42),
+    "Random Forest": RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42),
+    "XGBoost": XGBClassifier(n_estimators=100, max_depth=5, learning_rate=0.1, random_state=42)
+}
+
+resultados = []
+
+# Treinando e gerando resultados
+for nome, modelo in modelos.items():
+    print(f"Treinando {nome}...")
+    
+    inicio_treino = time.time()
+    modelo.fit(X_train, y_train)
+    tempo_treino = time.time() - inicio_treino
+    
+    inicio_pred = time.time()
+    y_pred = modelo.predict(X_test)
+    tempo_pred = time.time() - inicio_pred
+    
+    acc = accuracy_score(y_test, y_pred)
+    prec = precision_score(y_test, y_pred, average='macro', zero_division=0)
+    rec = recall_score(y_test, y_pred, average='macro', zero_division=0)
+    f1 = f1_score(y_test, y_pred, average='macro', zero_division=0)
+    
+    resultados.append({
+        'Modelo': nome,
+        'Acurácia (%)': round(acc * 100, 2),
+        'Precisão': round(prec, 3),
+        'Recall': round(rec, 3),
+        'F1-Score': round(f1, 3),
+        'Treino (s)': round(tempo_treino, 4),
+        'Predição (s)': round(tempo_pred, 4)
+    })
+    
+    print(f"Matriz de Confusão do {nome}:")
+    print(confusion_matrix(y_test, y_pred))
+    print("-" * 40)
+
+# Imprimindo a tabela final
+df_resultados = pd.DataFrame(resultados)
+print(df_resultados.to_markdown(index=False))
+</code></pre>
+            <p><strong>Como executar:</strong> instale as dependências com <code>python -m pip install pandas scikit-learn xgboost tabulate</code>, salve o script na <strong>pasta raiz do projeto</strong> (onde fica a pasta <code>data_ripe_atlas</code>) e rode-o com <code>python nome_do_script.py</code>.</p>
+            <p style="margin-top: 1rem;"><small>👉 O código completo do experimento está no nosso <a href="https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre" target="_blank" style="color: var(--secondary);">Repositório GitHub: Modelo Preditivo - Projeto Acadêmico</a>.</small></p>
+
+            <h3>Resultados no conjunto de teste</h3>
+            <p>Em redes, as classes de falha costumam ser bem menos frequentes que as medições normais. Por isso, a acurácia sozinha engana: um modelo que respondesse sempre "OK" acertaria quase tudo e não detectaria nenhuma falha. Relatamos também precisão, recall e F1-Score, calculados com média <em>macro</em> (as três classes têm o mesmo peso), além da matriz de confusão.</p>
+
+            <div class="highlight-box">
+                <strong>Preencha esta tabela com a saída real do script.</strong> Os campos amarelos abaixo devem receber os valores impressos por <code>df_resultados.to_markdown()</code> na sua execução. Não use números estimados.
+            </div>
+
+            <!-- TABELA DE RESULTADOS (mesmas colunas impressas pelo script) -->
+            <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Acurácia (%)</th>
+                        <th>Precisão</th>
+                        <th>Recall</th>
+                        <th>F1-Score</th>
+                        <th>Treino (s)</th>
+                        <th>Predição (s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Árvore de Decisão</td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Random Forest</strong></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                    </tr>
+                    <tr>
+                        <td>XGBoost</td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">preencher</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="figure-caption" style="text-align: center;">Tabela 1: Métricas dos três modelos no conjunto de teste (média macro entre OK, RISCO e FALHA).</div>
+
+            <!-- FIGURA 3: Matriz de Confusão (3 classes) -->
             <div class="figure-box">
-                <div class="mock-diagram">
-                    [Acurácia Comparativa]:<br>
-                    Árvore de Decisão: [████████████████████] 92.4%<br>
-                    Random Forest:     [██████████████████████] 98.6%<br>
-                    XGBoost:           [██████████████████████] 98.8%
+                <div class="mock-diagram" style="text-align: left; display: inline-block;">
+                    Matriz de Confusão do Random Forest (linhas = real, colunas = previsto):<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;RISCO&nbsp;&nbsp;FALHA<br>
+                    real OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ___&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;___ ]<br>
+                    real RISCO&nbsp;&nbsp;[ ___&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;___ ]<br>
+                    real FALHA&nbsp;&nbsp;[ ___&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;___ ]<br><br>
+                    (substituir pelos valores impressos pelo script)
                 </div>
-                <div class="figure-caption">Figura 4: Comparativo visual da acurácia global entre os três modelos testados.</div>
+                <div class="figure-caption">Figura 3: Matriz de confusão do Random Forest no conjunto de teste. A diagonal mostra os acertos; o que está fora dela são erros de classificação.</div>
             </div>
         </section>
 
@@ -551,12 +711,17 @@ print(classification_report(y_test, preds))
             <div class="decision-box">
                 <strong>Decisão Final do Grupo:</strong> Adotar o <strong>Random Forest</strong> como o modelo oficial para o preditor de falhas em rede.
             </div>
-            <p>Apesar do XGBoost ter empatado tecnicamente na margem de acurácia (98.8% vs 98.6%), justificamos nossa escolha com base em critérios vitais de engenharia de redes:</p>
+            <p>A escolha se apoia nos resultados da Tabela 1 e em critérios vitais de engenharia de redes, não apenas na acurácia bruta:</p>
             <ul>
-                <li><strong>Custo dos Erros (Falsos Negativos):</strong> Em infraestrutura, deixar de prever uma falha real de enlace causa indisponibilidade catastrófica. O Random Forest apresentou excelente estabilidade de sensibilidade (Recall de 91.1%), mantendo poucos alarmes falsos.</li>
-                <li><strong>Latência e Tempo de Predição:</strong> O tempo de resposta do Random Forest (~4 milissegundos por lote de telemetria) atende com folga os requisitos de monitoramento quase em tempo real.</li>
-                <li><strong>Interpretabilidade Operacional:</strong> Engenheiros de redes precisam auditar o motivo de um alerta. Com o Random Forest, extraímos facilmente quais métricas de rede (ex: jitter, perda de pacotes) mais pesaram na decisão através da <em>Feature Importance</em>, algo muito mais complexo de auditar em modelos de boosting profundos.</li>
+                <li><strong>Custo dos Erros (Falsos Negativos):</strong> Em infraestrutura, deixar de prever uma falha real de enlace causa indisponibilidade catastrófica. Por isso, o que mais pesa é quantas medições de FALHA o modelo realmente detecta. No Random Forest, a linha FALHA da matriz de confusão mostra <span class="fill">preencher: quantas falhas foram detectadas</span> e o recall macro foi de <span class="fill">preencher</span>.</li>
+                <li><strong>Latência e Tempo de Predição:</strong> O tempo de predição medido para o Random Forest foi de <span class="fill">preencher</span> segundo(s) no conjunto de teste, valor que deve ser comparado com os requisitos de monitoramento quase em tempo real.</li>
+                <li><strong>Interpretabilidade Operacional:</strong> Engenheiros de redes precisam auditar o motivo de um alerta. Com o Random Forest, é possível extrair quais métricas de rede mais pesaram na decisão através da <em>Feature Importance</em> (atributo <code>feature_importances_</code> do scikit-learn), algo mais difícil de auditar em modelos de boosting profundos.</li>
             </ul>
+            <p>Se o XGBoost tiver desempenho próximo ao do Random Forest na Tabela 1, a decisão se sustenta nesses critérios práticos. Se o XGBoost for claramente melhor na detecção de FALHA, essa diferença precisa ser discutida aqui.</p>
+
+            <div class="highlight-box">
+                <strong>Limitações do experimento:</strong> os três modelos usaram a mesma profundidade máxima (<code>max_depth=5</code>) sem otimização de hiperparâmetros, a avaliação usa uma única divisão treino/teste e os tempos foram medidos em uma única execução. Por isso, os resultados valem para esta configuração específica e não provam que um algoritmo é sempre melhor que o outro.
+            </div>
         </section>
 
         <!-- VÍDEOS OPCIONAIS -->
@@ -643,3 +808,6 @@ print(classification_report(y_test, preds))
         <p>Repositório GitHub: <a href="https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre" target="_blank" style="color: #93c5fd;">Modelo Preditivo - Projeto Acadêmico</a></p>
         <p style="font-size: 0.8rem; margin-top: 1rem; color: #64748b;">Última revisão do site: 12 de Outubro de 2026</p>
     </footer>
+
+</body>
+</html>
