@@ -1,0 +1,30 @@
+{
+  "fluxos": [
+    "6977|102.222.103.100",
+    "6977|148.163.220.5"
+  ],
+  "f1_macro": 0.326858537577545,
+  "f1_macro_persistencia": 0.36045498801844283,
+  "resumo": [
+    {
+      "fluxo_id": "6977|102.222.103.100",
+      "mediana_ms": 339.49,
+      "linhas": 2505,
+      "real_OK_%": 99.1,
+      "prevista_OK_%": 100.0,
+      "degradações_reais": 22,
+      "degradações_detectadas": 0,
+      "erros": 22
+    },
+    {
+      "fluxo_id": "6977|148.163.220.5",
+      "mediana_ms": 1.63,
+      "linhas": 2509,
+      "real_OK_%": 93.4,
+      "prevista_OK_%": 99.7,
+      "degradações_reais": 165,
+      "degradações_detectadas": 2,
+      "erros": 171
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "modelo": "RandomForestClassifier",
+  "n_estimators": 200,
+  "max_depth": 10,
+  "min_samples_leaf": 10,
+  "class_weight": null,
+  "criterion": "gini",
+  "random_state": 42,
+  "features": [
+    "z_robusto_t_menos_1",
+    "delta_z_robusto",
+    "z_robusto",
+    "perda_pct",
+    "jitter_relativo",
+    "n5_risco",
+    "n5_timeout",
+    "n5_aumento80"
+  ],
+  "alvo": "status_futuro",
+  "horizonte_segundos": 720,
+  "fluxos_novos": [
+    "6977|102.222.103.100",
+    "6977|148.163.220.5"
+  ],
+  "criterio_escolha_fluxos_novos": "automático (longo estável + curto degradado, só com treino e validação)",
+  "criterio_ganho_persistencia": "f1_macro",
+  "profundidade_media": 10.0,
+  "folhas_medias": 237.5,
+  "assinatura_validacao": "7c4bca0a450a8451828b5b6a3179f401e011cc6ce887191ab16d4739cda7a25d",
+  "scikit_learn": "1.9.1",
+  "congelado_em_utc": "2026-10-19T21:59:57.537472+00:00"
+}
