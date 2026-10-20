@@ -659,32 +659,32 @@ print(df_resultados.to_markdown(index=False))
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <tr>
                         <td>Árvore de Decisão</td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">100</span></td>
+                        <td><span class="fill">1</span></td>
+                        <td><span class="fill">1</span></td>
+                        <td><span class="fill">1</span></td>
+                        <td><span class="fill">0.3763</span></td>
+                        <td><span class="fill">0.0066</span></td>
                     </tr>
                     <tr>
                         <td><strong>Random Forest</strong></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">99.67</span></td>
+                        <td><span class="fill">0.997</span></td>
+                        <td><span class="fill">0.993</span></td>
+                        <td><span class="fill">0.995</span></td>
+                        <td><span class="fill">5.677</span></td>
+                        <td><span class="fill">0.0966</span></td>
                     </tr>
                     <tr>
                         <td>XGBoost</td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
-                        <td><span class="fill">preencher</span></td>
+                        <td><span class="fill">99.97</span></td>
+                        <td><span class="fill">0.999</span></td>
+                        <td><span class="fill">0.999</span></td>
+                        <td><span class="fill">0.999</span></td>
+                        <td><span class="fill">0.6823</span></td>
+                        <td><span class="fill">0.0275</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -696,10 +696,9 @@ print(df_resultados.to_markdown(index=False))
                 <div class="mock-diagram" style="text-align: left; display: inline-block;">
                     Matriz de Confusão do Random Forest (linhas = real, colunas = previsto):<br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;RISCO&nbsp;&nbsp;FALHA<br>
-                    real OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ___&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;___ ]<br>
-                    real RISCO&nbsp;&nbsp;[ ___&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;___ ]<br>
-                    real FALHA&nbsp;&nbsp;[ ___&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;___ ]<br><br>
-                    (substituir pelos valores impressos pelo script)
+                    real OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 42347&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;0 ]<br>
+                    real RISCO&nbsp;&nbsp;[ 0&nbsp;&nbsp;&nbsp;&nbsp;5714&nbsp;&nbsp;&nbsp;&nbsp;0 ]<br>
+                    real FALHA&nbsp;&nbsp;[ 159&nbsp;&nbsp;&nbsp;&nbsp;29&nbsp;&nbsp;&nbsp;&nbsp;9063 ]<br><br>
                 </div>
                 <div class="figure-caption">Figura 3: Matriz de confusão do Random Forest no conjunto de teste. A diagonal mostra os acertos; o que está fora dela são erros de classificação.</div>
             </div>
@@ -713,8 +712,8 @@ print(df_resultados.to_markdown(index=False))
             </div>
             <p>A escolha se apoia nos resultados da Tabela 1 e em critérios vitais de engenharia de redes, não apenas na acurácia bruta:</p>
             <ul>
-                <li><strong>Custo dos Erros (Falsos Negativos):</strong> Em infraestrutura, deixar de prever uma falha real de enlace causa indisponibilidade catastrófica. Por isso, o que mais pesa é quantas medições de FALHA o modelo realmente detecta. No Random Forest, a linha FALHA da matriz de confusão mostra <span class="fill">preencher: quantas falhas foram detectadas</span> e o recall macro foi de <span class="fill">preencher</span>.</li>
-                <li><strong>Latência e Tempo de Predição:</strong> O tempo de predição medido para o Random Forest foi de <span class="fill">preencher</span> segundo(s) no conjunto de teste, valor que deve ser comparado com os requisitos de monitoramento quase em tempo real.</li>
+                <li><strong>Custo dos Erros (Falsos Negativos):</strong> Em infraestrutura, deixar de prever uma falha real de enlace causa indisponibilidade catastrófica. Por isso, o que mais pesa é quantas medições de FALHA o modelo realmente detecta. No Random Forest, a linha FALHA da matriz de confusão mostra <span class="fill">9063</span> e o recall macro foi de <span class="fill">0.993</span></li>
+                <li><strong>Latência e Tempo de Predição:</strong> O tempo de predição medido para o Random Forest foi de <span class="fill">0.0966</span> segundo(s) no conjunto de teste, valor que deve ser comparado com os requisitos de monitoramento quase em tempo real.</li>
                 <li><strong>Interpretabilidade Operacional:</strong> Engenheiros de redes precisam auditar o motivo de um alerta. Com o Random Forest, é possível extrair quais métricas de rede mais pesaram na decisão através da <em>Feature Importance</em> (atributo <code>feature_importances_</code> do scikit-learn), algo mais difícil de auditar em modelos de boosting profundos.</li>
             </ul>
             <p>Se o XGBoost tiver desempenho próximo ao do Random Forest na Tabela 1, a decisão se sustenta nesses critérios práticos. Se o XGBoost for claramente melhor na detecção de FALHA, essa diferença precisa ser discutida aqui.</p>
