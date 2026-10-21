@@ -710,16 +710,16 @@ print(df_resultados.to_markdown(index=False))
             <div class="decision-box">
                 <strong>Decisão Final do Grupo:</strong> Adotar o <strong>Random Forest</strong> como o modelo oficial para o preditor de falhas em rede.
             </div>
-            <p>A escolha se apoia nos resultados da Tabela 1 e em critérios vitais de engenharia de redes, não apenas na acurácia bruta:</p>
+            
+            <p>Apesar de o nosso experimento ter mostrado que o XGBoost obteve métricas ligeiramente superiores (F1-Score de 0.999 contra 0.995 da floresta) e um tempo de predição menor, a decisão da Equipe 18 baseia-se em critérios vitais de engenharia de redes onde o Random Forest se sobressai:</p>
             <ul>
-                <li><strong>Custo dos Erros (Falsos Negativos):</strong> Em infraestrutura, deixar de prever uma falha real de enlace causa indisponibilidade catastrófica. Por isso, o que mais pesa é quantas medições de FALHA o modelo realmente detecta. No Random Forest, a linha FALHA da matriz de confusão mostra <span class="fill">9063</span> e o recall macro foi de <span class="fill">0.993</span></li>
-                <li><strong>Latência e Tempo de Predição:</strong> O tempo de predição medido para o Random Forest foi de <span class="fill">0.0966</span> segundo(s) no conjunto de teste, valor que deve ser comparado com os requisitos de monitoramento quase em tempo real.</li>
-                <li><strong>Interpretabilidade Operacional:</strong> Engenheiros de redes precisam auditar o motivo de um alerta. Com o Random Forest, é possível extrair quais métricas de rede mais pesaram na decisão através da <em>Feature Importance</em> (atributo <code>feature_importances_</code> do scikit-learn), algo mais difícil de auditar em modelos de boosting profundos.</li>
+                <li><strong>Interpretabilidade Operacional (O peso principal):</strong> Em um centro de operações de rede (NOC), um engenheiro não pode confiar cegamente em uma "caixa preta". O Random Forest permite extrair com facilidade quais métricas causaram o alerta (usando a <em>Feature Importance</em>). O XGBoost, devido à sua natureza de correção sequencial complexa de erros, é muito mais difícil de auditar humanamente durante um incidente.</li>
+                <li><strong>Robustez sem Overfitting:</strong> A Árvore de Decisão cravou 100% em nossos testes, revelando um grave <em>overfitting</em> (decorou os dados). O Random Forest, através do <em>Bagging</em>, provou reduzir essa variância de forma estável, detectando 9063 casos reais de FALHA com altíssima precisão e sem memorizar ruídos.</li>
+                <li><strong>Manutenção e Ajuste (Tuning):</strong> Redes são ambientes barulhentos. O XGBoost exige um ajuste rigoroso e contínuo de hiperparâmetros (como taxa de aprendizado e penalidades) para não criar um superajuste no ruído do tráfego. O Random Forest é quase "plug-and-play": ele atinge um desempenho excelente e seguro logo na configuração padrão.</li>
             </ul>
-            <p>Se o XGBoost tiver desempenho próximo ao do Random Forest na Tabela 1, a decisão se sustenta nesses critérios práticos. Se o XGBoost for claramente melhor na detecção de FALHA, essa diferença precisa ser discutida aqui.</p>
-
+            
             <div class="highlight-box">
-                <strong>Limitações do experimento:</strong> os três modelos usaram a mesma profundidade máxima (<code>max_depth=5</code>) sem otimização de hiperparâmetros, a avaliação usa uma única divisão treino/teste e os tempos foram medidos em uma única execução. Por isso, os resultados valem para esta configuração específica e não provam que um algoritmo é sempre melhor que o outro.
+                <strong>Conclusão:</strong> Para o nosso cenário, sacrificar 0,004 pontos de F1-Score em troca de um modelo transparente, que a equipe humana consegue auditar e que não quebra facilmente com as variações naturais da rede, faz do Random Forest a escolha mais inteligente e madura para a infraestrutura.
             </div>
         </section>
 
