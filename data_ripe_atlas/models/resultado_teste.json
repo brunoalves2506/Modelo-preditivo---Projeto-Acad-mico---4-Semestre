@@ -1,0 +1,56 @@
+{
+  "linhas_teste": 54582,
+  "matriz_floresta": {
+    "prevista OK": {
+      "real OK": 39249,
+      "real RISCO": 3195,
+      "real FALHA": 2667
+    },
+    "prevista RISCO": {
+      "real OK": 400,
+      "real RISCO": 2109,
+      "real FALHA": 409
+    },
+    "prevista FALHA": {
+      "real OK": 354,
+      "real RISCO": 284,
+      "real FALHA": 5915
+    }
+  },
+  "por_classe_floresta": {
+    "precisao": {
+      "OK": 0.870054,
+      "RISCO": 0.722755,
+      "FALHA": 0.90264
+    },
+    "recall": {
+      "OK": 0.981151,
+      "RISCO": 0.377416,
+      "FALHA": 0.65788
+    },
+    "F1": {
+      "OK": 0.922269,
+      "RISCO": 0.495885,
+      "FALHA": 0.761065
+    },
+    "medicoes": {
+      "OK": 40003,
+      "RISCO": 5588,
+      "FALHA": 8991
+    }
+  },
+  "f1_macro_floresta": 0.7264065257448804,
+  "acuracia_balanceada_floresta": 0.6721491357213142,
+  "recall_falha_floresta": 0.6578801023245467,
+  "recall_risco_floresta": 0.37741589119541874,
+  "f1_macro_persistencia": 0.6842474812181419,
+  "acuracia_balanceada_persistencia": 0.6840870545214548,
+  "recall_falha_persistencia": 0.6960293626960293,
+  "recall_risco_persistencia": 0.4659985683607731,
+  "criterio_ganho": "f1_macro",
+  "ganho": 0.042159044526738465,
+  "troca_risco_para_falha": 284,
+  "troca_falha_para_risco": 409,
+  "falha_prevista_ok": 2667,
+  "medido_em_utc": "2026-10-19T22:15:30.525101+00:00"
+}

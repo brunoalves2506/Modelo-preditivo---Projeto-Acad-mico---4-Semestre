@@ -1,0 +1,9 @@
+A. Árvore componente 1 (ilustrativa)
+Se n5_risco <= 0.50 e z_robusto > 4.13 e n5_aumento80 <= 0.50 e jitter_relativo <= 4.39 e 1.90 < z_robusto_t_menos_1 <= 26.47 e perda_pct <= 83.33 e delta_z_robusto <= 1.07, então FALHA  (folha com 3.253 amostras; pureza 98,8%)
+Se n5_risco <= 2.50 e z_robusto <= 1.77 e delta_z_robusto > -2.27 e perda_pct <= 58.33 e z_robusto_t_menos_1 <= 1.80 e n5_aumento80 <= 0.50 e jitter_relativo <= 3.39, então OK  (folha com 37.210 amostras; pureza 92,8%)
+Se n5_risco > 2.50 e 2.12 < z_robusto_t_menos_1 <= 3.64 e 0.44 < jitter_relativo <= 2.31, então RISCO  (folha com 1.242 amostras; pureza 60,8%)
+
+B. Árvore substituta rasa (fidelidade 0.9846)
+Se z_robusto > 3.50 e z_robusto_t_menos_1 > 3.36, então FALHA  (folha com 11.432 amostras; pureza 98,2%)
+Se z_robusto <= 2.49 e n5_risco <= 3.50, então OK  (folha com 72.311 amostras; pureza 99,9%)
+Se z_robusto > 2.86 e 2.29 < z_robusto_t_menos_1 <= 3.36, então RISCO  (folha com 1.674 amostras; pureza 80,1%)
