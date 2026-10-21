@@ -1,0 +1,87 @@
+# Árvore, Floresta ou Boosting? Predição de Falhas em Redes
+
+Projeto acadêmico da **Equipe 18** (4º semestre, Estrutura de Dados) que compara três modelos de aprendizado de máquina para prever falhas em rotas de rede usando medições reais do **RIPE Atlas**. O resultado é um artigo técnico didático em HTML, voltado a estudantes de TI, que justifica a escolha do **Random Forest** com base em dados experimentais.
+
+## Sobre o projeto
+
+Sistemas tradicionais de monitoramento usam limites estáticos (*thresholds*) e deixam passar degradações silenciosas de enlaces ou ataques como DDoS. O objetivo aqui é mostrar, na prática, como escolher o modelo adequado para antecipar esses cenários.
+
+Cada medição de rede é classificada em uma de três classes:
+
+| Classe | Rótulo numérico |
+|--------|-----------------|
+| OK     | 0 |
+| RISCO  | 1 |
+| FALHA  | 2 |
+
+## Modelos comparados
+
+| Modelo | Hiperparâmetros |
+|--------|-----------------|
+| Árvore de Decisão | `max_depth=5`, `random_state=42` |
+| Random Forest | `n_estimators=100`, `max_depth=5`, `random_state=42` |
+| XGBoost | `n_estimators=100`, `max_depth=5`, `learning_rate=0.1`, `random_state=42` |
+
+## Resultados no conjunto de teste
+
+Métricas com média *macro* entre as três classes.
+
+| Modelo | Acurácia (%) | Precisão | Recall | F1-Score | Treino (s) | Predição (s) |
+|--------|--------------|----------|--------|----------|------------|--------------|
+| Árvore de Decisão | 100 | 1 | 1 | 1 | 0.3763 | 0.0066 |
+| Random Forest | 99.67 | 0.997 | 0.993 | 0.995 | 5.677 | 0.0966 |
+| XGBoost | 99.97 | 0.999 | 0.999 | 0.999 | 0.6823 | 0.0275 |
+
+### Recomendação do grupo
+
+O grupo adotou o **Random Forest**, mesmo com o XGBoost apresentando métricas ligeiramente superiores. Os critérios foram interpretabilidade operacional (importância de atributos), robustez contra overfitting e menor necessidade de ajuste fino de hiperparâmetros. A Árvore de Decisão simples **não** foi recomendada: os 100% de acurácia no teste são indício de overfitting (memorização dos dados).
+
+
+## Como executar o script de treinamento
+
+**Pré-requisitos:** Python 3 e as bibliotecas `pandas`, `scikit-learn`, `xgboost` e `tabulate`.
+
+1. Instale as dependências:
+
+   ```bash
+   python -m pip install pandas scikit-learn xgboost tabulate
+   ```
+
+2. Salve o script na **pasta raiz do projeto**, onde fica a pasta `data_ripe_atlas`.
+3. Execute:
+
+   ```bash
+   python nome_do_script.py
+   ```
+
+O script carrega os CSVs, converte as classes em números, remove colunas de identificação (como `fluxo_id`, `prb_id`, `dst_addr`, `timestamp` e `rota`), treina os três modelos e imprime a matriz de confusão de cada um e a tabela final de métricas.
+
+## Como visualizar o artigo
+
+Abra o arquivo HTML do artigo em qualquer navegador. Ele não depende de instalaçãO, ou abra através do link do WEB: https://dev-artigo-universitario-brazcubas.pantheonsite.io/32-2/ .
+
+## Decisões do grupo
+
+1. Usar dados do **RIPE Atlas** (medições reais de rotas, como DE-PT) em vez de um dataset genérico.
+2. Converter a variável alvo para rótulos numéricos (0, 1, 2), exigência do XGBoost, para que os três modelos usem exatamente a mesma base.
+3. Limitar a profundidade com `max_depth=5` para uma comparação justa (Ajuste Honesto) entre Bagging e Boosting.
+4. **Não** recomendar a Árvore de Decisão simples, por sinais de overfitting.
+
+## Referências
+
+- BREIMAN, Leo. *Random Forests*. Machine Learning, v. 45, n. 1, p. 5-32, 2001.
+- CHEN, Tianqi; GUESTRIN, Carlos. *XGBoost: A Scalable Tree Boosting System*. KDD '16, p. 785-794, 2016.
+- Scikit-Learn Developers. *User Guide: Supervised Learning – Ensemble methods*. https://scikit-learn.org/stable/modules/ensemble.html
+
+## Equipe 18
+
+- Bruno Alves Ribeiro de Souza
+- Igor da Silva Alves Correa
+- Pedro Henrique Alexandre da Silva
+- Samuel de Oliveira Santos
+- Victoria Agatha Rodrigues Fagundes
+- Wendel Henrique da Silva Rocha (Scrum Master)
+
+## Licença
+
+MIT License © 2026 Grupo Preditor de Redes.
