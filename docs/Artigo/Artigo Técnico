@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Árvore, Floresta ou Boosting? Escolhendo o Modelo Ideal para Predição de Falhas em Redes</title>
     <style>
@@ -324,8 +321,8 @@
             margin: 0.5rem 0;
         }
     </style>
-</head>
-<body>
+
+
 
     <!-- CABEÇALHO / NAVBAR -->
     <nav>
@@ -723,14 +720,20 @@ print(df_resultados.to_markdown(index=False))
             </div>
         </section>
 
-        <!-- VÍDEOS OPCIONAIS -->
-        <section>
-            <h2>6. Demonstração em Vídeo</h2>
-            <p>Assista abaixo à apresentação resumida do funcionamento prático do nosso preditor de falhas em ambiente simulado:</p>
+       <!-- QUADRO DE OBSERVAÇÕES DA EQUIPE 18 -->
+        <section id="observacoes">
+            <h2>6. Quadro de Observações da Equipe 18</h2>
+
             <div class="figure-box">
-                <p>🎥 <em>[Vídeo demonstrativo do experimento rodando em laboratório de redes]</em></p>
-                <p class="figure-caption">Observe como o modelo reage a picos de latência anômalos disparando o alerta preventivo.<br>
-                Link de reserva para visualização externa: <a href="https://youtube.com" target="_blank" style="color: var(--secondary);">Acessar gravação no YouTube</a>.</p>
+                <img src="imagens/quadro-observacao-a.png" alt="Quadro de Observação - Equipe 18: duas referências analisadas (Tópico 8 do artigo)">
+            </div>
+
+            <div class="figure-box">
+                <img src="imagens/quadro-observacao-b.png" alt="Quadro de Observação - Equipe 18: três decisões do grupo">
+            </div>
+
+            <div class="figure-box">
+                <img src="imagens/quadro-observacao-c.png" alt="Quadro de Observação - Equipe 18: o que o grupo decidiu não fazer">
             </div>
         </section>
 
@@ -807,6 +810,3 @@ print(df_resultados.to_markdown(index=False))
         <p>Repositório GitHub: <a href="https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre" target="_blank" style="color: #93c5fd;">Modelo Preditivo - Projeto Acadêmico</a></p>
         <p style="font-size: 0.8rem; margin-top: 1rem; color: #64748b;">Última revisão do site: 12 de Outubro de 2026</p>
     </footer>
-
-</body>
-</html>
