@@ -219,22 +219,11 @@ body {
     top: 43.5px;
     left: 2px;
 
-    animation: piscar 3s linear infinite;
-}
 
-@keyframes piscar {
-    0% {
-        background-color: rgba(31, 32, 30, 0.977);
-    }
-
-
-    50% {
-        background-color: rgb(255, 200, 2);
-    }
-
-    100% {
-        background-color: rgba(31, 32, 30, 0.977);
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.4s ease;
 }
 
 #container_integrantes {
@@ -265,4 +254,102 @@ body {
     width: 150px;
     height: auto;
     object-fit: contain;
+}
+
+/* ---------- integração com o modelo ---------- */
+
+.oculto {
+    visibility: hidden;
+}
+
+#botao_acao:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+#status_rede_texto {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+}
+
+/* azul = OK, amarelo = risco, vermelho = falha */
+#status_rede_tempo_real.status_ok {
+    background-color: #1e78ff;
+}
+
+#status_rede_tempo_real.status_risco {
+    background-color: rgb(255, 200, 2);
+}
+
+#status_rede_tempo_real.status_risco #status_rede_texto {
+    color: black;
+}
+
+#status_rede_tempo_real.status_falha {
+    background-color: #e5231b;
+}
+
+#info_medicao {
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 215px;
+    right: 14px;
+    overflow-y: auto;
+
+    color: #d8d8d8;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+#info_medicao .info_mensagem {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+}
+
+#info_medicao .info_metricas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 16px;
+    margin-bottom: 8px;
+}
+
+#info_medicao .info_metricas span {
+    color: rgb(150, 150, 150);
+}
+
+#info_medicao .info_alvo {
+    display: flex;
+    justify-content: space-between;
+}
+
+#info_medicao .info_alvo b.status_ok {
+    color: #5aa2ff;
+}
+
+#info_medicao .info_alvo b.status_risco {
+    color: rgb(255, 200, 2);
+}
+
+#info_medicao .info_alvo b.status_falha {
+    color: #ff5d55;
+}
+
+#info_medicao .info_rodape {
+    margin-top: 8px;
+    font-size: 11px;
+    color: rgb(130, 130, 130);
+}
+
+#info_medicao .info_erro {
+    color: #ff8a84;
+}
+
+#info_medicao.erro {
+    left: 20px;
 }

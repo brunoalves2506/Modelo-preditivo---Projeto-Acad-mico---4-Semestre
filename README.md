@@ -77,6 +77,20 @@ main
 
 O ambiente virtual `.venv/` é utilizado localmente para executar o projeto, mas não é versionado. Portanto, antes de executar o projeto, confirme se o ambiente virtual está ativo para manter as dependências isoladas.
 
+## Interface de medição
+
+A interface (`notebook/arvore/interface`) é servida por um backend Flask (`app/`) que mede a rede do computador por ICMP, calcula as métricas relativas ao baseline (fórmulas da Tarefa 2) e classifica com o modelo treinado: azul = OK, amarelo = RISCO, vermelho = FALHA.
+
+```bash
+pip install -r requirements.txt
+python -m app.servidor                    # abre http://127.0.0.1:5000
+python -m app.servidor --simular risco    # demonstração sem rede (ok | risco | falha)
+python -m app.servidor --calibrar 1500    # refaz o baseline completo (rede funcionando normalmente)
+python -m pytest tests                    # testes da integração
+```
+
+No primeiro uso o sistema cria uma referência provisória (o "normal" da rede, em `app/dados/baseline_local.json`, não versionado). Para o baseline completo (1.500 medições válidas, como exige a RFC) rode `--calibrar 1500`.
+
 ## Estrutura e organização
 
 ```text

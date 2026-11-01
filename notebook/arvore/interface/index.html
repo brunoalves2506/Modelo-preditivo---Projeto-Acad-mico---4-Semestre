@@ -9,7 +9,7 @@
         <h1>Classificador de degradação de rede</h1>
     </div>
 
-    <div id="carregando_medicao">
+    <div id="carregando_medicao" class="oculto">
         <div id="frase_carregando_medicao">
             <h2>Obtendo Métricas</h2>
         </div>
@@ -44,15 +44,17 @@
 
         <div id = container_info_medicao>
 
-            <div id="container_sec_info">
+            <div id="container_sec_info" class="oculto">
 
                 <div id="status_rede_box">
                     <h2 id="status_rede">Status</h2>
                 </div>
 
-                <div id="status_rede_tempo_real"> </div>
+                <div id="status_rede_tempo_real"><span id="status_rede_texto"></span></div>
                 
             </div>
+
+            <div id="info_medicao"></div>
 
         </div>
 
@@ -62,17 +64,19 @@
 
     <div id="container_integrantes">
         <div id="nome_integrantes">
-            <h4>Bruno Alves Ribeiro de Souza - RGM: 4276047</h4>
-            <h4>Samuel de Oliveira Santos - RGM: 4276048</h4>
-            <h4>Wendel Henrique da Silva Rocha - RGM: 4276049</h4>
-            <h4>Victoria Aghata Rodriges Fagundes  - RGM: 4276049</h4>
-            <h4>Igor da Silva Alves Correa  - RGM: 4276049</h4>
-            <h4>Pedro Henrique Alexandre da Silva  - RGM: 4276049</h4>
+            <h4>Bruno Alves Ribeiro de Souza - RGM: 42276047</h4>
+            <h4>Samuel de Oliveira Santos - RGM: 41761782</h4>
+            <h4>Wendel Henrique da Silva Rocha - RGM: 42614945</h4>
+            <h4>Victoria Agatha Rodrigues Fagundes - RGM: 43756042</h4>
+            <h4>Igor da Silva Alves Correa - RGM: 41885163</h4>
+            <h4>Pedro Henrique Alexandre da Silva - RGM: 42947049</h4>
          </div>
 
          <img src="img/logo_bc_white.png" alt="Logo Braz Cubas">
 
     </div>
+
+    <script src="script.js"></script>
 
   </body>
 </html>

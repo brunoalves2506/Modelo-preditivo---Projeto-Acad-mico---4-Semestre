@@ -11,3 +11,4 @@ tests/relatorio_validacao.md
 .vscode/
 .idea/
 .DS_Store
+app/dados/baseline_local.json
