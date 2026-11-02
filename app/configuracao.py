@@ -2,14 +2,12 @@
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-DIR_INTERFACE = RAIZ / "notebook" / "arvore" / "interface"
+ARQ_HISTORICO = RAIZ / "data_ripe_atlas" / "processed" / "dataset_rotulado_b.csv"
+ARQ_MODELO_FINAL = RAIZ / "data_ripe_atlas" / "models" / "floresta_final.joblib"
+ARQ_MODELO_HISTORICO = ARQ_MODELO_FINAL
 
-# Detector de estado atual (OK / RISCO / FALHA). Usa o primeiro arquivo que existir.
-# A floresta é a aprovada para o projeto; a árvore oficial fica como reserva.
-CANDIDATOS_DETECTOR = [
-    RAIZ / "notebook" / "data_ripe_atlas" / "models" / "floresta_oficial.joblib",
-    RAIZ / "data_ripe_atlas" / "models" / "arvore_oficial.joblib",
-]
+# Detector de estado atual (OK / RISCO / FALHA): floresta final ajustada na Tarefa 4.
+CANDIDATOS_DETECTOR = [ARQ_MODELO_FINAL]
 
 # Baseline (o "normal" da rede de quem está usando). É local de cada máquina e não vai para o Git.
 ARQ_BASELINE = Path(__file__).resolve().parent / "dados" / "baseline_local.json"

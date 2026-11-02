@@ -5,25 +5,22 @@ import argparse
 import threading
 import webbrowser
 
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, render_template, request
 
-from .configuracao import DIR_INTERFACE, RAJADAS_CALIBRACAO
+from .configuracao import RAJADAS_CALIBRACAO
+from .historico import carregar_pings_previstos, carregar_previsoes_historicas
 from .monitor import ErroMedicao, Monitor, MonitorOcupado
 from .rede import PingIndisponivel
 from .simulacao import CENARIOS
 
 
 def criar_app(monitor: Monitor) -> Flask:
-    app = Flask(__name__, static_folder=None)
+    app = Flask(__name__)
     app.json.ensure_ascii = False
 
     @app.get("/")
     def inicio():
-        return send_from_directory(DIR_INTERFACE, "index.html")
-
-    @app.get("/<path:arquivo>")
-    def estaticos(arquivo):
-        return send_from_directory(DIR_INTERFACE, arquivo)
+        return render_template("index.html")
 
     @app.post("/api/medicao")
     def medicao():
@@ -33,6 +30,23 @@ def criar_app(monitor: Monitor) -> Flask:
             return jsonify(erro=str(e)), 429
         except (ErroMedicao, PingIndisponivel) as e:
             return jsonify(erro=str(e)), 503
+
+    @app.get("/api/previsoes-historicas")
+    def previsoes_historicas():
+        return jsonify(carregar_previsoes_historicas())
+
+    @app.get("/api/pings-previstos")
+    def pings_previstos():
+        try:
+            offset = int(request.args.get("offset", "0"))
+            limite = int(request.args.get("limite", "500"))
+        except ValueError:
+            return jsonify(erro="offset e limite devem ser números inteiros."), 400
+        if offset < 0:
+            return jsonify(erro="offset deve ser um inteiro não negativo."), 400
+        if not 1 <= limite <= 1000:
+            return jsonify(erro="limite deve estar entre 1 e 1000."), 400
+        return jsonify(carregar_pings_previstos(offset, limite))
 
     return app
 

@@ -25,7 +25,8 @@ const ROTAS = [
   { id: "IN→SG", escopo: "regional", de: "Mumbai", para: "Singapura", origens: "7375, 7269 (in-maa), 6954 (in-bom), 7277", destinos: "102.130.67.116 e 203.175.175.206 (sg-sin)", fluxos: "4 / 8", rtt: "53 a 103", ok: 85.4, risco: 9.3, falha: 5.3, aviso: "4 fluxos excluídos: 102.130.67.116 nunca respondeu." }
 ];
 
-const COR = { curto: "#3dd9d6", regional: "#b08cff", longo: "#ff9f43" };
+const COR = { curto: "#50dfff", regional: "#b08cff", longo: "#ff9f43" };
+const COR_STATUS = { OK: "#43d6a3", RISCO: "#ffc86a", FALHA: "#ff657d" };
 const REGIOES = [
   ["América do Sul", [-25, -58], 2600000], ["Europa", [47, 8], 1900000], ["África", [-15, 30], 3300000],
   ["Sul e Sudeste da Ásia", [14, 90], 3300000], ["Japão", [35.5, 137], 900000]
@@ -44,7 +45,7 @@ fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json")
   .then(r => r.json())
   .then(t => L.geoJSON(topojson.feature(t, t.objects.countries), {
     pane: "terra", interactive: false,
-    style: { color: "#4f6156", weight: 0.7, fillColor: "#27312b", fillOpacity: 1 }
+    style: { color: "#1d5876", weight: 0.8, fillColor: "#0b2740", fillOpacity: 1 }
   }).addTo(mapa))
   .catch(() => {
     document.getElementById("mapa").insertAdjacentHTML("beforeend",
@@ -52,7 +53,7 @@ fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json")
   });
 
 REGIOES.forEach(([nome, c, raio]) => {
-  L.circle(c, { radius: raio, color: "#63ff2f", weight: 1, dashArray: "4 6", fillColor: "#63ff2f", fillOpacity: .05, interactive: false }).addTo(mapa);
+  L.circle(c, { radius: raio, color: "#50dfff", weight: 1, dashArray: "4 6", fillColor: "#50dfff", fillOpacity: .05, interactive: false }).addTo(mapa);
   L.marker(c, { interactive: false, icon: L.divIcon({ className: "rotulo-regiao", html: nome, iconSize: [160, 16], iconAnchor: [80, 8] }) }).addTo(mapa);
 });
 
@@ -68,50 +69,277 @@ function arco(a, b) {
 
 const camadas = {};
 const nos = new Set();
+const paginasPings = new Map();
+const TAMANHO_PAGINA = 500;
+let totalPings = 0;
+let inicioHistorico = 0;
+let fimHistorico = 0;
+let indicePing = -1;
+let pingAtual = null;
+let temporizador = null;
+let reproduzindo = false;
+let animacaoPing = null;
+let marcadorPing = null;
+let rotaSelecionada = null;
+let horizonteMinutos = 12;
+let rotaDoPingAnterior = null;
+let revisaoBusca = 0;
+let velocidadeReproducao = 2;
 ROTAS.forEach(r => {
   const a = CIDADES[r.de], b = CIDADES[r.para];
   const linha = L.polyline(arco(a, b), { color: COR[r.escopo], weight: 3, opacity: .75 }).addTo(mapa);
-  linha.bindTooltip(`${r.id} (${r.escopo}): ${fmt(r.falha)} de FALHA`, { sticky: true });
+  linha.bindTooltip(`${r.id}: aguardando ping`, { sticky: true });
   linha.on("click", () => selecionar(r.id));
   camadas[r.id] = linha;
   [r.de, r.para].forEach(n => {
     if (nos.has(n)) return;
     nos.add(n);
-    L.circleMarker(CIDADES[n], { radius: 5, color: "#fff", weight: 1, fillColor: "#63ff2f", fillOpacity: 1 }).bindTooltip(n).addTo(mapa);
+    L.circleMarker(CIDADES[n], { radius: 5, color: "#e5f4ff", weight: 1, fillColor: "#50dfff", fillOpacity: 1 }).bindTooltip(n).addTo(mapa);
   });
 });
 
-// Tabela
-const corpo = document.querySelector("#tabela tbody");
 ROTAS.forEach(r => {
-  const tr = document.createElement("tr");
-  tr.tabIndex = 0;
-  tr.dataset.id = r.id;
-  tr.dataset.escopo = r.escopo;
-  tr.innerHTML = `<td class="rota">${r.id}</td><td><span class="etiqueta ${r.escopo}">${r.escopo}</span></td>
-    <td>${r.origens}</td><td>${r.destinos}</td><td class="num">${r.fluxos}</td><td class="num">${r.rtt}</td>
-    <td class="num">${fmt(r.ok)}</td><td class="num">${fmt(r.risco)}</td>
-    <td class="num ${r.falha > 30 ? "falha-alta" : ""}">${fmt(r.falha)}</td>
-    <td><div class="barra" role="img" aria-label="OK ${fmt(r.ok)}, RISCO ${fmt(r.risco)}, FALHA ${fmt(r.falha)}">
-      <i class="ok" style="width:${r.ok}%"></i><i class="risco" style="width:${r.risco}%"></i><i class="falha" style="width:${r.falha}%"></i></div></td>`;
-  tr.addEventListener("click", () => selecionar(r.id));
-  tr.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selecionar(r.id); } });
-  corpo.appendChild(tr);
+  const opcaoRota = document.createElement("option");
+  opcaoRota.value = r.id;
+  opcaoRota.textContent = r.id.replace("→", " → ");
+  document.getElementById("rota-selecionada").appendChild(opcaoRota);
 });
 
 // Seleção e filtro
 function selecionar(id) {
   const r = ROTAS.find(x => x.id === id);
-  Object.entries(camadas).forEach(([k, l]) => l.setStyle({ weight: k === id ? 6 : 3, opacity: k === id ? 1 : .4 }));
-  camadas[id].bringToFront();
+  if (!r) return;
+  rotaSelecionada = id;
+  document.getElementById("rota-selecionada").value = id;
+  atualizarMapaPing(pingAtual, false);
   mapa.fitBounds(camadas[id].getBounds(), { padding: [60, 60], maxZoom: 5 });
-  document.querySelectorAll("#tabela tbody tr").forEach(tr => tr.classList.toggle("sel", tr.dataset.id === id));
-  document.getElementById("detalhe").innerHTML = `<h3>${r.id} (${r.escopo})</h3>
-    <dl><dt>Origens (probes)</dt><dd>${r.origens}</dd><dt>Destinos (IPs)</dt><dd>${r.destinos}</dd>
-    <dt>Fluxos válidos</dt><dd>${r.fluxos}</dd><dt>RTT normal</dt><dd>${r.rtt} ms</dd>
-    <dt>Resultado</dt><dd>OK ${fmt(r.ok)}, RISCO ${fmt(r.risco)}, FALHA ${fmt(r.falha)}</dd></dl>
-    ${r.aviso ? `<p><b>Atenção:</b> ${r.aviso}</p>` : ""}`;
 }
+
+function formatarInstante(timestamp) {
+  return new Intl.DateTimeFormat("pt-BR", {
+    timeZone: "UTC",
+    dateStyle: "short",
+    timeStyle: "medium",
+  }).format(new Date(timestamp * 1000)) + " UTC";
+}
+
+function textoTooltip(ping) {
+  return `${ping.rota}: previsão ${ping.status} (${fmt(ping.confianca_pct)} de confiança) `
+    + `para ${ping.fluxo_id}, cerca de ${horizonteMinutos} min após o ping.`;
+}
+
+function atualizarEstilosRotas(ping) {
+  const rotaDoPing = ping && ROTAS.find(r => r.id === ping.rota);
+  const temSelecao = Boolean(rotaSelecionada);
+  ROTAS.forEach(rota => {
+    const selecionada = rota.id === rotaSelecionada;
+    const pingAtivo = rotaDoPing && rota.id === rotaDoPing.id;
+    const linha = camadas[rota.id];
+    linha.setStyle({
+      color: pingAtivo ? COR_STATUS[ping.status] : COR[rota.escopo],
+      weight: selecionada ? 8 : pingAtivo ? 4 : temSelecao ? 2 : 3,
+      opacity: !temSelecao ? (pingAtivo ? 1 : .75) : selecionada ? 1 : pingAtivo ? .48 : .14,
+      dashArray: null,
+    });
+    const elemento = linha.getElement();
+    if (elemento) elemento.classList.toggle("rota-destacada", selecionada);
+  });
+  if (rotaSelecionada) camadas[rotaSelecionada].bringToFront();
+}
+
+function atualizarMapaPing(ping, animar) {
+  if (rotaDoPingAnterior && camadas[rotaDoPingAnterior]) {
+    const anterior = ROTAS.find(r => r.id === rotaDoPingAnterior);
+    camadas[rotaDoPingAnterior].setTooltipContent(`${anterior.id}: aguardando próximo ping`);
+  }
+  atualizarEstilosRotas(ping);
+  if (!ping) {
+    rotaDoPingAnterior = null;
+    return;
+  }
+
+  const rota = ROTAS.find(r => r.id === ping.rota);
+  if (!rota) return;
+  camadas[rota.id].setTooltipContent(textoTooltip(ping));
+  rotaDoPingAnterior = rota.id;
+
+  if (animacaoPing !== null) window.cancelAnimationFrame(animacaoPing);
+  if (!marcadorPing) {
+    marcadorPing = L.circleMarker(CIDADES[rota.de], {
+      radius: 7,
+      color: "#fff",
+      weight: 2,
+      fillColor: COR_STATUS[ping.status],
+      fillOpacity: 1,
+    }).bindTooltip(`${ping.status}: ${ping.fluxo_id}`, { sticky: true }).addTo(mapa);
+  }
+  const pontos = camadas[rota.id].getLatLngs();
+  if (!pontos.length) return;
+  marcadorPing.setStyle({ fillColor: COR_STATUS[ping.status] });
+  marcadorPing.setTooltipContent(`${ping.status}: ${ping.fluxo_id}`);
+  if (!animar) {
+    marcadorPing.setLatLng(pontos[0]);
+    return;
+  }
+
+  const inicioAnimacao = performance.now();
+  const duracao = Math.max(80, 1200 / velocidadeReproducao);
+  function moverPing(agora) {
+    const progresso = Math.max(0, Math.min((agora - inicioAnimacao) / duracao, 1));
+    const posicao = progresso * (pontos.length - 1);
+    const indice = Math.min(Math.floor(posicao), pontos.length - 1);
+    const proporcao = posicao - indice;
+    const atual = pontos[indice];
+    const proximo = pontos[Math.min(indice + 1, pontos.length - 1)];
+    if (!atual || !proximo) return;
+    marcadorPing.setLatLng([
+      atual.lat + (proximo.lat - atual.lat) * proporcao,
+      atual.lng + (proximo.lng - atual.lng) * proporcao,
+    ]);
+    if (progresso < 1) animacaoPing = window.requestAnimationFrame(moverPing);
+    else animacaoPing = null;
+  }
+  animacaoPing = window.requestAnimationFrame(moverPing);
+}
+
+async function carregarPaginaPings(indice) {
+  const offset = Math.floor(indice / TAMANHO_PAGINA) * TAMANHO_PAGINA;
+  if (paginasPings.has(offset)) return paginasPings.get(offset);
+
+  const resposta = await fetch(`/api/pings-previstos?offset=${offset}&limite=${TAMANHO_PAGINA}`);
+  if (!resposta.ok) {
+    const erro = await resposta.json();
+    throw new Error(erro.erro || `O servidor respondeu com status ${resposta.status}.`);
+  }
+  const pagina = await resposta.json();
+  paginasPings.set(offset, pagina.pings);
+  return pagina.pings;
+}
+
+async function mostrarPing(indice) {
+  const indiceLimitado = Math.max(0, Math.min(indice, totalPings - 1));
+  const revisao = ++revisaoBusca;
+  try {
+    const offset = Math.floor(indiceLimitado / TAMANHO_PAGINA) * TAMANHO_PAGINA;
+    const pings = await carregarPaginaPings(indiceLimitado);
+    if (revisao !== revisaoBusca) return;
+    pingAtual = pings[indiceLimitado - offset];
+    if (!pingAtual) throw new Error(`O ping ${indiceLimitado + 1} não existe na resposta do servidor.`);
+    indicePing = indiceLimitado;
+    document.getElementById("ping-selecionado").value = indicePing;
+    document.getElementById("rotulo-ping").textContent =
+      `${(indicePing + 1).toLocaleString("pt-BR")} de ${totalPings.toLocaleString("pt-BR")} · `
+      + `${formatarInstante(pingAtual.timestamp)} → ${formatarInstante(pingAtual.previsto_em)}`;
+    document.getElementById("ping-anterior").disabled = indicePing === 0;
+    document.getElementById("proximo-ping").disabled = indicePing === totalPings - 1;
+    document.getElementById("resumo-previsao").textContent =
+      `${pingAtual.fluxo_id} em ${pingAtual.rota}: previsão ${pingAtual.status} `
+      + `(${fmt(pingAtual.confianca_pct)} de confiança) para ${horizonteMinutos} min após a medição.`;
+    atualizarMapaPing(pingAtual, true);
+  } catch (erro) {
+    pararReproducao();
+    document.getElementById("resumo-previsao").textContent =
+      `Não foi possível carregar o ping: ${erro.message}`;
+  }
+}
+
+function pararReproducao() {
+  reproduzindo = false;
+  revisaoBusca += 1;
+  if (temporizador !== null) {
+    window.clearTimeout(temporizador);
+    temporizador = null;
+  }
+  document.getElementById("reproduzir").textContent = "Reproduzir";
+}
+
+function agendarProximoPing() {
+  temporizador = window.setTimeout(async () => {
+    if (!reproduzindo) return;
+    if (indicePing >= totalPings - 1) {
+      pararReproducao();
+      return;
+    }
+    await mostrarPing(indicePing + 1);
+    if (reproduzindo) agendarProximoPing();
+  }, 1200 / velocidadeReproducao);
+}
+
+function iniciarReproducao() {
+  if (indicePing >= totalPings - 1) {
+    mostrarPing(0).then(() => {
+      if (indicePing !== 0) return;
+      reproduzindo = true;
+      document.getElementById("reproduzir").textContent = "Pausar";
+      agendarProximoPing();
+    });
+    return;
+  }
+  reproduzindo = true;
+  document.getElementById("reproduzir").textContent = "Pausar";
+  agendarProximoPing();
+}
+
+async function carregarPrevisoes() {
+  const resposta = await fetch(`/api/pings-previstos?offset=0&limite=${TAMANHO_PAGINA}`);
+  if (!resposta.ok) throw new Error(`O servidor respondeu com status ${resposta.status}.`);
+  const pagina = await resposta.json();
+  if (!Number.isInteger(pagina.total) || pagina.total < 1 || !Array.isArray(pagina.pings) || !pagina.pings.length) {
+    throw new Error("A resposta do histórico não contém pings previstos válidos.");
+  }
+  paginasPings.set(0, pagina.pings);
+  totalPings = pagina.total;
+  inicioHistorico = pagina.inicio;
+  fimHistorico = pagina.fim;
+  horizonteMinutos = pagina.horizonte_minutos;
+  const controle = document.getElementById("ping-selecionado");
+  controle.max = totalPings - 1;
+  controle.disabled = false;
+  ["ping-anterior", "proximo-ping", "reproduzir", "velocidade-reproducao"].forEach(id => {
+    document.getElementById(id).disabled = false;
+  });
+  document.getElementById("resumo-previsao").textContent =
+    `Histórico de ${formatarInstante(inicioHistorico)} a ${formatarInstante(fimHistorico)}. `
+    + `${totalPings.toLocaleString("pt-BR")} pings disponíveis; cada resultado prevê a classe `
+    + `aproximadamente ${horizonteMinutos} minutos depois.`;
+  await mostrarPing(0);
+}
+
+document.getElementById("ping-selecionado").addEventListener("input", evento => {
+  pararReproducao();
+  mostrarPing(Number(evento.target.value));
+});
+document.getElementById("ping-anterior").addEventListener("click", () => {
+  pararReproducao();
+  mostrarPing(indicePing - 1);
+});
+document.getElementById("proximo-ping").addEventListener("click", () => {
+  pararReproducao();
+  mostrarPing(indicePing + 1);
+});
+document.getElementById("reproduzir").addEventListener("click", () => {
+  if (reproduzindo) {
+    pararReproducao();
+    return;
+  }
+  iniciarReproducao();
+});
+document.getElementById("velocidade-reproducao").addEventListener("change", () => {
+  velocidadeReproducao = Number(document.getElementById("velocidade-reproducao").value);
+  if (!reproduzindo) return;
+  if (temporizador !== null) window.clearTimeout(temporizador);
+  agendarProximoPing();
+});
+
+document.getElementById("rota-selecionada").addEventListener("change", evento => {
+  if (evento.target.value) {
+    selecionar(evento.target.value);
+    return;
+  }
+  rotaSelecionada = null;
+  atualizarMapaPing(pingAtual, false);
+  mapa.setView([5, 10], 2);
+});
 
 document.querySelectorAll(".filtro").forEach(btn => btn.addEventListener("click", () => {
   const esc = btn.dataset.escopo;
@@ -119,11 +347,14 @@ document.querySelectorAll(".filtro").forEach(btn => btn.addEventListener("click"
   ROTAS.forEach(r => {
     const mostrar = esc === "todos" || r.escopo === esc;
     if (mostrar) camadas[r.id].addTo(mapa); else mapa.removeLayer(camadas[r.id]);
-    camadas[r.id].setStyle({ weight: 3, opacity: .75 });
   });
-  document.querySelectorAll("#tabela tbody tr").forEach(tr => {
-    tr.classList.remove("sel");
-    tr.classList.toggle("oculta", !(esc === "todos" || tr.dataset.escopo === esc));
-  });
+  rotaSelecionada = null;
+  document.getElementById("rota-selecionada").value = "";
+  atualizarMapaPing(pingAtual, false);
   mapa.setView([5, 10], 2);
 }));
+
+carregarPrevisoes().catch(erro => {
+  document.getElementById("resumo-previsao").textContent =
+    `Não foi possível carregar os pings previstos: ${erro.message} Inicie a interface pelo servidor Flask e tente novamente.`;
+});

@@ -94,4 +94,6 @@ def calcular_metricas(ficha: Ficha, rajadas: list[Rajada]) -> pd.DataFrame:
     df["n5_timeout"] = df["timeout_atual"].rolling(5, min_periods=1).sum()
     df["n5_aumento80"] = (df["aumento_pct"] > 80).astype(int).rolling(5, min_periods=1).sum()
     df["n5_risco"] = risco_individual.rolling(5, min_periods=1).sum()
+    df["z_robusto_t_menos_1"] = df["z_robusto"].shift(1)
+    df["delta_z_robusto"] = df["z_robusto"] - df["z_robusto_t_menos_1"]
     return df

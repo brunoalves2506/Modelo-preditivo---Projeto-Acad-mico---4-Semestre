@@ -1,4 +1,4 @@
-"""Carrega o modelo treinado e classifica a medição atual como OK, RISCO ou FALHA."""
+"""Carrega a floresta final da Tarefa 4 e classifica como OK, RISCO ou FALHA."""
 from __future__ import annotations
 
 import joblib
@@ -21,6 +21,6 @@ class Detector:
         self.colunas = list(self.modelo.feature_names_in_)
 
     def classificar(self, linha: pd.Series) -> str:
-        """Classifica a última medição (as colunas n5_* já carregam a janela das 5 últimas)."""
+        """Classifica a última medição com as features e lags da floresta final."""
         X = pd.DataFrame([[linha[c] for c in self.colunas]], columns=self.colunas)
         return str(self.modelo.predict(X)[0])

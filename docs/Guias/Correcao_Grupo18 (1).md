@@ -9,7 +9,7 @@
 | Projeto integrador | Modelo preditivo de rede |
 | Equipe / Integrantes | Grupo 18 — Bruno Alves Ribeiro de Souza; Wendel Henrique da Silva Rocha; Victoria Agatha Rodrigues Fagundes; Samuel de Oliveira Santos; Pedro Henrique Alexandre da Silva; Igor da Silva Alves Correa |
 | Repositório | https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre |
-| Notebook avaliado | `notebook/coleta_de_dados.ipynb` (30 células; saídas da coleta salvas; `execution_count` 5–6 e 31–35; célula de verificação com `execution_count` 1 e `NameError`) |
+| Notebook avaliado | `notebook/coletas/coleta_de_dados.ipynb` (30 células; saídas da coleta salvas; `execution_count` 5–6 e 31–35; célula de verificação com `execution_count` 1 e `NameError`) |
 | Materiais complementares | `data_ripe_atlas/raw/ripe_atlas_m1009_20260914T030005Z.{json,csv,_metadata.json}`; `docs/memorando_de_decisao_grupo18.md`; `README.md`. Há também célula Colab, não usada na corrida salva |
 | Avaliador(a) | Andrea Ono Sakai |
 | Data da avaliação | 20/09/2026 |
