@@ -1,82 +1,89 @@
-<html>
-  <head>
-    <title>Modelo Preditivo - Grupo 18</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modelo Preditivo - Grupo 18</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div id="titulo">
-        <h1>Classificador de degradação de rede</h1>
+  <header id="titulo">
+    <h1>Classificador de degradação de rede</h1>
+    <p>Rotas de ping do RIPE Atlas entre 06/09 e 20/09/2026 e o resultado de cada uma</p>
+  </header>
+
+  <main>
+    <section id="mapa_secao" aria-label="Mapa das rotas">
+      <div id="filtros" role="group" aria-label="Filtrar por escopo">
+        <button class="filtro ativo" data-escopo="todos">Todas</button>
+        <button class="filtro" data-escopo="curto">Curtas</button>
+        <button class="filtro" data-escopo="regional">Regionais</button>
+        <button class="filtro" data-escopo="longo">Longas</button>
+      </div>
+      <div id="mapa"></div>
+      <p class="nota">Cada linha liga o Anchor de origem ao de destino, usando uma cidade de referência por país. Clique em uma linha ou em uma linha da tabela para ver os detalhes.</p>
+    </section>
+
+    <section id="resultados">
+      <h2>Quem mede quem</h2>
+      <p class="texto">O mesh é uma rede de Anchors (sondas de datacenter) que pingam umas às outras por IPv4 a cada 240 s. O grupo não criou medições, só leu o histórico por GET. Cada rota combina origem e destino por país, com 4 probes de origem e 2 alvos por destino, e cada par probe × alvo é um fluxo. Os sorteios usaram semente 42.</p>
+      <p class="texto">As rotas juntam, no mesmo arquivo, um normal de poucos milissegundos e um normal de mais de 300 ms. Assim o modelo precisa aprender o desvio em relação ao próprio fluxo, e não a distância.</p>
+
+      <div id="detalhe" aria-live="polite">
+        <h3>Selecione uma rota</h3>
+        <p>Os detalhes de origens, destinos e resultado aparecem aqui.</p>
+      </div>
+
+      <h2>Resultados por rota</h2>
+      <div class="rolagem">
+        <table id="tabela">
+          <thead>
+            <tr><th>Rota</th><th>Escopo</th><th>Origens (probes)</th><th>Destinos (IPs)</th><th>Fluxos válidos</th><th>RTT normal (ms)</th><th>OK</th><th>RISCO</th><th>FALHA</th><th>Distribuição</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="nota">Percentuais de treino mais validação. São rótulos da regra da Tarefa 2, não quedas confirmadas na rede.</p>
+
+      <div class="cartoes">
+        <article>
+          <h3>Fluxos excluídos: 16 de 92</h3>
+          <p><b>Destinos que nunca responderam (13 fluxos):</b> 18.153.158.127 (DE), 138.204.7.245 (AR), 102.130.67.116 (SG) e o par 7414→190.124.192.162 (AR). Todos os pings viraram timeout, então não há mediana. A causa provável é o alvo não responder a ICMP, mas isso não foi confirmado nos arquivos.</p>
+          <p><b>Probe 6447, na Alemanha (3 fluxos):</b> só tem cerca de 1 dia de dados (17 a 23 medições válidas).</p>
+        </article>
+        <article>
+          <h3>Perda e timeouts na coleta</h3>
+          <p>BR→IN: 374 timeouts. Dois fluxos para 156.154.184.254 têm cerca de 90 cada.</p>
+          <p>BR→UY: 185 timeouts, concentrados em dois fluxos com cerca de 61 cada.</p>
+          <p>As demais rotas ficam abaixo de 30 timeouts.</p>
+        </article>
+        <article class="alerta">
+          <h3>O resultado mais surpreendente: BR→ZA com 62% de FALHA</h3>
+          <p>Isso contradiz o RFC, que diz que BR→IN e BR→ZA são majoritariamente OK. No fluxo 6790|102.222.103.100, o baseline é 347,0 ms e a mediana no Período B é 348,3 ms, uma diferença de 1,3 ms (0,4%).</p>
+          <p>O MAD desse fluxo é só 0,18 ms, então z = 1,3 / (1,4826 × 0,18) ≈ 4,9, acima de 3,5, e o fluxo inteiro vira FALHA (100%).</p>
+          <p>Casos iguais: 6659|196.10.53.7 (99,9%), 6659|102.222.103.100 (95,5%, desvio de 5 ms) e 6926|151.245.112.32 em ES→PL (98,8%, desvio de 1,7 ms).</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="container_integrantes">
+    <div id="nome_integrantes">
+      <h4>Bruno Alves Ribeiro de Souza - RGM: 42276047</h4>
+      <h4>Igor da Silva Alves Correa - RGM: 41885163</h4>
+      <h4>Pedro Henrique Alexandre da Silva - RGM: 42947049</h4>
+      <h4>Samuel de Oliveira Santos - RGM: 41761782</h4>
+      <h4>Victoria Agatha Rodrigues Fagundes - RGM: 43756042</h4>
+      <h4>Wendel Henrique da Silva Rocha - RGM: 42614945</h4>
+      
     </div>
+    <img src="img/logo_bc_white.png" alt="Logo Braz Cubas" onerror="this.style.display='none'">
+  </footer>
 
-    <div id="carregando_medicao" class="oculto">
-        <div id="frase_carregando_medicao">
-            <h2>Obtendo Métricas</h2>
-        </div>
-        <div id="barra_carregando_medicao">
-
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-
-        </div>
-    </div>
-
-    <p></p>
-
-    <p></p>
-
-    <div id="meio_tela">
-
-        <button id="botao_acao" onclick="obter_medicao()">
-            Fazer Medição
-        </button>
-
-        <div id = container_info_medicao>
-
-            <div id="container_sec_info" class="oculto">
-
-                <div id="status_rede_box">
-                    <h2 id="status_rede">Status</h2>
-                </div>
-
-                <div id="status_rede_tempo_real"><span id="status_rede_texto"></span></div>
-                
-            </div>
-
-            <div id="info_medicao"></div>
-
-        </div>
-
-    </div>
-
-    
-
-    <div id="container_integrantes">
-        <div id="nome_integrantes">
-            <h4>Bruno Alves Ribeiro de Souza - RGM: 42276047</h4>
-            <h4>Samuel de Oliveira Santos - RGM: 41761782</h4>
-            <h4>Wendel Henrique da Silva Rocha - RGM: 42614945</h4>
-            <h4>Victoria Agatha Rodrigues Fagundes - RGM: 43756042</h4>
-            <h4>Igor da Silva Alves Correa - RGM: 41885163</h4>
-            <h4>Pedro Henrique Alexandre da Silva - RGM: 42947049</h4>
-         </div>
-
-         <img src="img/logo_bc_white.png" alt="Logo Braz Cubas">
-
-    </div>
-
-    <script src="script.js"></script>
-
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
