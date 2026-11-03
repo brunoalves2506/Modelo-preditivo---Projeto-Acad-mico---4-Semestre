@@ -29,7 +29,7 @@ def rodadas_simuladas(cenario: str) -> list[Rajada]:
         if cenario == "ok" or not degradada:
             rajadas.append(_rajada(rng, 20.0, 0.4))
         elif cenario == "risco":
-            rajadas.append(_rajada(rng, 22.6, 3.0))        # latência e jitter acima do normal
+            rajadas.append(_rajada(rng, 24.5, 0.5))        # latência um pouco acima do normal (zona de risco)
         else:  # falha
             rajadas.append(_rajada(rng, 60.0, 8.0, perdidos=rng.choice([1, 2, 3])))
     return rajadas

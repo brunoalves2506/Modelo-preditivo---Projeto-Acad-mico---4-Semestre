@@ -20,7 +20,13 @@ class Detector:
             )
         self.colunas = list(self.modelo.feature_names_in_)
 
+    def prever(self, linha: pd.Series) -> tuple[str, float]:
+        """Classe prevista para ~12 min à frente e a confiança (%) da floresta nessa classe."""
+        X = pd.DataFrame([[linha[c] for c in self.colunas]], columns=self.colunas)
+        proba = self.modelo.predict_proba(X)[0]
+        i = int(proba.argmax())
+        return str(self.modelo.classes_[i]), float(proba[i] * 100)
+
     def classificar(self, linha: pd.Series) -> str:
         """Classifica a última medição com as features e lags da floresta final."""
-        X = pd.DataFrame([[linha[c] for c in self.colunas]], columns=self.colunas)
-        return str(self.modelo.predict(X)[0])
+        return self.prever(linha)[0]

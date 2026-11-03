@@ -25,8 +25,8 @@ const ROTAS = [
   { id: "IN→SG", escopo: "regional", de: "Mumbai", para: "Singapura", origens: "7375, 7269 (in-maa), 6954 (in-bom), 7277", destinos: "102.130.67.116 e 203.175.175.206 (sg-sin)", fluxos: "4 / 8", rtt: "53 a 103", ok: 85.4, risco: 9.3, falha: 5.3, aviso: "4 fluxos excluídos: 102.130.67.116 nunca respondeu." }
 ];
 
-const COR = { curto: "#50dfff", regional: "#b08cff", longo: "#ff9f43" };
-const COR_STATUS = { OK: "#43d6a3", RISCO: "#ffc86a", FALHA: "#ff657d" };
+const COR = { curto: "#63ff2f", regional: "#b9c9b5", longo: "#8a8a8a" };
+const COR_STATUS = { OK: "#1e78ff", RISCO: "#ffc802", FALHA: "#e5231b" };
 const REGIOES = [
   ["América do Sul", [-25, -58], 2600000], ["Europa", [47, 8], 1900000], ["África", [-15, 30], 3300000],
   ["Sul e Sudeste da Ásia", [14, 90], 3300000], ["Japão", [35.5, 137], 900000]
@@ -45,7 +45,7 @@ fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json")
   .then(r => r.json())
   .then(t => L.geoJSON(topojson.feature(t, t.objects.countries), {
     pane: "terra", interactive: false,
-    style: { color: "#1d5876", weight: 0.8, fillColor: "#0b2740", fillOpacity: 1 }
+    style: { color: "#2b5a24", weight: 0.6, fillColor: "#141414", fillOpacity: 1 }
   }).addTo(mapa))
   .catch(() => {
     document.getElementById("mapa").insertAdjacentHTML("beforeend",
@@ -53,7 +53,7 @@ fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json")
   });
 
 REGIOES.forEach(([nome, c, raio]) => {
-  L.circle(c, { radius: raio, color: "#50dfff", weight: 1, dashArray: "4 6", fillColor: "#50dfff", fillOpacity: .05, interactive: false }).addTo(mapa);
+  L.circle(c, { radius: raio, color: "#63ff2f", weight: 1, dashArray: "4 6", fillColor: "#63ff2f", fillOpacity: .05, interactive: false }).addTo(mapa);
   L.marker(c, { interactive: false, icon: L.divIcon({ className: "rotulo-regiao", html: nome, iconSize: [160, 16], iconAnchor: [80, 8] }) }).addTo(mapa);
 });
 
@@ -94,7 +94,7 @@ ROTAS.forEach(r => {
   [r.de, r.para].forEach(n => {
     if (nos.has(n)) return;
     nos.add(n);
-    L.circleMarker(CIDADES[n], { radius: 5, color: "#e5f4ff", weight: 1, fillColor: "#50dfff", fillOpacity: 1 }).bindTooltip(n).addTo(mapa);
+    L.circleMarker(CIDADES[n], { radius: 5, color: "#e6e6e6", weight: 1, fillColor: "#63ff2f", fillOpacity: 1 }).bindTooltip(n).addTo(mapa);
   });
 });
 

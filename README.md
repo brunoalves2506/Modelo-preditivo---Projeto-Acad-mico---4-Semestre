@@ -97,7 +97,9 @@ python -m app.servidor --simular falha
 
 ## Interface e API
 
-A interface permite selecionar uma rota por localidade, visualizar sua previsão no mapa e percorrer os pings históricos individualmente. O seletor de velocidade oferece 2×, 10× e 15×. A legenda explica as classes previstas, os marcadores e as linhas do mapa.
+A parte de cima da página é o **preditor**: o botão **Calibrar** cria o baseline da rede que será predita e o botão **Fazer Medição** mede a rede por ICMP e mostra a classe prevista para cerca de 12 minutos depois (azul = OK, amarelo = RISCO, vermelho = FALHA), com a confiança da floresta final em cada destino. Abaixo dele fica o mapa com as previsões históricas.
+
+O mapa permite selecionar uma rota por localidade, visualizar sua previsão e percorrer os pings históricos individualmente. O seletor de velocidade oferece 2×, 10× e 15×. A legenda explica as classes previstas, os marcadores e as linhas do mapa.
 
 Endpoints disponíveis:
 
@@ -106,13 +108,18 @@ Endpoints disponíveis:
 | `GET` | `/` | Interface do mapa |
 | `GET` | `/api/previsoes-historicas` | Resumo das previsões históricas |
 | `GET` | `/api/pings-previstos?offset=0&limite=500` | Página de previsões individuais; `limite` aceita de 1 a 1000 |
-| `POST` | `/api/medicao` | Executa medições ICMP atuais e classifica o resultado |
+| `POST` | `/api/medicao` | Mede a rede agora e devolve a previsão da floresta final (409 se a rede ainda não foi calibrada) |
+| `POST` | `/api/calibracao` | Inicia a calibração (1.500 medições por alvo) em segundo plano |
+| `GET` | `/api/calibracao` | Progresso e resultado da calibração |
+| `DELETE` | `/api/calibracao` | Cancela a calibração em andamento sem alterar o baseline anterior |
 
-O endpoint de medição atual usa os alvos configurados em `app/configuracao.py`. Na primeira execução, o sistema cria um baseline local provisório em `app/dados/baseline_local.json`; esse arquivo não deve ser versionado. Para refazer o baseline com 1.500 medições válidas por alvo, mantenha a rede estável e execute:
+O preditor usa os alvos configurados em `app/configuracao.py` (1.1.1.1, 8.8.8.8 e 9.9.9.9). Antes da primeira medição é preciso clicar em **Calibrar**: o sistema faz 1.500 medições por alvo (piso da RFC) e grava o "normal" da rede em `app/dados/baseline_local.json`, arquivo local que não deve ser versionado. Deixe a rede parada durante a calibração; ela pode ser cancelada e, nesse caso, o baseline anterior é mantido. Também dá para calibrar pelo terminal:
 
 ```bash
-python -m app.servidor --calibrar 1500
+python -m app.servidor --calibrar         # 1.500 medições por alvo
 ```
+
+Limitação: a floresta final foi treinada com medições espaçadas de 4 minutos. Na medição atual as 5 rodadas acontecem com poucos segundos de intervalo, então a previsão para ~12 minutos é uma aproximação.
 
 ## Dados e notebooks
 

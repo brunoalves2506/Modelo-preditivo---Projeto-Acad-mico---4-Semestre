@@ -9,7 +9,7 @@ from flask import Flask, jsonify, render_template, request
 
 from .configuracao import RAJADAS_CALIBRACAO
 from .historico import carregar_pings_previstos, carregar_previsoes_historicas
-from .monitor import ErroMedicao, Monitor, MonitorOcupado
+from .monitor import ErroMedicao, Monitor, MonitorOcupado, SemBaseline
 from .rede import PingIndisponivel
 from .simulacao import CENARIOS
 
@@ -28,8 +28,30 @@ def criar_app(monitor: Monitor) -> Flask:
             return jsonify(monitor.medir())
         except MonitorOcupado as e:
             return jsonify(erro=str(e)), 429
+        except SemBaseline as e:
+            return jsonify(erro=str(e)), 409
         except (ErroMedicao, PingIndisponivel) as e:
             return jsonify(erro=str(e)), 503
+        except Exception as e:  # noqa: BLE001 - mostra a causa na tela em vez de um erro genérico
+            app.logger.exception("Erro inesperado na medição")
+            return jsonify(erro=f"Erro interno ({e.__class__.__name__}: {e}). Veja o terminal do servidor."), 500
+
+    @app.post("/api/calibracao")
+    def iniciar_calibracao():
+        try:
+            monitor.iniciar_calibracao()
+        except MonitorOcupado as e:
+            return jsonify(erro=str(e)), 429
+        return jsonify(monitor.estado_calibracao()), 202
+
+    @app.get("/api/calibracao")
+    def estado_calibracao():
+        return jsonify(monitor.estado_calibracao())
+
+    @app.delete("/api/calibracao")
+    def cancelar_calibracao():
+        monitor.cancelar_calibracao()
+        return jsonify(monitor.estado_calibracao())
 
     @app.get("/api/previsoes-historicas")
     def previsoes_historicas():
@@ -56,13 +78,19 @@ def main():
     p.add_argument("--porta", type=int, default=5000)
     p.add_argument("--simular", choices=CENARIOS, help="modo demonstração: não usa a rede, gera o cenário escolhido")
     p.add_argument("--calibrar", type=int, nargs="?", const=RAJADAS_CALIBRACAO, metavar="N",
-                   help=f"refaz o baseline com N medições por alvo e sai (padrão {RAJADAS_CALIBRACAO}; use 1500 para o baseline completo)")
+                   help=f"refaz o baseline com N medições por alvo e sai (padrão {RAJADAS_CALIBRACAO}, o baseline completo)")
     args = p.parse_args()
 
     monitor = Monitor(cenario=args.simular)
     if args.calibrar is not None:
         print(f"Calibrando com {args.calibrar} medições por alvo (deixe a rede funcionando normalmente)...")
-        for host, ficha in monitor.calibrar(args.calibrar).items():
+        def progresso(feitas, total):
+            if feitas % max(1, total // 50) == 0 or feitas == total:
+                print(f"\r  {feitas / total:4.0%} ({feitas}/{total})", end="", flush=True)
+
+        resultado = monitor.calibrar(args.calibrar, progresso)
+        print()
+        for host, ficha in resultado.items():
             print(f"  {host}: " + (f"normal = {ficha.mediana:.1f} ms ({ficha.n_validos} amostras válidas)" if ficha
                                    else "sem respostas suficientes, baseline não atualizado"))
         return
