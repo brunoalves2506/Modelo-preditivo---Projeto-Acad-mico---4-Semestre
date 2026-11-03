@@ -67,7 +67,7 @@ function mostrar_resultado(d) {
         ["Jitter: ", formatar_valor(m.jitter_ms, "ms", 2)],
         ["Perda de pacotes: ", formatar_valor(m.perda_pct, "%", 0)],
     ].forEach(([rotulo, valor]) => {
-        const linha = elemento("div");
+        const linha = elemento("div", "info_metrica");
         linha.appendChild(elemento("span", null, rotulo));
         linha.appendChild(document.createTextNode(valor));
         metricas.appendChild(linha);

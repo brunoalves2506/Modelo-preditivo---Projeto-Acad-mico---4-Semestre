@@ -252,12 +252,21 @@ def test_endpoint_medicao_sem_baseline_devolve_409(detector, tmp_path):
     assert r.status_code == 409 and "Calibrar" in r.get_json()["erro"]
 
 
-def test_pagina_tem_preditor_botao_calibrar_coruja_e_mapa(detector):
+def test_pagina_tem_preditor_mapa_player_e_lista_de_rotas(detector):
     html = criar_app(Monitor(detector=detector, cenario="ok")).test_client().get("/").get_data(as_text=True)
     assert "Preditor de degradação de rede" in html
     assert 'id="botao_calibrar"' in html and 'id="botao_acao"' in html
+    assert 'class="descricao-preditor"' in html
+    assert 'id="acoes-preditor"' in html
     assert "coruja-mirai.png" in html and "/static/js/preditor.js" in html
-    assert html.index('id="meio_tela"') < html.index('id="mapa"') < html.index('id="container_integrantes"')
+    assert 'id="lista-rotas"' in html and 'id="rota-selecionada"' not in html
+    assert html.index('id="mapa-painel"') < html.index('id="mapa"') < html.index('id="legenda-previsao"')
+    assert 'id="botao-legenda"' in html and 'id="conteudo-legenda"' in html
+    assert 'aria-expanded="false"' in html and 'aria-hidden="true" inert' in html
+    assert html.index('id="mapa"') < html.index('id="legenda-previsao"')
+    assert html.index('id="legenda-previsao"') < html.index('id="linha-temporal"')
+    assert html.index('id="linha-temporal"') < html.index('id="meio_tela"')
+    assert html.index('id="meio_tela"') < html.index('id="container_integrantes"')
 
 
 def test_erro_inesperado_na_medicao_vira_json_com_a_causa(detector):

@@ -25,8 +25,8 @@ const ROTAS = [
   { id: "IN→SG", escopo: "regional", de: "Mumbai", para: "Singapura", origens: "7375, 7269 (in-maa), 6954 (in-bom), 7277", destinos: "102.130.67.116 e 203.175.175.206 (sg-sin)", fluxos: "4 / 8", rtt: "53 a 103", ok: 85.4, risco: 9.3, falha: 5.3, aviso: "4 fluxos excluídos: 102.130.67.116 nunca respondeu." }
 ];
 
-const COR = { curto: "#63ff2f", regional: "#b9c9b5", longo: "#8a8a8a" };
-const COR_STATUS = { OK: "#1e78ff", RISCO: "#ffc802", FALHA: "#e5231b" };
+const COR = { curto: "#50dfff", regional: "#b08cff", longo: "#ff9f43" };
+const COR_STATUS = { OK: "#3b9cff", RISCO: "#ffc86a", FALHA: "#ff657d" };
 const REGIOES = [
   ["América do Sul", [-25, -58], 2600000], ["Europa", [47, 8], 1900000], ["África", [-15, 30], 3300000],
   ["Sul e Sudeste da Ásia", [14, 90], 3300000], ["Japão", [35.5, 137], 900000]
@@ -45,7 +45,7 @@ fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json")
   .then(r => r.json())
   .then(t => L.geoJSON(topojson.feature(t, t.objects.countries), {
     pane: "terra", interactive: false,
-    style: { color: "#2b5a24", weight: 0.6, fillColor: "#141414", fillOpacity: 1 }
+    style: { color: "#1d5876", weight: 0.8, fillColor: "#0b2740", fillOpacity: 1 }
   }).addTo(mapa))
   .catch(() => {
     document.getElementById("mapa").insertAdjacentHTML("beforeend",
@@ -53,7 +53,7 @@ fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json")
   });
 
 REGIOES.forEach(([nome, c, raio]) => {
-  L.circle(c, { radius: raio, color: "#63ff2f", weight: 1, dashArray: "4 6", fillColor: "#63ff2f", fillOpacity: .05, interactive: false }).addTo(mapa);
+  L.circle(c, { radius: raio, color: "#50dfff", weight: 1, dashArray: "4 6", fillColor: "#50dfff", fillOpacity: .05, interactive: false }).addTo(mapa);
   L.marker(c, { interactive: false, icon: L.divIcon({ className: "rotulo-regiao", html: nome, iconSize: [160, 16], iconAnchor: [80, 8] }) }).addTo(mapa);
 });
 
@@ -94,23 +94,38 @@ ROTAS.forEach(r => {
   [r.de, r.para].forEach(n => {
     if (nos.has(n)) return;
     nos.add(n);
-    L.circleMarker(CIDADES[n], { radius: 5, color: "#e6e6e6", weight: 1, fillColor: "#63ff2f", fillOpacity: 1 }).bindTooltip(n).addTo(mapa);
+    L.circleMarker(CIDADES[n], { radius: 5, color: "#e5f4ff", weight: 1, fillColor: "#50dfff", fillOpacity: 1 }).bindTooltip(n).addTo(mapa);
   });
 });
 
+const listaRotas = document.getElementById("lista-rotas");
 ROTAS.forEach(r => {
-  const opcaoRota = document.createElement("option");
-  opcaoRota.value = r.id;
+  const item = document.createElement("li");
+  item.dataset.escopo = r.escopo;
+  const opcaoRota = document.createElement("button");
+  opcaoRota.type = "button";
+  opcaoRota.className = "opcao-rota";
+  opcaoRota.dataset.rota = r.id;
+  opcaoRota.setAttribute("aria-pressed", "false");
   opcaoRota.textContent = r.id.replace("→", " → ");
-  document.getElementById("rota-selecionada").appendChild(opcaoRota);
+  item.appendChild(opcaoRota);
+  listaRotas.appendChild(item);
 });
+
+function atualizarSelecaoLista(id) {
+  listaRotas.querySelectorAll(".opcao-rota").forEach(opcao => {
+    const selecionada = opcao.dataset.rota === (id || "");
+    opcao.classList.toggle("ativa", selecionada);
+    opcao.setAttribute("aria-pressed", String(selecionada));
+  });
+}
 
 // Seleção e filtro
 function selecionar(id) {
   const r = ROTAS.find(x => x.id === id);
   if (!r) return;
   rotaSelecionada = id;
-  document.getElementById("rota-selecionada").value = id;
+  atualizarSelecaoLista(id);
   atualizarMapaPing(pingAtual, false);
   mapa.fitBounds(camadas[id].getBounds(), { padding: [60, 60], maxZoom: 5 });
 }
@@ -331,12 +346,42 @@ document.getElementById("velocidade-reproducao").addEventListener("change", () =
   agendarProximoPing();
 });
 
-document.getElementById("rota-selecionada").addEventListener("change", evento => {
-  if (evento.target.value) {
-    selecionar(evento.target.value);
+const blocoLegenda = document.getElementById("legenda-previsao");
+const botaoLegenda = document.getElementById("botao-legenda");
+const conteudoLegenda = document.getElementById("conteudo-legenda");
+
+function definirLegendaAberta(aberta) {
+  blocoLegenda.classList.toggle("aberta", aberta);
+  botaoLegenda.setAttribute("aria-expanded", String(aberta));
+  conteudoLegenda.setAttribute("aria-hidden", String(!aberta));
+  conteudoLegenda.inert = !aberta;
+}
+
+botaoLegenda.addEventListener("click", () => {
+  definirLegendaAberta(botaoLegenda.getAttribute("aria-expanded") !== "true");
+});
+document.addEventListener("keydown", evento => {
+  if (evento.key !== "Escape") return;
+  if (botaoLegenda.getAttribute("aria-expanded") !== "true") return;
+  evento.preventDefault();
+  definirLegendaAberta(false);
+  botaoLegenda.focus();
+});
+document.addEventListener("click", evento => {
+  if (botaoLegenda.getAttribute("aria-expanded") === "true" && !blocoLegenda.contains(evento.target)) {
+    definirLegendaAberta(false);
+  }
+});
+
+listaRotas.addEventListener("click", evento => {
+  const opcao = evento.target.closest(".opcao-rota");
+  if (!opcao) return;
+  if (opcao.dataset.rota) {
+    selecionar(opcao.dataset.rota);
     return;
   }
   rotaSelecionada = null;
+  atualizarSelecaoLista(null);
   atualizarMapaPing(pingAtual, false);
   mapa.setView([5, 10], 2);
 });
@@ -347,9 +392,10 @@ document.querySelectorAll(".filtro").forEach(btn => btn.addEventListener("click"
   ROTAS.forEach(r => {
     const mostrar = esc === "todos" || r.escopo === esc;
     if (mostrar) camadas[r.id].addTo(mapa); else mapa.removeLayer(camadas[r.id]);
+    listaRotas.querySelector(`[data-rota="${r.id}"]`).closest("li").hidden = !mostrar;
   });
   rotaSelecionada = null;
-  document.getElementById("rota-selecionada").value = "";
+  atualizarSelecaoLista(null);
   atualizarMapaPing(pingAtual, false);
   mapa.setView([5, 10], 2);
 }));

@@ -15,106 +15,11 @@
         <h1>Preditor de degradação de rede</h1>
     </div>
 
-    <div id="carregando_medicao" class="oculto">
-        <div id="frase_carregando_medicao">
-            <h2 id="frase_carregando">Obtendo Métricas</h2>
-        </div>
-        <div id="barra_carregando_medicao">
-
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-            <div class="animacao_carregando"></div>
-
-        </div>
-    </div>
-
-    <p></p>
-
-    <p></p>
-
-    <div id="meio_tela">
-
-        <button id="botao_calibrar" onclick="calibrar_rede()">
-            Calibrar
-        </button>
-
-        <button id="botao_acao" onclick="obter_medicao()">
-            Fazer Medição
-        </button>
-
-        <div id="container_info_medicao">
-
-            <div id="container_sec_info" class="oculto">
-
-                <div id="status_rede_box">
-                    <h2 id="status_rede">Previsão</h2>
-                </div>
-
-                <div id="status_rede_tempo_real"><span id="status_rede_texto"></span></div>
-
-            </div>
-
-            <div id="info_medicao"></div>
-
-        </div>
-
-    </div>
-
     <main>
       <section id="mapa_secao" aria-label="Mapa das rotas">
         <div id="cabecalho_mapa">
           <h2>Previsões históricas por rota</h2>
           <p class="nota">Previsões de degradação por rota do RIPE Atlas, de 13/09 a 20/09/2026</p>
-        </div>
-        <div id="linha-temporal" aria-label="Período das previsões">
-          <button id="ping-anterior" type="button" aria-label="Ping anterior" disabled>‹</button>
-          <label for="ping-selecionado">Ping <output id="rotulo-ping">Carregando...</output></label>
-          <button id="proximo-ping" type="button" aria-label="Próximo ping" disabled>›</button>
-          <input id="ping-selecionado" type="range" min="0" max="0" value="0" step="1" disabled>
-          <label for="velocidade-reproducao">Velocidade:
-            <select id="velocidade-reproducao" aria-label="Velocidade da reprodução" disabled>
-              <option value="2">2×</option>
-              <option value="10">10×</option>
-              <option value="15">15×</option>
-            </select>
-          </label>
-          <button id="reproduzir" type="button" disabled>Reproduzir</button>
-        </div>
-        <p id="resumo-previsao" class="nota" aria-live="polite">Carregando pings históricos e previsões da floresta...</p>
-        <p class="nota">A reprodução percorre cada ping em ordem cronológica. Em cada passo, a cor da rota mostra a classe prevista para cerca de 12 minutos depois do ping selecionado.</p>
-        <div id="legenda-previsao" aria-label="Legenda completa do mapa">
-          <h2>Como interpretar o mapa</h2>
-          <div class="grupos-legenda">
-            <section class="grupo-legenda" aria-label="Classes previstas">
-              <h3>Cor da rota e do ping animado: classe prevista</h3>
-              <ul>
-                <li><i class="simbolo linha cor-ok"></i><span><b>Azul — OK:</b> o modelo prevê estado normal.</span></li>
-                <li><i class="simbolo linha cor-risco"></i><span><b>Amarelo — RISCO:</b> o modelo prevê degradação.</span></li>
-                <li><i class="simbolo linha cor-falha"></i><span><b>Vermelho — FALHA:</b> o modelo prevê falha.</span></li>
-                <li><i class="simbolo linha cor-sem-dado"></i><span><b>Cinza — outra rota:</b> não é a rota do ping atual; não significa OK nem falta de dados.</span></li>
-              </ul>
-            </section>
-            <section class="grupo-legenda" aria-label="Símbolos e referências geográficas">
-              <h3>Pontos, traços e outros elementos</h3>
-              <ul>
-                <li><i class="simbolo ponto-ping cor-falha"></i><span><b>Ponto com borda branca:</b> ping atual em animação; a cor indica a previsão desse ping.</span></li>
-                <li><i class="simbolo ponto-cidade"></i><span><b>Pontos verdes com borda clara:</b> cidades de referência aproximadas dos Anchors de origem e destino.</span></li>
-                <li><i class="simbolo circulo-regiao"></i><span><b>Círculos verdes pontilhados e nomes:</b> referências visuais de região, não representam falha nem cobertura medida.</span></li>
-                <li><i class="simbolo linha linha-selecionada"></i><span><b>Linha clara, mais grossa e brilhante:</b> rota selecionada; as demais ficam suavizadas.</span></li>
-              </ul>
-            </section>
-          </div>
-          <p class="nota">Passe o cursor sobre uma rota ou sobre o ping animado para ver fluxo, classe prevista e confiança. A previsão é para cerca de 12 minutos após a medição.</p>
         </div>
         <div id="filtros" role="group" aria-label="Filtrar por escopo">
           <button class="filtro ativo" data-escopo="todos">Todas</button>
@@ -123,14 +28,107 @@
           <button class="filtro" data-escopo="longo">Longas</button>
         </div>
         <div id="mapa-layout">
-          <div id="mapa"></div>
+          <div id="mapa-painel">
+            <div id="mapa"></div>
+            <div id="legenda-previsao">
+              <button id="botao-legenda" type="button" aria-expanded="false" aria-controls="conteudo-legenda">
+                <span aria-hidden="true">i</span> Legenda do mapa
+              </button>
+              <div id="conteudo-legenda" aria-label="Como interpretar o mapa" aria-hidden="true" inert>
+                <h2>Como interpretar o mapa</h2>
+                <div class="grupos-legenda">
+                  <section class="grupo-legenda" aria-label="Classes previstas">
+                    <h3>Cor da rota e do ping animado: classe prevista</h3>
+                    <ul>
+                      <li><i class="simbolo linha cor-ok"></i><span><b>Azul — OK:</b> o modelo prevê estado normal.</span></li>
+                      <li><i class="simbolo linha cor-risco"></i><span><b>Amarelo — RISCO:</b> o modelo prevê degradação.</span></li>
+                      <li><i class="simbolo linha cor-falha"></i><span><b>Vermelho — FALHA:</b> o modelo prevê falha.</span></li>
+                      <li><i class="simbolo linha cor-sem-dado"></i><span><b>Cinza — outra rota:</b> não é a rota do ping atual; não significa OK nem falta de dados.</span></li>
+                    </ul>
+                  </section>
+                  <section class="grupo-legenda" aria-label="Símbolos e referências geográficas">
+                    <h3>Pontos, traços e outros elementos</h3>
+                    <ul>
+                      <li><i class="simbolo ponto-ping cor-falha"></i><span><b>Ponto com borda branca:</b> ping atual em animação; a cor indica a previsão desse ping.</span></li>
+                      <li><i class="simbolo ponto-cidade"></i><span><b>Pontos ciano com borda clara:</b> cidades de referência aproximadas dos Anchors de origem e destino.</span></li>
+                      <li><i class="simbolo circulo-regiao"></i><span><b>Círculos ciano pontilhados e nomes:</b> referências visuais de região, não representam falha nem cobertura medida.</span></li>
+                      <li><i class="simbolo linha linha-selecionada"></i><span><b>Linha clara, mais grossa e brilhante:</b> rota selecionada; as demais ficam suavizadas.</span></li>
+                    </ul>
+                  </section>
+                </div>
+                <p class="nota">Passe o cursor sobre uma rota ou sobre o ping animado para ver fluxo, classe prevista e confiança. A previsão é para cerca de 12 minutos após a medição.</p>
+              </div>
+            </div>
+          </div>
           <aside id="seletor-rotas" aria-label="Seletor de rotas">
-            <label for="rota-selecionada">Localidades</label>
-            <select id="rota-selecionada">
-              <option value="">Padrão</option>
-            </select>
-            <p>Selecione uma rota para destacá-la ou use Padrão para ver todas.</p>
+            <h3>Localidades</h3>
+            <ul id="lista-rotas" aria-label="Rotas disponíveis">
+              <li><button class="opcao-rota ativa" type="button" data-rota="" aria-pressed="true">Padrão</button></li>
+            </ul>
+            <p>Escolha uma rota para destacá-la no mapa.</p>
           </aside>
+        </div>
+        <div id="linha-temporal" aria-label="Reprodução das previsões históricas">
+          <div class="controles-video">
+            <button id="ping-anterior" type="button" aria-label="Ping anterior" disabled>‹</button>
+            <button id="reproduzir" type="button" aria-label="Reproduzir" disabled>▶</button>
+            <button id="proximo-ping" type="button" aria-label="Próximo ping" disabled>›</button>
+            <output id="rotulo-ping">Carregando...</output>
+            <label for="velocidade-reproducao">Velocidade
+              <select id="velocidade-reproducao" aria-label="Velocidade da reprodução" disabled>
+                <option value="2">2×</option>
+                <option value="10">10×</option>
+                <option value="15">15×</option>
+              </select>
+            </label>
+          </div>
+          <input id="ping-selecionado" type="range" min="0" max="0" value="0" step="1" disabled aria-label="Progresso dos pings">
+          <p id="resumo-previsao" class="nota" aria-live="polite">Carregando pings históricos e previsões da floresta...</p>
+          <p class="nota">A reprodução percorre cada ping em ordem cronológica; cada cor mostra a previsão para cerca de 12 minutos após a medição.</p>
+        </div>
+      </section>
+
+      <section id="preditor" aria-labelledby="titulo-preditor">
+        <h2 id="titulo-preditor">Predição em tempo real</h2>
+        <p class="descricao-preditor">
+          Calibre a conexão para registrar uma referência estável e, depois, faça uma medição.
+          O modelo compara latência, jitter e perda de pacotes com essa referência para estimar
+          o estado da rede nos próximos 12 minutos.
+        </p>
+        <div id="carregando_medicao" class="oculto">
+          <div id="frase_carregando_medicao">
+            <h3 id="frase_carregando">Obtendo métricas</h3>
+          </div>
+          <div id="barra_carregando_medicao">
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+            <div class="animacao_carregando"></div>
+          </div>
+        </div>
+        <div id="meio_tela">
+          <div id="acoes-preditor" role="group" aria-label="Ações do preditor">
+            <button id="botao_calibrar" type="button" onclick="calibrar_rede()">Calibrar rede</button>
+            <button id="botao_acao" type="button" onclick="obter_medicao()">Fazer medição</button>
+          </div>
+          <div id="container_info_medicao">
+            <div id="container_sec_info" class="oculto">
+              <div id="status_rede_box">
+                <h2 id="status_rede">Previsão</h2>
+              </div>
+              <div id="status_rede_tempo_real"><span id="status_rede_texto"></span></div>
+            </div>
+            <div id="info_medicao"></div>
+          </div>
         </div>
       </section>
 
