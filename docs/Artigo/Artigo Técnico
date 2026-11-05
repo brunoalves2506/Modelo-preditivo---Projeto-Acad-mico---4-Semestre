@@ -320,6 +320,70 @@
         footer p {
             margin: 0.5rem 0;
         }
+        /* ABAS DO VÍDEO DE APRESENTAÇÃO */
+        .tab-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-btn {
+            appearance: none;
+            font: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #64748b;
+            background: transparent;
+            border: 1px solid transparent;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            padding: 0.6rem 1.1rem;
+            cursor: pointer;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: var(--secondary);
+        }
+
+        .tab-btn.active {
+            color: var(--secondary);
+            background: var(--bg-color);
+            border-color: var(--border-color);
+            border-bottom: 2px solid var(--bg-color);
+            margin-bottom: -2px;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .video-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            border-radius: 8px;
+            background: #0f172a;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+        }
+
+        .tab-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .tab-link:hover {
+            text-decoration: underline;
+        }
     </style>
 
 
@@ -334,6 +398,7 @@
             <li><a href="#experimento">Experimento &amp; Código</a></li>
             <li><a href="#recomendacao">Recomendação (Random Forest)</a></li>
             <li><a href="#referencias">Referências</a></li>
+            <li><a href="#apresentacao">🎬 Apresentação (Vídeo)</a></li>
         </ul>
     </nav>
 
@@ -800,6 +865,35 @@ print(df_resultados.to_markdown(index=False))
                 </div>
             </div>
         </section>
+        <!-- ABAS: VÍDEO DE APRESENTAÇÃO -->
+        <section id="apresentacao">
+            <h2>10. Apresentação do Projeto</h2>
+            <div class="tab-buttons" role="tablist" aria-label="Apresentação do projeto">
+                <button type="button" class="tab-btn active" id="tab-btn-video" role="tab" aria-selected="true" aria-controls="tab-video">🎬 Apresentação (Vídeo)</button>
+                <button type="button" class="tab-btn" id="tab-btn-artigo" role="tab" aria-selected="false" aria-controls="tab-artigo">📄 Artigo</button>
+            </div>
+
+            <div class="tab-panel active" id="tab-video" role="tabpanel" aria-labelledby="tab-btn-video">
+                <p style="margin-top: 0;">Assista à apresentação do modelo preditor de falhas em redes, pela <strong>Equipe 18</strong>:</p>
+                <iframe
+                    class="video-frame"
+                    src="https://www.youtube-nocookie.com/embed/7wiXlERGq3Y"
+                    title="Apresentação do modelo preditor - Grupo 18"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+                <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">
+                    Não consegue ver o player? <a href="https://www.youtube.com/watch?v=7wiXlERGq3Y" target="_blank" rel="noopener" style="color: var(--secondary);">Assista diretamente no YouTube</a>.
+                </p>
+            </div>
+
+            <div class="tab-panel" id="tab-artigo" role="tabpanel" aria-labelledby="tab-btn-artigo">
+                <p style="margin-top: 0;">O artigo completo <strong>Árvore, Floresta ou Boosting?</strong> está nesta mesma página, logo acima desta seção.</p>
+                <a href="#" class="tab-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Voltar ao início do artigo</a>
+            </div>
+        </section>
     </main>
 
     <!-- RODAPÉ -->
@@ -810,3 +904,23 @@ print(df_resultados.to_markdown(index=False))
         <p>Repositório GitHub: <a href="https://github.com/brunoalves2506/Modelo-preditivo---Projeto-Acad-mico---4-Semestre" target="_blank" style="color: #93c5fd;">Modelo Preditivo - Projeto Acadêmico</a></p>
         <p style="font-size: 0.8rem; margin-top: 1rem; color: #64748b;">Última revisão do site: 12 de Outubro de 2026</p>
     </footer>
+
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('.tab-btn');
+            var panels = document.querySelectorAll('.tab-panel');
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    buttons.forEach(function (b) {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    panels.forEach(function (p) { p.classList.remove('active'); });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+                    if (panel) { panel.classList.add('active'); }
+                });
+            });
+        })();
+    </script>
