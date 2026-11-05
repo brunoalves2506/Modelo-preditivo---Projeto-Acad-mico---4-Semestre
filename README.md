@@ -6,6 +6,10 @@ Projeto acadêmico do Grupo 18 de Ciência da Computação (noturno), orientado 
 
 Assista ao pitch do projeto no YouTube: [Vídeo pitch MIRAI](https://www.youtube.com/watch?v=7wiXlERGq3Y)
 
+## Artigo
+
+Leia o nosso artigo em: [Artigo](https://open-article-garden.lovable.app/)
+
 ## Visão geral
 
 O repositório reúne duas partes relacionadas:
