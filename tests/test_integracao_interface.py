@@ -255,6 +255,9 @@ def test_endpoint_medicao_sem_baseline_devolve_409(detector, tmp_path):
 def test_pagina_tem_preditor_mapa_player_e_lista_de_rotas(detector):
     html = criar_app(Monitor(detector=detector, cenario="ok")).test_client().get("/").get_data(as_text=True)
     assert "Preditor de degradação de rede" in html
+    assert 'id="pitch"' in html
+    assert 'src="https://www.youtube-nocookie.com/embed/7wiXlERGq3Y"' in html
+    assert 'href="https://www.youtube.com/watch?v=7wiXlERGq3Y"' in html
     assert 'id="botao_calibrar"' in html and 'id="botao_acao"' in html
     assert 'class="descricao-preditor"' in html
     assert 'id="acoes-preditor"' in html
