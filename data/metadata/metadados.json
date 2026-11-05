@@ -1,0 +1,180 @@
+{
+  "modelo": {
+    "nome": "preditor_degradacao_rede_floresta_final",
+    "versao": "1.0.0",
+    "familia": "RandomForestClassifier",
+    "parametros": {
+      "n_estimators": 200,
+      "criterion": "gini",
+      "max_depth": 10,
+      "min_samples_leaf": 10,
+      "class_weight": null,
+      "random_state": 42
+    },
+    "congelado_em_utc": "2026-10-19T21:59:57.537472+00:00",
+    "gerado_em_utc": "2026-11-05T00:27:25+00:00",
+    "equipe": "Equipe 18",
+    "arquivo": "floresta_final.joblib",
+    "formato_arquivo": "objeto RandomForestClassifier serializado direto (sem dicionario modelo/features/familia/params)",
+    "como_carregar": "modelo = joblib.load('floresta_final.joblib'); features = list(modelo.feature_names_in_); classes = list(modelo.classes_)",
+    "features": [
+      "z_robusto_t_menos_1",
+      "delta_z_robusto",
+      "z_robusto",
+      "perda_pct",
+      "jitter_relativo",
+      "n5_risco",
+      "n5_timeout",
+      "n5_aumento80"
+    ],
+    "familia_modelo": "RandomForestClassifier"
+  },
+  "versoes": {
+    "python": "3.12.3",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "joblib": "1.6.0",
+    "observacao": "Carregar o floresta_final.joblib com a mesma versao do scikit-learn do treino (1.9.1, ver floresta_final_params.json e requirements.txt)."
+  },
+  "descricao": "Preditor da classe de qualidade de um fluxo de rede (OK, RISCO ou FALHA) cerca de 12 minutos a frente, a partir de RTT normalizado pelo baseline do proprio fluxo. Treinado com ping IPv4 do mesh de anchors do RIPE Atlas. Nao usa pais, IP, rota, fluxo_id nem RTT absoluto.",
+  "entradas": [
+    {
+      "ordem": 1,
+      "nome": "z_robusto_t_menos_1",
+      "tipo": "float",
+      "descricao": "z_robusto da medicao anterior do mesmo fluxo (deslocamento de 1 na ordem do tempo). Vazio na 1a medicao do fluxo."
+    },
+    {
+      "ordem": 2,
+      "nome": "delta_z_robusto",
+      "tipo": "float",
+      "descricao": "Variacao do z_robusto: z_robusto - z_robusto_t_menos_1. Vazio se faltar um dos dois."
+    },
+    {
+      "ordem": 3,
+      "nome": "z_robusto",
+      "tipo": "float",
+      "descricao": "Desvio do RTT medio atual em relacao ao baseline do fluxo, em unidades de MAD robusto. Vazio sem resposta."
+    },
+    {
+      "ordem": 4,
+      "nome": "perda_pct",
+      "tipo": "float",
+      "descricao": "Percentual de pacotes perdidos na rajada atual, de 0 a 100."
+    },
+    {
+      "ordem": 5,
+      "nome": "jitter_relativo",
+      "tipo": "float",
+      "descricao": "Jitter da rajada dividido pelo jitter tipico do baseline. Vazio se o jitter estiver vazio."
+    },
+    {
+      "ordem": 6,
+      "nome": "n5_risco",
+      "tipo": "inteiro 0-5",
+      "descricao": "Quantas das ultimas 5 medicoes (incluindo a atual) cumprem o criterio individual de risco."
+    },
+    {
+      "ordem": 7,
+      "nome": "n5_timeout",
+      "tipo": "inteiro 0-5",
+      "descricao": "Quantas das ultimas 5 medicoes tiveram timeout_atual = 1."
+    },
+    {
+      "ordem": 8,
+      "nome": "n5_aumento80",
+      "tipo": "inteiro 0-5",
+      "descricao": "Quantas das ultimas 5 medicoes tiveram aumento_pct > 80."
+    }
+  ],
+  "formulas_e_etapas": {
+    "0_ordenacao": "Ordenar as medicoes do fluxo (fluxo_id = prb_id|dst_addr) por timestamp.",
+    "1_rtt": "rtt = avg da rajada (ms). Sentinela -1 e ausencia sao tratados como vazio, nunca como 0.",
+    "2_perda_pct": "(enviados - recebidos) / enviados * 100",
+    "3_timeout_atual": "1 se rtt vazio ou perda_pct = 100; senao 0",
+    "4_z_robusto": "(rtt - mediana) / (1,4826 * MAD), com mediana e MAD da linha do fluxo em baseline_por_fluxo.csv (colunas mediana e MAD)",
+    "5_aumento_pct": "(rtt - mediana) / mediana * 100 (usa max(mediana, 1e-6)); nao e feature, serve para n5_aumento80 e n5_risco",
+    "6_jitter_relativo": "jitter_ms / jitter_tipico (coluna jitter_tipico do baseline_por_fluxo.csv); jitter_ms = desvio-padrao dos RTTs individuais da rajada, so com 2+ respostas",
+    "7_risco_individual": "1 se (2 <= z_robusto < 3,5) ou (30 <= aumento_pct <= 80) ou (jitter_relativo >= 3); senao 0",
+    "8_janelas_5": "n5_timeout = soma de timeout_atual; n5_aumento80 = soma de (aumento_pct > 80); n5_risco = soma de risco_individual; todas nas ultimas 5 medicoes do fluxo, incluindo a atual (min_periods = 1)",
+    "9_lag": "z_robusto_t_menos_1 = z_robusto da medicao anterior do fluxo; delta_z_robusto = z_robusto - z_robusto_t_menos_1"
+  },
+  "tratamento_ausentes_e_divisoes": {
+    "rtt_ausente": "z_robusto e aumento_pct ficam vazios (NaN); timeout_atual = 1. A floresta aceita NaN nas entradas.",
+    "jitter_ausente": "jitter_relativo vazio (NaN); o criterio de jitter nao dispara.",
+    "primeira_medicao_do_fluxo": "z_robusto_t_menos_1 e delta_z_robusto ficam vazios (NaN).",
+    "MAD_igual_a_zero": "z_robusto = 0 se rtt == mediana; senao (rtt - mediana) / max(IQR / 1,349; 1,0). O baseline_por_fluxo.csv nao tem coluna de IQR; nos 76 fluxos atuais nenhum tem MAD = 0, entao esse caso nao ocorre com este baseline.",
+    "jitter_tipico_igual_a_zero": "jitter_relativo = 1,0 se jitter == 0; senao 3,0",
+    "mediana_zero": "usa-se max(mediana, 1e-6) em aumento_pct"
+  },
+  "saidas": {
+    "classe_prevista": "classe do mesmo fluxo na 3a medicao seguinte (cerca de 12 min a frente): OK, RISCO ou FALHA",
+    "probabilidades": "predict_proba, uma coluna por classe, na ordem de ordem_classes; a confianca e a maior probabilidade",
+    "regras_do_rotulo_FALHA": "perda_pct >= 10, ou n5_timeout >= 3, ou z_robusto >= 3,5 (com RTT presente), ou n5_aumento80 >= 2"
+  },
+  "ordem_classes": [
+    "FALHA",
+    "OK",
+    "RISCO"
+  ],
+  "ordem_classes_observacao": "Ordem alfabetica do scikit-learn (modelo.classes_); e a ordem das colunas de predict_proba.",
+  "horizonte_previsao": {
+    "segundos": 720,
+    "descricao": "3a medicao seguinte do mesmo fluxo (intervalo de 240 s do mesh), tolerancia de 60 s"
+  },
+  "requisitos_historico": {
+    "janela": "ultimas 5 medicoes consecutivas do mesmo fluxo (n5_*), mais a medicao anterior para o lag (t-1)",
+    "minimo_para_todas_as_features": "2 medicoes do fluxo; com menos de 5, as janelas n5 usam so o que existe (min_periods = 1)",
+    "intervalo_entre_medicoes_s": 240,
+    "baseline": "minimo de 1500 RTTs validos do fluxo no periodo inicial (Periodo A); fluxos abaixo do piso nao entram no baseline_por_fluxo.csv"
+  },
+  "regras_baseline": [
+    "Usar a linha do baseline_por_fluxo.csv com o mesmo fluxo_id (fluxo_id = prb_id|dst_addr); colunas usadas no calculo: mediana, MAD, jitter_tipico. perda_tipica e prop_resposta sao informativas.",
+    "Validade: a coluna status vale 'ok' nos 76 fluxos do arquivo. Esses fluxos tem no minimo 1.500 RTTs validos no Periodo A; os que nao atingiram o piso estao fora do arquivo (ver fluxos_excluidos_baseline.csv, 16 fluxos).",
+    "Recomendacao de uso: usar somente fluxos presentes no arquivo com status = 'ok'; fluxo ausente ou sem baseline valido nao deve ser previsto (baseline_insuficiente). Nao inventar mediana.",
+    "Periodo de calculo (o arquivo nao traz colunas de data): Periodo A, de 2026-09-06T04:32:00+00:00 a 2026-09-13T04:32:00+00:00. Nunca recalcular o baseline com dados do periodo de teste.",
+    "Para uma rede nova, calibrar antes (medir o suficiente para o piso de 1.500 RTTs validos) e so entao prever."
+  ],
+  "dados_de_treino": {
+    "fonte": "RIPE Atlas API v2, mesh de anchors, ping IPv4 (coleta v2, 12 rotas de pais)",
+    "janela_utc": [
+      "2026-09-06T04:32:00+00:00",
+      "2026-09-20T04:32:00+00:00"
+    ],
+    "fluxos_com_baseline": 76,
+    "linhas_treino_validacao": [
+      92655,
+      36658
+    ]
+  },
+  "exemplo": {
+    "origem": "data_ripe_atlas/processed/teste.csv (linha real do conjunto de teste)",
+    "fluxo_id": "6396|91.209.16.127",
+    "timestamp_utc": "2026-09-18T03:22:53+00:00",
+    "entrada": {
+      "z_robusto_t_menos_1": 2.719948,
+      "delta_z_robusto": 1.230416,
+      "z_robusto": 3.950364,
+      "perda_pct": 0.0,
+      "jitter_relativo": 4.850549,
+      "n5_risco": 5.0,
+      "n5_timeout": 0.0,
+      "n5_aumento80": 0.0
+    },
+    "saida": {
+      "classe_prevista_12_min": "RISCO",
+      "probabilidades": {
+        "FALHA": 0.2506,
+        "OK": 0.1736,
+        "RISCO": 0.5758
+      },
+      "classe_real_12_min": "RISCO"
+    }
+  },
+  "arquivos_da_pasta": {
+    "floresta_final.joblib": "RandomForestClassifier treinado, serializado direto com joblib (nao e um dicionario). Features em modelo.feature_names_in_ e classes em modelo.classes_.",
+    "metadados.json": "Este arquivo.",
+    "baseline_por_fluxo.csv": "Ficha de baseline de 76 fluxos (Periodo A) com as colunas: prb_id, dst_addr, fluxo_id, mediana, MAD, jitter_tipico, perda_tipica, prop_resposta, status."
+  }
+}
