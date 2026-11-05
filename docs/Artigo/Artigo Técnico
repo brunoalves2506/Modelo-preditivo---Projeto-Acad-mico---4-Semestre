@@ -12,6 +12,15 @@
             --border-color: #e2e8f0;
         }
 
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-padding-top: 8rem;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: var(--bg-color);
@@ -25,40 +34,115 @@
         nav {
             position: sticky;
             top: 0;
-            background-color: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(8px);
+            background-color: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(10px);
             color: #fff;
-            padding: 1rem 2rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 0.55rem 1.5rem;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
         }
 
         nav .logo {
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            min-width: 0;
+        }
+
+        nav .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--secondary), #1d4ed8);
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            align-items: center;
+            gap: 0.25rem;
             margin: 0;
             padding: 0;
             overflow-x: auto;
+            min-width: 0;
+            scrollbar-width: none;
+            overscroll-behavior-x: contain;
+        }
+
+        nav ul::-webkit-scrollbar { display: none; }
+
+        nav li {
+            flex-shrink: 0;
+        }
+
+        nav li.divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(255,255,255,0.18);
+            align-self: center;
+            margin: 0 0.45rem;
         }
 
         nav a {
             color: #cbd5e1;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            min-height: 38px;
+            white-space: nowrap;
+        }
+
+        nav a .num {
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: #60a5fa;
+            background: rgba(37, 99, 235, 0.16);
+            border-radius: 999px;
+            padding: 0.1rem 0.4rem;
         }
 
         nav a:hover {
             color: #ffffff;
+            background-color: rgba(37, 99, 235, 0.18);
+            border-color: rgba(96, 165, 250, 0.25);
+        }
+
+        nav a.nav-cta {
+            color: #fff7ed;
+            background: linear-gradient(135deg, #d97706, #b45309);
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.35);
+        }
+
+        nav a.nav-cta:hover {
+            color: #ffffff;
+            filter: brightness(1.1);
+            background: linear-gradient(135deg, #ea8a0c, #c25a06);
         }
 
         header {
@@ -70,6 +154,7 @@
 
         header h1 {
             font-size: 2.5rem;
+            line-height: 1.3;
             max-width: 900px;
             margin: 0 auto 1rem auto;
         }
@@ -83,11 +168,12 @@
 
         /* AUTORES NA ABERTURA */
         .authors-header {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
-            flex-wrap: wrap;
+            max-width: 1100px;
+            margin-inline: auto;
         }
 
         .author-mini {
@@ -95,6 +181,11 @@
             align-items: center;
             gap: 0.75rem;
             text-align: left;
+            min-width: 0;
+        }
+
+        .author-mini > div {
+            min-width: 0;
         }
 
         .author-mini img {
@@ -103,6 +194,7 @@
             border-radius: 50%;
             border: 2px solid var(--secondary);
             object-fit: cover;
+            flex-shrink: 0;
         }
 
         .author-mini span {
@@ -117,7 +209,7 @@
         }
 
         main {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: -2rem auto 4rem auto;
             padding: 0 1.5rem;
         }
@@ -129,6 +221,8 @@
             padding: 2.5rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            min-width: 0;
+            overflow-wrap: anywhere;
         }
 
         h2 {
@@ -166,6 +260,17 @@
             color: #475569;
         }
 
+        .figure-box img {
+            display: block;
+            margin-inline: auto;
+        }
+
+        .mock-diagram {
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            overflow-wrap: normal;
+        }
+
         .figure-caption {
             font-size: 0.85rem;
             color: #64748b;
@@ -175,7 +280,7 @@
 
         .models-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
@@ -185,6 +290,7 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 1.5rem;
+            min-width: 0;
         }
 
         .model-card h4 {
@@ -195,10 +301,14 @@
 
         .table-wrap {
             overflow-x: auto;
+            max-width: 100%;
+            overscroll-behavior-x: contain;
+            scrollbar-width: thin;
         }
 
         table {
             width: 100%;
+            min-width: 600px;
             border-collapse: collapse;
             margin: 1.5rem 0;
             font-size: 0.95rem;
@@ -237,6 +347,7 @@
             padding: 0;
             color: inherit;
             font-size: 0.85rem;
+            overflow-wrap: normal;
         }
 
         .highlight-box {
@@ -268,7 +379,7 @@
         /* CARTÕES DE AUTORES NO FINAL */
         .authors-full-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
@@ -322,7 +433,9 @@
         }
         /* ABAS DO VÍDEO DE APRESENTAÇÃO */
         .tab-buttons {
-            display: flex;
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: start;
             gap: 0.5rem;
             flex-wrap: wrap;
             border-bottom: 2px solid var(--border-color);
@@ -342,6 +455,8 @@
             padding: 0.6rem 1.1rem;
             cursor: pointer;
             transition: color 0.2s, background 0.2s;
+            min-width: 0;
+            min-height: 44px;
         }
 
         .tab-btn:hover {
@@ -365,6 +480,7 @@
         }
 
         .video-frame {
+            display: block;
             width: 100%;
             aspect-ratio: 16 / 9;
             border: 0;
@@ -384,21 +500,63 @@
         .tab-link:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 900px) {
+            nav { padding: 0.55rem 1rem; gap: 0.75rem; }
+            header { padding: 3rem 1.5rem; }
+            header h1 { font-size: 2rem; }
+            .authors-header { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            section { padding: 2rem; }
+        }
+
+        @media (max-width: 600px) {
+            nav { flex-direction: column; align-items: stretch; gap: 0.4rem; padding: 0.5rem 0.75rem; }
+            nav .logo { justify-content: center; font-size: 0.9rem; }
+            nav ul { gap: 0.3rem; }
+            nav a { font-size: 0.8rem; padding: 0.3rem 0.6rem; min-height: 36px; }
+            nav li.divider { margin: 0 0.2rem; }
+            header { padding: 2rem 1rem 3rem; }
+            header h1 { font-size: 1.75rem; }
+            header p { font-size: 1rem; }
+            .authors-header {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 1rem;
+                max-width: 360px;
+                margin-top: 1.5rem;
+            }
+            main { padding: 0 0.75rem; margin-bottom: 2rem; }
+            section { padding: 1.25rem; margin-bottom: 1rem; border-radius: 8px; }
+            h2 { font-size: 1.4rem; line-height: 1.35; }
+            h3 { font-size: 1.15rem; line-height: 1.4; }
+            .figure-box { padding: 0.75rem; }
+            .figure-box img { padding: 0.25rem; }
+            .mock-diagram { padding: 0.75rem; font-size: 0.8rem; }
+            .models-grid, .authors-full-grid { gap: 1rem; }
+            .model-card, .author-card { padding: 1rem; }
+            .highlight-box, .decision-box { padding: 1rem; }
+            th, td { padding: 0.625rem; }
+            pre { padding: 1rem; }
+            section ul:not(.links-list), section ol { padding-left: 1.25rem; }
+            .tab-buttons { grid-template-columns: minmax(0, 1fr) auto; gap: 0.25rem; }
+            .tab-btn { padding: 0.625rem 0.5rem; font-size: 0.85rem; }
+            footer { padding: 2rem 1rem; margin-top: 2rem; overflow-wrap: anywhere; }
+        }
     </style>
 
 
 
     <!-- CABEÇALHO / NAVBAR -->
     <nav>
-        <div class="logo">Equipe 18 - Preditor de Redes ML</div>
+        <div class="logo"><span class="logo-badge">18</span>Preditor de Redes ML</div>
         <ul>
-            <li><a href="#introducao">Introdução</a></li>
-            <li><a href="#modelos">Os 3 Modelos</a></li>
-            <li><a href="#comparativo">Quadro Comparativo</a></li>
-            <li><a href="#experimento">Experimento &amp; Código</a></li>
-            <li><a href="#recomendacao">Recomendação (Random Forest)</a></li>
+            <li><a href="#introducao"><span class="num">01</span>Introdução</a></li>
+            <li><a href="#modelos"><span class="num">02</span>Os 3 Modelos</a></li>
+            <li><a href="#comparativo" title="Quadro Comparativo"><span class="num">03</span>Comparativo</a></li>
+            <li><a href="#experimento" title="Experimento & Código"><span class="num">04</span>Experimento</a></li>
+            <li><a href="#recomendacao" title="Recomendação (Random Forest)"><span class="num">05</span>Recomendação</a></li>
+            <li class="divider" aria-hidden="true"></li>
             <li><a href="#referencias">Referências</a></li>
-            <li><a href="#apresentacao">🎬 Apresentação (Vídeo)</a></li>
+            <li><a class="nav-cta" href="#apresentacao">🎬 Vídeo</a></li>
         </ul>
     </nav>
 
@@ -701,10 +859,6 @@ print(df_resultados.to_markdown(index=False))
 
             <h3>Resultados no conjunto de teste</h3>
             <p>Em redes, as classes de falha costumam ser bem menos frequentes que as medições normais. Por isso, a acurácia sozinha engana: um modelo que respondesse sempre "OK" acertaria quase tudo e não detectaria nenhuma falha. Relatamos também precisão, recall e F1-Score, calculados com média <em>macro</em> (as três classes têm o mesmo peso), além da matriz de confusão.</p>
-
-            <div class="highlight-box">
-                <strong>Preencha esta tabela com a saída real do script.</strong> Os campos amarelos abaixo devem receber os valores impressos por <code>df_resultados.to_markdown()</code> na sua execução. Não use números estimados.
-            </div>
 
             <!-- TABELA DE RESULTADOS (mesmas colunas impressas pelo script) -->
             <div class="table-wrap">
