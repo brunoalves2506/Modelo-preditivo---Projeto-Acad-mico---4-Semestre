@@ -2,6 +2,12 @@
 
 Projeto acadêmico do Grupo 18 de Ciência da Computação (noturno), orientado pela professora Andrea Ono Sakai. O sistema usa medições do RIPE Atlas para estudar degradação de rede e apresenta previsões históricas e medições atuais em uma interface Flask.
 
+## Vídeo pitch
+
+[![Pitch do projeto MIRAI](https://img.youtube.com/vi/7wiXlERGq3Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=7wiXlERGq3Y)
+
+Assista ao pitch do projeto no YouTube: [Vídeo pitch MIRAI](https://www.youtube.com/watch?v=7wiXlERGq3Y)
+
 ## Visão geral
 
 O repositório reúne duas partes relacionadas:
