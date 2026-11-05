@@ -4,7 +4,7 @@ Projeto acadêmico do Grupo 18 de Ciência da Computação (noturno), orientado 
 
 ## Vídeo pitch
 
-[![Pitch do projeto MIRAI](https://img.youtube.com/vi/7wiXlERGq3Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=7wiXlERGq3Y)
+[![Pitch do projeto MIRAI](docs/imagens/video-pitch-mirai.jpg)](https://www.youtube.com/watch?v=7wiXlERGq3Y)
 
 Assista ao pitch do projeto no YouTube: [Vídeo pitch MIRAI](https://www.youtube.com/watch?v=7wiXlERGq3Y)
 
